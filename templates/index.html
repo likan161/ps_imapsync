@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>PS ImapSync</title>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  margin-left: 40px;
+}
+input[type=password], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  margin-left: 40px;
+}
+input[type=email], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  margin-left: 40px;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #09c;
+  margin: 0 auto;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+  position:absolute;
+  left:0;
+  right:0;
+  margin:auto;
+  margin-top: 30px;
+}
+
+input[type=submit]:hover {
+  background-color: #357ebd;
+}
+
+.container {
+  border-width: 1px;
+  text-align: center;
+  border-radius: 8px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-color: #C0C0C0; 
+  border-style: solid;
+  height: 500px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 400px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.cen {
+  text-align: center;
+  color: #808080;
+}
+
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+</style>
+</head>
+<body bgcolor="#f2f2f2">
+
+<div class="header__logo">
+    <a href="https://www.ps.kz">
+        <img src="/logo.png" alt="PS Internet Company">
+    </a>
+</div>
+
+<div class="container">
+  <form action="/redre" method="post">
+{% csrf_token %}
+{{ form.as_p }}
+
+  <div class="cen">
+    <label for="host1">Целевой почтовый ящик</label>
+  </div>
+
+  <div class="row">
+    <div class="col-75">
+      <input type="email" id="mail1" name="mail1" placeholder="Имя почтового ящика">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-75">
+      <input type="password" id="pass1" name="pass1" placeholder="Введите пароль">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-75">
+      <input type="text" id="host1" name="host1" placeholder="Имя сервера, или IP адрес">
+    </div>
+  </div>
+
+<div class="cen">
+ <label for="host1">Destination mailbox</label>
+</div>
+
+  <div class="row">
+    <div class="col-75">
+      <input type="email" id="mail2" name="mail2" placeholder="Имя почтового ящика">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-75">
+      <input type="password" id="pass2" name="pass2" placeholder="Введите пароль">
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-75">
+      <input type="text" id="host2" name="host2" placeholder="Имя сервера, или IP адрес">
+    </div>
+  </div>
+
+</textarea>
+  <div class="row">
+    <input type="submit" value="Начать трансфер">
+  </div>
+  </form>
+</div>
+
+</body>
+</html>
