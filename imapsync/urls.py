@@ -20,5 +20,7 @@ from django.urls import path
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('imapsyncpage.urls')),
-    path('redre', include('imapsyncpage.urls')),
+    path('transfer', include('imapsyncpage.urls')),
+    path('masstransfer', include('imapsyncpage.urls')),
+#    path('test', include('imapsyncpage.urls')),
 ]

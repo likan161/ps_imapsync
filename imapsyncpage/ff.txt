@@ -1,0 +1,17 @@
+<script type="text/javascript" language="javascript">
+    $('#send').click(function() {
+        var serializeFormData = $('#form').serialize();
+        
+        $.ajax({
+          type: 'POST',
+          url: '/get-form-data',
+          data: serializeFormData,
+          success: function(data) {
+              console.log(data);
+          },
+          error:  function(data){
+              console.log('Внимание! произошла ошибка:' + data);
+          }
+        });
+    });
+</script>

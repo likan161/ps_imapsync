@@ -1,0 +1,1137 @@
+Here is imapsync 1.977 on host kvs02.likan.space, a linux system with 0.1/1.0 free GiB of RAM
+with Perl 5.26.1 and Mail::IMAPClient 3.42
+Transfer started at Mon Oct 26 05:32:01 2020
+PID is 12391 my PPID is 12390
+Log file is LOG_imapsync/2020_10_26_05_32_01_515_admin@nichost.kz_test@constructor.likan.space.txt ( to change it, use --logfile path ; or use --nolog to turn off logging )
+Load is 0.05 0.06 0.02 1/93 on 1 cores
+Current directory is /var/www/django/imapsync
+Real user id is root (uid 0)
+Effective user id is root (euid 0)
+$RCSfile: imapsync,v $ $Revision: 1.977 $ $Date: 2019/12/23 20:18:02 $ 
+Command line used, run by /usr/bin/perl:
+/usr/bin/imapsync --automap --no-modulesversion --host1 srv-plesk14.ps.kz --user1 admin@nichost.kz --password1 MASKED --host2 srv-bplesk01.ps.kz --user2 test@constructor.likan.space --password2 MASKED
+Temp directory is /tmp ( to change it use --tmpdir dirpath )
+kill -QUIT 12391 # special behavior: call to sub catch_exit
+kill -TERM 12391 # special behavior: call to sub catch_exit
+kill -INT 12391 # special behavior: call to sub catch_reconnect
+kill -HUP 12391 # special behavior: call to sub catch_print
+kill -USR1 12391 # special behavior: call to sub toggle_sleep
+File /tmp/imapsync.pid does not exist
+PID file is /tmp/imapsync.pid ( to change it, use --pidfile filepath ; to avoid it use --pidfile "" )
+Writing my PID 12391 in /tmp/imapsync.pid
+Writing also my logfile name in /tmp/imapsync.pid : LOG_imapsync/2020_10_26_05_32_01_515_admin@nichost.kz_test@constructor.likan.space.txt
+Info: will resync flags for already transferred messages. Use --noresyncflags to not resync flags.
+Host1: probing ssl on port 993 ( use --nosslcheck to avoid this ssl probe ) 
+Host1: sslcheck detected open ssl port 993 so turning ssl on (use --nossl1 --notls1 to turn off SSL and TLS wizardry)
+Host2: probing ssl on port 993 ( use --nosslcheck to avoid this ssl probe ) 
+Host2: sslcheck detected open ssl port 993 so turning ssl on (use --nossl2 --notls2 to turn off SSL and TLS wizardry)
+SSL debug mode level is --debugssl 1 (can be set from 0 meaning no debug to 4 meaning max debug)
+Host1: SSL default mode is like --sslargs1 "SSL_verify_mode=0", meaning for host1 SSL_VERIFY_NONE, ie, do not check the certificate server.
+Host1: Use --sslargs1 SSL_verify_mode=1 to have SSL_VERIFY_PEER, ie, check the certificate server of host1
+Host2: SSL default mode is like --sslargs2 "SSL_verify_mode=0", meaning for host2 SSL_VERIFY_NONE, ie, do not check the certificate server.
+Host2: Use --sslargs2 SSL_verify_mode=1 to have SSL_VERIFY_PEER, ie, check the certificate server of host2
+Info: turned ON syncinternaldates, will set the internal dates (arrival dates) on host2 same as host1.
+Host1: will try to use LOGIN authentication on host1
+Host2: will try to use LOGIN authentication on host2
+Host1: imap connection timeout is 120 seconds
+Host2: imap connection timeout is 120 seconds
+Host1: IMAP server [srv-plesk14.ps.kz] port [993] user [admin@nichost.kz]
+Host2: IMAP server [srv-bplesk01.ps.kz] port [993] user [test@constructor.likan.space]
+Host1: connecting and login on host1 [srv-plesk14.ps.kz] port [993] with user [admin@nichost.kz]
+Host1 IP address: 2a00:5da0:1000::114
+Host1 banner: * OK [CAPABILITY IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE LITERAL+ AUTH=PLAIN AUTH=LOGIN AUTH=DIGEST-MD5 AUTH=CRAM-MD5] Dovecot ready.
+Host1 capability before authentication: IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE LITERAL+ AUTH=PLAIN AUTH=LOGIN AUTH=DIGEST-MD5 AUTH=CRAM-MD5 AUTH
+Host1: srv-plesk14.ps.kz says it has CAPABILITY for AUTHENTICATE LOGIN
+Host1: success login on [srv-plesk14.ps.kz] with user [admin@nichost.kz] auth [LOGIN]
+Host2: connecting and login on host2 [srv-bplesk01.ps.kz] port [993] with user [test@constructor.likan.space]
+Host2 IP address: 2a00:5da0:1000::b01
+Host2 banner: * OK [CAPABILITY IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE LITERAL+ AUTH=PLAIN AUTH=LOGIN AUTH=DIGEST-MD5 AUTH=CRAM-MD5] Dovecot ready.
+Host2 capability before authentication: IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE LITERAL+ AUTH=PLAIN AUTH=LOGIN AUTH=DIGEST-MD5 AUTH=CRAM-MD5 AUTH
+Host2: srv-bplesk01.ps.kz says it has CAPABILITY for AUTHENTICATE LOGIN
+Host2: success login on [srv-bplesk01.ps.kz] with user [test@constructor.likan.space] auth [LOGIN]
+Host1: state Authenticated
+Host2: state Authenticated
+Host1 capability once authenticated: IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE SORT SORT=DISPLAY THREAD=REFERENCES THREAD=REFS THREAD=ORDEREDSUBJECT MULTIAPPEND URL-PARTIAL CATENATE UNSELECT CHILDREN NAMESPACE UIDPLUS LIST-EXTENDED I18NLEVEL=1 CONDSTORE QRESYNC ESEARCH ESORT SEARCHRES WITHIN CONTEXT=SEARCH LIST-STATUS BINARY MOVE SNIPPET=FUZZY PREVIEW=FUZZY STATUS=SIZE LITERAL+ NOTIFY SPECIAL-USE QUOTA THREAD I18NLEVEL CONTEXT SNIPPET PREVIEW STATUS
+Host2 capability once authenticated: IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE SORT SORT=DISPLAY THREAD=REFERENCES THREAD=REFS THREAD=ORDEREDSUBJECT MULTIAPPEND URL-PARTIAL CATENATE UNSELECT CHILDREN NAMESPACE UIDPLUS LIST-EXTENDED I18NLEVEL=1 CONDSTORE QRESYNC ESEARCH ESORT SEARCHRES WITHIN CONTEXT=SEARCH LIST-STATUS BINARY MOVE SNIPPET=FUZZY PREVIEW=FUZZY STATUS=SIZE LITERAL+ NOTIFY SPECIAL-USE QUOTA THREAD I18NLEVEL CONTEXT SNIPPET PREVIEW STATUS
+
+Host1: found ID capability. Sending/receiving ID, presented in raw IMAP for now.
+In order to avoid sending/receiving ID, use option --noid
+Sending: 4 ID ("name" "imapsync" "version" "1.977" "os" "linux" "vendor" "Gilles LAMIRAL" "support-url" "https://imapsync.lamiral.info/" "date" "23-Dec-2019 20:18:02 +0000" "side" "host1")
+Sent 181 bytes
+Read: 	* ID ("name" "Dovecot")
+  	4 OK ID completed (0.001 + 0.000 secs).
+
+
+Host2: found ID capability. Sending/receiving ID, presented in raw IMAP for now.
+In order to avoid sending/receiving ID, use option --noid
+Sending: 4 ID ("name" "imapsync" "version" "1.977" "os" "linux" "vendor" "Gilles LAMIRAL" "support-url" "https://imapsync.lamiral.info/" "date" "23-Dec-2019 20:18:02 +0000" "side" "host2")
+Sent 181 bytes
+Read: 	* ID ("name" "Dovecot")
+  	4 OK ID completed (0.001 + 0.000 secs).
+
+
+Host2: found quota, presented in raw IMAP
+Sending: 5 GETQUOTAROOT INBOX
+Sent 22 bytes
+Read: 	5 OK No quota (0.002 + 0.000 + 0.001 secs).
+
+Host2: Quota current storage is 0 bytes. Limit is 0 bytes. So 0 % full
+Host1: found 9 folders.
+Host2: found 6 folders.
+Host1: guessing separator from folder listing: [.]
+Host1: separator given by NAMESPACE: [.]
+Host2: guessing separator from folder listing: [.]
+Host2: separator given by NAMESPACE: [.]
+Host1: guessing prefix from folder listing: [INBOX.]
+Host1: prefix given by NAMESPACE: [INBOX.]
+Host2: guessing prefix from folder listing: [INBOX.]
+Host2: prefix given by NAMESPACE: [INBOX.]
+Host1: separator and prefix: [.][INBOX.]
+Host2: separator and prefix: [.][INBOX.]
+Including all folders found by default. Use --subscribed or --folder or --folderrec or --include to select specific folders. Use --exclude to unselect specific folders.
+Host1: Checking wanted folders exist. Use --nocheckfoldersexist to avoid this check (shared of public namespace targeted).
+Host1: Checking wanted folders are selectable. Use --nocheckselectable to avoid this check.
+Turned on automapping folders ( use --noautomap to turn off automapping )
+Host1: special INBOX.Spam           = \Junk
+Host1: special INBOX.Trash          = \Trash
+Host1: special INBOX.Sent           = \Sent
+Host1: special INBOX.Drafts         = \Drafts
+
+Host2: special INBOX.Trash          = \Trash
+Host2: special INBOX.Drafts         = \Drafts
+Host2: special INBOX.Sent           = \Sent
+Host2: special INBOX.Spam           = \Junk
+
+Host1: INBOX.Spam not \Junk because set to INBOX.Junk
+Host2: INBOX.Spam not \Junk because set to INBOX.Junk
+
+++++ Listing folders
+All foldernames are presented between brackets like [X] where X is the foldername.
+When a foldername contains non-ASCII characters it is presented in the form
+[X] = [Y] where
+X is the imap foldername you have to use in command line options and
+Y is the utf8 output just printed for convenience, to recognize it.
+
+Host1: folders list (first the raw imap format then the [X] = [Y]):
+* LIST (\HasChildren) "." INBOX
+* LIST (\HasNoChildren \Junk) "." INBOX.Spam
+* LIST (\HasNoChildren) "." INBOX.Archive
+* LIST (\HasNoChildren) "." INBOX.spam
+* LIST (\HasNoChildren) "." INBOX.&-BB4EQgQ,BEAEMAQyBDsENQQ9BD0ESwQ1-
+* LIST (\HasNoChildren) "." INBOX.Junk
+* LIST (\HasNoChildren \UnMarked \Trash) "." INBOX.Trash
+* LIST (\HasNoChildren \UnMarked \Sent) "." INBOX.Sent
+* LIST (\HasNoChildren \Drafts) "." INBOX.Drafts
+19 OK List completed (0.002 + 0.000 + 0.001 secs).
+
+[INBOX]
+[INBOX.&-BB4EQgQ,BEAEMAQyBDsENQQ9BD0ESwQ1-] = [INBOX.&BB4EQgQ,BEAEMAQyBDsENQQ9BD0ESwQ1-]
+[INBOX.Archive]
+[INBOX.Drafts]
+[INBOX.Junk]
+[INBOX.Sent]
+[INBOX.Spam]
+[INBOX.Trash]
+[INBOX.spam]
+
+Host2: folders list (first the raw imap format then the [X] = [Y]):
+* LIST (\HasChildren) "." INBOX
+* LIST (\HasNoChildren \UnMarked) "." INBOX.Junk
+* LIST (\HasNoChildren \Trash) "." INBOX.Trash
+* LIST (\HasNoChildren \UnMarked \Drafts) "." INBOX.Drafts
+* LIST (\HasNoChildren \UnMarked \Sent) "." INBOX.Sent
+* LIST (\HasNoChildren \UnMarked \Junk) "." INBOX.Spam
+11 OK List completed (0.001 + 0.000 secs).
+
+[INBOX]
+[INBOX.Drafts]
+[INBOX.Junk]
+[INBOX.Sent]
+[INBOX.Spam]
+[INBOX.Trash]
+
+Folders mapping from --automap feature (use --f1f2 to override any mapping):
+[INBOX.Drafts]                           -> [INBOX.Drafts]                          
+[INBOX.Junk]                             -> [INBOX.Spam]                            
+[INBOX.Spam]                             -> [INBOX.Spam]                            
+[INBOX.Trash]                            -> [INBOX.Trash]                           
+[INBOX.Sent]                             -> [INBOX.Sent]                            
+
+
+Folders sizes before the synchronization.
+You can remove foldersizes listings by using "--nofoldersizes" and "--nofoldersizesatend"
+but then you will also lose the ETA (Estimation Time of Arrival) given after each message copy.
+Host1 folder     1/9 [INBOX]                             Size: 111534696 Messages: 13594 Biggest:   2521410
+Host2 folder     1/9 [INBOX]                             Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                    -111534696           -13594           -2521410
+
+Host1 folder     2/9 [INBOX.&-BB4EQgQ,BEAEMAQyBDsENQQ9BD0ESwQ1-] = [INBOX.&BB4EQgQ,BEAEMAQyBDsENQQ9BD0ESwQ1-] Size:         0 Messages:     0 Biggest:         0
+Host2 folder     2/9 [INBOX.&-BB4EQgQ,BEAEMAQyBDsENQQ9BD0ESwQ1-] = [INBOX.&BB4EQgQ,BEAEMAQyBDsENQQ9BD0ESwQ1-]  does not exist yet
+Host2-Host1                                                            0               0                  0
+
+Host1 folder     3/9 [INBOX.Archive]                     Size:         0 Messages:     0 Biggest:         0
+Host2 folder     3/9 [INBOX.Archive]                      does not exist yet
+Host2-Host1                                                            0               0                  0
+
+Host1 folder     4/9 [INBOX.Drafts]                      Size:         0 Messages:     0 Biggest:         0
+Host2 folder     4/9 [INBOX.Drafts]                      Size:       741 Messages:     1 Biggest:       741
+Host2-Host1                                                          741               1                741
+
+Host1 folder     5/9 [INBOX.Junk]                        Size:         0 Messages:     0 Biggest:         0
+Host2 folder     5/9 [INBOX.Spam]                        Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder     6/9 [INBOX.Sent]                        Size:     20357 Messages:     7 Biggest:      6362
+Host2 folder     6/9 [INBOX.Sent]                        Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                       -20357              -7              -6362
+
+Host1 folder     7/9 [INBOX.Spam]                        Size:         0 Messages:     0 Biggest:         0
+Host2 folder     7/9 [INBOX.Spam]                        Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder     8/9 [INBOX.Trash]                       Size:         0 Messages:     0 Biggest:         0
+Host2 folder     8/9 [INBOX.Trash]                       Size:      3760 Messages:     1 Biggest:      3760
+Host2-Host1                                                         3760               1               3760
+
+Host2 Folder INBOX.spam: Could not select: 24 NO Mailbox doesn't exist: INBOX.spam (0.001 + 0.000 secs).
+Host1 folder     9/9 [INBOX.spam]                        Size:         0 Messages:     0 Biggest:         0
+Host2 folder     9/9 [INBOX.spam]                         does not exist yet
+Host2-Host1                                                            0               0                  0
+
+Host1 Nb folders:                     9 folders
+Host2 Nb folders:                     8 folders
+
+Host1 Nb messages:                13601 messages
+Host2 Nb messages:                    2 messages
+
+Host1 Total size:             111555053 bytes (106.387 MiB)
+Host2 Total size:                  4501 bytes (4.396 KiB)
+
+Host1 Biggest message:          2521410 bytes (2.405 MiB)
+Host2 Biggest message:             3760 bytes (3.672 KiB)
+
+Time spent on sizing:         3.2 seconds
+++++ Looping on each one of 9 folders to sync
+ETA: Mon Oct 26 05:32:06 2020  2 s  13601/13601 msgs left
+Folder     1/9 [INBOX]                             -> [INBOX]                            
+Host1: folder [INBOX] has 13594 messages in total (mentioned by SELECT)
+Host2: folder [INBOX] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX] permanentflags: 
+Host1: folder [INBOX] considering 13594 messages
+Host2: folder [INBOX] considering 0 messages
+Host1: folder [INBOX] selected 13594 messages, duplicates 0
+Host2: folder [INBOX] selected 0 messages, duplicates 0
+msg INBOX/17 {2826}           copied to INBOX/3162       0.18 msgs/s  0.506 KiB/s 2.760 KiB copied ETA: Tue Oct 27 02:07:58 2020  74148 s  13600/13601 msgs left
+msg INBOX/19 {1929}           copied to INBOX/3163       0.36 msgs/s  0.836 KiB/s 4.644 KiB copied ETA: Mon Oct 26 16:01:32 2020  37762 s  13599/13601 msgs left
+msg INBOX/26 {3037}           copied to INBOX/3164       0.54 msgs/s  1.364 KiB/s 7.609 KiB copied ETA: Mon Oct 26 12:33:37 2020  25288 s  13598/13601 msgs left
+msg INBOX/38 {1202}           copied to INBOX/3165       0.71 msgs/s  1.568 KiB/s 8.783 KiB copied ETA: Mon Oct 26 10:49:34 2020  19044 s  13597/13601 msgs left
+msg INBOX/40 {1748}           copied to INBOX/3166       0.89 msgs/s  1.865 KiB/s 10.490 KiB copied ETA: Mon Oct 26 09:47:04 2020  15294 s  13596/13601 msgs left
+msg INBOX/47 {1120}           copied to INBOX/3167       1.06 msgs/s  2.052 KiB/s 11.584 KiB copied ETA: Mon Oct 26 09:05:21 2020  12791 s  13595/13601 msgs left
+msg INBOX/48 {1392}           copied to INBOX/3168       1.24 msgs/s  2.284 KiB/s 12.943 KiB copied ETA: Mon Oct 26 08:35:36 2020  11007 s  13594/13601 msgs left
+msg INBOX/49 {1158}           copied to INBOX/3169       1.41 msgs/s  2.473 KiB/s 14.074 KiB copied ETA: Mon Oct 26 08:13:21 2020  9671 s  13593/13601 msgs left
+msg INBOX/50 {1180}           copied to INBOX/3170       1.58 msgs/s  2.665 KiB/s 15.227 KiB copied ETA: Mon Oct 26 07:56:00 2020  8630 s  13592/13601 msgs left
+msg INBOX/56 {1733}           copied to INBOX/3171       1.74 msgs/s  2.948 KiB/s 16.919 KiB copied ETA: Mon Oct 26 07:42:11 2020  7801 s  13591/13601 msgs left
+msg INBOX/61 {2284}           copied to INBOX/3172       1.91 msgs/s  3.323 KiB/s 19.149 KiB copied ETA: Mon Oct 26 07:30:50 2020  7120 s  13590/13601 msgs left
+msg INBOX/68 {1323}           copied to INBOX/3173       2.07 msgs/s  3.532 KiB/s 20.441 KiB copied ETA: Mon Oct 26 07:21:24 2020  6554 s  13589/13601 msgs left
+msg INBOX/78 {1272}           copied to INBOX/3174       2.24 msgs/s  3.732 KiB/s 21.684 KiB copied ETA: Mon Oct 26 07:13:25 2020  6074 s  13588/13601 msgs left
+msg INBOX/79 {2396}           copied to INBOX/3175       2.40 msgs/s  4.116 KiB/s 24.023 KiB copied ETA: Mon Oct 26 07:06:35 2020  5665 s  13587/13601 msgs left
+msg INBOX/85 {1471}           copied to INBOX/3176       2.56 msgs/s  4.346 KiB/s 25.460 KiB copied ETA: Mon Oct 26 07:00:37 2020  5307 s  13586/13601 msgs left
+msg INBOX/86 {1783}           copied to INBOX/3177       2.72 msgs/s  4.627 KiB/s 27.201 KiB copied ETA: Mon Oct 26 06:55:22 2020  4992 s  13585/13601 msgs left
+msg INBOX/88 {1780}           copied to INBOX/3178       2.88 msgs/s  4.905 KiB/s 28.939 KiB copied ETA: Mon Oct 26 06:50:45 2020  4714 s  13584/13601 msgs left
+msg INBOX/90 {2352}           copied to INBOX/3179       3.04 msgs/s  5.275 KiB/s 31.236 KiB copied ETA: Mon Oct 26 06:46:39 2020  4469 s  13583/13601 msgs left
+msg INBOX/103 {2292}          copied to INBOX/3180       3.20 msgs/s  5.632 KiB/s 33.475 KiB copied ETA: Mon Oct 26 06:42:59 2020  4249 s  13582/13601 msgs left
+msg INBOX/104 {2204}          copied to INBOX/3181       3.35 msgs/s  5.970 KiB/s 35.627 KiB copied ETA: Mon Oct 26 06:39:43 2020  4053 s  13581/13601 msgs left
+msg INBOX/113 {3025}          copied to INBOX/3182       3.50 msgs/s  6.438 KiB/s 38.581 KiB copied ETA: Mon Oct 26 06:36:45 2020  3875 s  13580/13601 msgs left
+msg INBOX/119 {1947}          copied to INBOX/3183       3.66 msgs/s  6.726 KiB/s 40.482 KiB copied ETA: Mon Oct 26 06:34:05 2020  3715 s  13579/13601 msgs left
+msg INBOX/120 {1083}          copied to INBOX/3184       3.81 msgs/s  6.874 KiB/s 41.540 KiB copied ETA: Mon Oct 26 06:31:38 2020  3568 s  13578/13601 msgs left
+msg INBOX/121 {1307}          copied to INBOX/3185       3.96 msgs/s  7.060 KiB/s 42.816 KiB copied ETA: Mon Oct 26 06:29:22 2020  3431 s  13577/13601 msgs left
+msg INBOX/127 {1336}          copied to INBOX/3186       4.11 msgs/s  7.250 KiB/s 44.121 KiB copied ETA: Mon Oct 26 06:27:15 2020  3305 s  13576/13601 msgs left
+msg INBOX/129 {1225}          copied to INBOX/3187       4.26 msgs/s  7.419 KiB/s 45.317 KiB copied ETA: Mon Oct 26 06:25:20 2020  3189 s  13575/13601 msgs left
+msg INBOX/132 {2926}          copied to INBOX/3188       4.40 msgs/s  7.859 KiB/s 48.175 KiB copied ETA: Mon Oct 26 06:23:32 2020  3082 s  13574/13601 msgs left
+msg INBOX/140 {1238}          copied to INBOX/3189       4.55 msgs/s  8.023 KiB/s 49.384 KiB copied ETA: Mon Oct 26 06:21:54 2020  2984 s  13573/13601 msgs left
+msg INBOX/143 {1947}          copied to INBOX/3190       4.69 msgs/s  8.297 KiB/s 51.285 KiB copied ETA: Mon Oct 26 06:20:23 2020  2893 s  13572/13601 msgs left
+msg INBOX/144 {1247}          copied to INBOX/3191       4.82 msgs/s  8.439 KiB/s 52.503 KiB copied ETA: Mon Oct 26 06:19:05 2020  2815 s  13571/13601 msgs left
+msg INBOX/150 {2257}          copied to INBOX/3192       4.96 msgs/s  8.761 KiB/s 54.707 KiB copied ETA: Mon Oct 26 06:17:44 2020  2733 s  13570/13601 msgs left
+msg INBOX/155 {1578}          copied to INBOX/3193       5.11 msgs/s  8.980 KiB/s 56.248 KiB copied ETA: Mon Oct 26 06:16:27 2020  2656 s  13569/13601 msgs left
+msg INBOX/157 {1060}          copied to INBOX/3194       5.25 msgs/s  9.108 KiB/s 57.283 KiB copied ETA: Mon Oct 26 06:15:17 2020  2586 s  13568/13601 msgs left
+msg INBOX/158 {1358}          copied to INBOX/3195       5.38 msgs/s  9.283 KiB/s 58.609 KiB copied ETA: Mon Oct 26 06:14:10 2020  2520 s  13567/13601 msgs left
+msg INBOX/159 {1293}          copied to INBOX/3196       5.52 msgs/s  9.449 KiB/s 59.872 KiB copied ETA: Mon Oct 26 06:13:07 2020  2456 s  13566/13601 msgs left
+msg INBOX/160 {1669}          copied to INBOX/3197       5.66 msgs/s  9.674 KiB/s 61.502 KiB copied ETA: Mon Oct 26 06:12:06 2020  2396 s  13565/13601 msgs left
+msg INBOX/162 {1411}          copied to INBOX/3198       5.80 msgs/s  9.862 KiB/s 62.880 KiB copied ETA: Mon Oct 26 06:11:08 2020  2338 s  13564/13601 msgs left
+msg INBOX/163 {1331}          copied to INBOX/3199       5.94 msgs/s  10.027 KiB/s 64.180 KiB copied ETA: Mon Oct 26 06:10:15 2020  2285 s  13563/13601 msgs left
+msg INBOX/164 {2087}          copied to INBOX/3200       6.07 msgs/s  10.305 KiB/s 66.218 KiB copied ETA: Mon Oct 26 06:09:25 2020  2235 s  13562/13601 msgs left
+msg INBOX/165 {2087}          copied to INBOX/3201       6.20 msgs/s  10.585 KiB/s 68.256 KiB copied ETA: Mon Oct 26 06:08:37 2020  2186 s  13561/13601 msgs left
+msg INBOX/166 {2998}          copied to INBOX/3202       6.33 msgs/s  10.996 KiB/s 71.184 KiB copied ETA: Mon Oct 26 06:07:52 2020  2141 s  13560/13601 msgs left
+msg INBOX/167 {1709}          copied to INBOX/3203       6.47 msgs/s  11.216 KiB/s 72.853 KiB copied ETA: Mon Oct 26 06:07:08 2020  2097 s  13559/13601 msgs left
+msg INBOX/169 {2592}          copied to INBOX/3204       6.59 msgs/s  11.561 KiB/s 75.384 KiB copied ETA: Mon Oct 26 06:06:27 2020  2056 s  13558/13601 msgs left
+msg INBOX/175 {2493}          copied to INBOX/3205       6.73 msgs/s  11.899 KiB/s 77.818 KiB copied ETA: Mon Oct 26 06:05:46 2020  2015 s  13557/13601 msgs left
+msg INBOX/176 {2925}          copied to INBOX/3206       6.85 msgs/s  12.279 KiB/s 80.675 KiB copied ETA: Mon Oct 26 06:05:10 2020  1979 s  13556/13601 msgs left
+msg INBOX/183 {2597}          copied to INBOX/3207       6.97 msgs/s  12.613 KiB/s 83.211 KiB copied ETA: Mon Oct 26 06:04:35 2020  1944 s  13555/13601 msgs left
+msg INBOX/185 {1378}          copied to INBOX/3208       7.10 msgs/s  12.773 KiB/s 84.557 KiB copied ETA: Mon Oct 26 06:04:00 2020  1909 s  13554/13601 msgs left
+msg INBOX/194 {1589}          copied to INBOX/3209       7.23 msgs/s  12.969 KiB/s 86.108 KiB copied ETA: Mon Oct 26 06:03:26 2020  1875 s  13553/13601 msgs left
+msg INBOX/205 {1490}          copied to INBOX/3210       7.36 msgs/s  13.150 KiB/s 87.563 KiB copied ETA: Mon Oct 26 06:02:53 2020  1842 s  13552/13601 msgs left
+msg INBOX/210 {1975}          copied to INBOX/3211       7.49 msgs/s  13.402 KiB/s 89.492 KiB copied ETA: Mon Oct 26 06:02:21 2020  1810 s  13551/13601 msgs left
+msg INBOX/211 {1585}          copied to INBOX/3212       7.61 msgs/s  13.593 KiB/s 91.040 KiB copied ETA: Mon Oct 26 06:01:51 2020  1780 s  13550/13601 msgs left
+msg INBOX/213 {1453}          copied to INBOX/3213       7.74 msgs/s  13.766 KiB/s 92.459 KiB copied ETA: Mon Oct 26 06:01:21 2020  1750 s  13549/13601 msgs left
+msg INBOX/215 {1313}          copied to INBOX/3214       7.87 msgs/s  13.919 KiB/s 93.741 KiB copied ETA: Mon Oct 26 06:00:53 2020  1722 s  13548/13601 msgs left
+msg INBOX/216 {1795}          copied to INBOX/3215       8.00 msgs/s  14.141 KiB/s 95.494 KiB copied ETA: Mon Oct 26 06:00:25 2020  1694 s  13547/13601 msgs left
+msg INBOX/218 {2329}          copied to INBOX/3216       8.12 msgs/s  14.438 KiB/s 97.769 KiB copied ETA: Mon Oct 26 05:59:59 2020  1668 s  13546/13601 msgs left
+msg INBOX/219 {2284}          copied to INBOX/3217       8.24 msgs/s  14.719 KiB/s 99.999 KiB copied ETA: Mon Oct 26 05:59:34 2020  1643 s  13545/13601 msgs left
+msg INBOX/223 {2525}          copied to INBOX/3218       8.36 msgs/s  15.037 KiB/s 102.465 KiB copied ETA: Mon Oct 26 05:59:10 2020  1619 s  13544/13601 msgs left
+msg INBOX/224 {2195}          copied to INBOX/3219       8.49 msgs/s  15.306 KiB/s 104.608 KiB copied ETA: Mon Oct 26 05:58:47 2020  1596 s  13543/13601 msgs left
+msg INBOX/226 {2762}          copied to INBOX/3220       8.61 msgs/s  15.652 KiB/s 107.306 KiB copied ETA: Mon Oct 26 05:58:25 2020  1574 s  13542/13601 msgs left
+msg INBOX/227 {1180}          copied to INBOX/3221       8.73 msgs/s  15.776 KiB/s 108.458 KiB copied ETA: Mon Oct 26 05:58:03 2020  1552 s  13541/13601 msgs left
+msg INBOX/229 {2722}          copied to INBOX/3222       8.85 msgs/s  16.116 KiB/s 111.116 KiB copied ETA: Mon Oct 26 05:57:42 2020  1531 s  13540/13601 msgs left
+msg INBOX/233 {1314}          copied to INBOX/3223       8.97 msgs/s  16.258 KiB/s 112.399 KiB copied ETA: Mon Oct 26 05:57:21 2020  1510 s  13539/13601 msgs left
+msg INBOX/235 {2986}          copied to INBOX/3224       9.09 msgs/s  16.634 KiB/s 115.315 KiB copied ETA: Mon Oct 26 05:57:01 2020  1490 s  13538/13601 msgs left
+msg INBOX/236 {2724}          copied to INBOX/3225       9.21 msgs/s  16.973 KiB/s 117.976 KiB copied ETA: Mon Oct 26 05:56:42 2020  1470 s  13537/13601 msgs left
+msg INBOX/238 {2298}          copied to INBOX/3226       9.33 msgs/s  17.249 KiB/s 120.220 KiB copied ETA: Mon Oct 26 05:56:23 2020  1452 s  13536/13601 msgs left
+msg INBOX/247 {2725}          copied to INBOX/3227       9.45 msgs/s  17.588 KiB/s 122.881 KiB copied ETA: Mon Oct 26 05:56:04 2020  1433 s  13535/13601 msgs left
+msg INBOX/249 {1476}          copied to INBOX/3228       9.56 msgs/s  17.738 KiB/s 124.322 KiB copied ETA: Mon Oct 26 05:55:47 2020  1416 s  13534/13601 msgs left
+msg INBOX/252 {1362}          copied to INBOX/3229       9.68 msgs/s  17.881 KiB/s 125.652 KiB copied ETA: Mon Oct 26 05:55:30 2020  1399 s  13533/13601 msgs left
+msg INBOX/255 {1209}          copied to INBOX/3230       9.79 msgs/s  17.999 KiB/s 126.833 KiB copied ETA: Mon Oct 26 05:55:13 2020  1382 s  13532/13601 msgs left
+msg INBOX/258 {2519}          copied to INBOX/3231       9.90 msgs/s  18.292 KiB/s 129.293 KiB copied ETA: Mon Oct 26 05:54:58 2020  1366 s  13531/13601 msgs left
+msg INBOX/260 {1473}          copied to INBOX/3232       10.02 msgs/s  18.442 KiB/s 130.731 KiB copied ETA: Mon Oct 26 05:54:42 2020  1351 s  13530/13601 msgs left
+msg INBOX/264 {1255}          copied to INBOX/3233       10.13 msgs/s  18.565 KiB/s 131.957 KiB copied ETA: Mon Oct 26 05:54:27 2020  1336 s  13529/13601 msgs left
+msg INBOX/266 {1592}          copied to INBOX/3234       10.24 msgs/s  18.727 KiB/s 133.512 KiB copied ETA: Mon Oct 26 05:54:13 2020  1321 s  13528/13601 msgs left
+msg INBOX/267 {1576}          copied to INBOX/3235       10.35 msgs/s  18.885 KiB/s 135.051 KiB copied ETA: Mon Oct 26 05:53:59 2020  1307 s  13527/13601 msgs left
+msg INBOX/269 {1515}          copied to INBOX/3236       10.46 msgs/s  19.040 KiB/s 136.530 KiB copied ETA: Mon Oct 26 05:53:45 2020  1293 s  13526/13601 msgs left
+msg INBOX/270 {1256}          copied to INBOX/3237       10.57 msgs/s  19.155 KiB/s 137.757 KiB copied ETA: Mon Oct 26 05:53:31 2020  1280 s  13525/13601 msgs left
+msg INBOX/271 {1383}          copied to INBOX/3238       10.68 msgs/s  19.292 KiB/s 139.107 KiB copied ETA: Mon Oct 26 05:53:18 2020  1267 s  13524/13601 msgs left
+msg INBOX/273 {1570}          copied to INBOX/3239       10.74 msgs/s  19.361 KiB/s 140.641 KiB copied ETA: Mon Oct 26 05:53:11 2020  1260 s  13523/13601 msgs left
+msg INBOX/274 {1512}          copied to INBOX/3240       10.84 msgs/s  19.505 KiB/s 142.117 KiB copied ETA: Mon Oct 26 05:52:59 2020  1247 s  13522/13601 msgs left
+msg INBOX/275 {1605}          copied to INBOX/3241       10.95 msgs/s  19.661 KiB/s 143.685 KiB copied ETA: Mon Oct 26 05:52:47 2020  1235 s  13521/13601 msgs left
+msg INBOX/276 {1614}          copied to INBOX/3242       11.05 msgs/s  19.822 KiB/s 145.261 KiB copied ETA: Mon Oct 26 05:52:35 2020  1223 s  13520/13601 msgs left
+msg INBOX/277 {1650}          copied to INBOX/3243       11.16 msgs/s  19.986 KiB/s 146.872 KiB copied ETA: Mon Oct 26 05:52:23 2020  1212 s  13519/13601 msgs left
+msg INBOX/281 {2913}          copied to INBOX/3244       11.25 msgs/s  20.285 KiB/s 149.717 KiB copied ETA: Mon Oct 26 05:52:14 2020  1202 s  13518/13601 msgs left
+msg INBOX/283 {1559}          copied to INBOX/3245       11.35 msgs/s  20.438 KiB/s 151.239 KiB copied ETA: Mon Oct 26 05:52:03 2020  1191 s  13517/13601 msgs left
+msg INBOX/300 {1480}          copied to INBOX/3246       11.46 msgs/s  20.578 KiB/s 152.685 KiB copied ETA: Mon Oct 26 05:51:52 2020  1180 s  13516/13601 msgs left
+msg INBOX/301 {2208}          copied to INBOX/3247       11.55 msgs/s  20.802 KiB/s 154.841 KiB copied ETA: Mon Oct 26 05:51:42 2020  1170 s  13515/13601 msgs left
+msg INBOX/304 {1421}          copied to INBOX/3248       11.65 msgs/s  20.929 KiB/s 156.229 KiB copied ETA: Mon Oct 26 05:51:31 2020  1160 s  13514/13601 msgs left
+msg INBOX/307 {1475}          copied to INBOX/3249       11.76 msgs/s  21.066 KiB/s 157.669 KiB copied ETA: Mon Oct 26 05:51:21 2020  1149 s  13513/13601 msgs left
+msg INBOX/310 {1781}          copied to INBOX/3250       11.86 msgs/s  21.238 KiB/s 159.408 KiB copied ETA: Mon Oct 26 05:51:11 2020  1140 s  13512/13601 msgs left
+msg INBOX/312 {2352}          copied to INBOX/3251       11.95 msgs/s  21.469 KiB/s 161.705 KiB copied ETA: Mon Oct 26 05:51:03 2020  1131 s  13511/13601 msgs left
+msg INBOX/314 {1463}          copied to INBOX/3252       12.05 msgs/s  21.594 KiB/s 163.134 KiB copied ETA: Mon Oct 26 05:50:53 2020  1122 s  13510/13601 msgs left
+msg INBOX/317 {1048}          copied to INBOX/3253       12.14 msgs/s  21.658 KiB/s 164.157 KiB copied ETA: Mon Oct 26 05:50:45 2020  1113 s  13509/13601 msgs left
+msg INBOX/321 {1015}          copied to INBOX/3254       12.23 msgs/s  21.727 KiB/s 165.148 KiB copied ETA: Mon Oct 26 05:50:36 2020  1104 s  13508/13601 msgs left
+msg INBOX/326 {1686}          copied to INBOX/3255       12.33 msgs/s  21.878 KiB/s 166.795 KiB copied ETA: Mon Oct 26 05:50:27 2020  1096 s  13507/13601 msgs left
+msg INBOX/327 {1086}          copied to INBOX/3256       12.43 msgs/s  21.957 KiB/s 167.855 KiB copied ETA: Mon Oct 26 05:50:19 2020  1087 s  13506/13601 msgs left
+msg INBOX/328 {2603}          copied to INBOX/3257       12.52 msgs/s  22.230 KiB/s 170.397 KiB copied ETA: Mon Oct 26 05:50:10 2020  1078 s  13505/13601 msgs left
+msg INBOX/329 {889}           copied to INBOX/3258       12.62 msgs/s  22.280 KiB/s 171.266 KiB copied ETA: Mon Oct 26 05:50:02 2020  1070 s  13504/13601 msgs left
+msg INBOX/330 {1847}          copied to INBOX/3259       12.71 msgs/s  22.451 KiB/s 173.069 KiB copied ETA: Mon Oct 26 05:49:54 2020  1062 s  13503/13601 msgs left
+msg INBOX/332 {2437}          copied to INBOX/3260       12.81 msgs/s  22.701 KiB/s 175.449 KiB copied ETA: Mon Oct 26 05:49:46 2020  1054 s  13502/13601 msgs left
+msg INBOX/334 {1034}          copied to INBOX/3261       12.90 msgs/s  22.768 KiB/s 176.459 KiB copied ETA: Mon Oct 26 05:49:38 2020  1046 s  13501/13601 msgs left
+msg INBOX/335 {2171}          copied to INBOX/3262       12.99 msgs/s  22.972 KiB/s 178.579 KiB copied ETA: Mon Oct 26 05:49:31 2020  1039 s  13500/13601 msgs left
+msg INBOX/337 {1503}          copied to INBOX/3263       13.07 msgs/s  23.070 KiB/s 180.047 KiB copied ETA: Mon Oct 26 05:49:25 2020  1033 s  13499/13601 msgs left
+msg INBOX/338 {1091}          copied to INBOX/3264       13.16 msgs/s  23.135 KiB/s 181.112 KiB copied ETA: Mon Oct 26 05:49:18 2020  1026 s  13498/13601 msgs left
+msg INBOX/340 {1029}          copied to INBOX/3265       13.25 msgs/s  23.204 KiB/s 182.117 KiB copied ETA: Mon Oct 26 05:49:11 2020  1019 s  13497/13601 msgs left
+msg INBOX/342 {1656}          copied to INBOX/3266       13.34 msgs/s  23.346 KiB/s 183.734 KiB copied ETA: Mon Oct 26 05:49:04 2020  1012 s  13496/13601 msgs left
+msg INBOX/347 {2231}          copied to INBOX/3267       13.43 msgs/s  23.561 KiB/s 185.913 KiB copied ETA: Mon Oct 26 05:48:57 2020  1005 s  13495/13601 msgs left
+msg INBOX/366 {1706}          copied to INBOX/3268       13.52 msgs/s  23.707 KiB/s 187.579 KiB copied ETA: Mon Oct 26 05:48:50 2020  998 s  13494/13601 msgs left
+msg INBOX/383 {1169}          copied to INBOX/3269       13.62 msgs/s  23.794 KiB/s 188.721 KiB copied ETA: Mon Oct 26 05:48:43 2020  991 s  13493/13601 msgs left
+msg INBOX/398 {2697}          copied to INBOX/3270       13.71 msgs/s  24.064 KiB/s 191.354 KiB copied ETA: Mon Oct 26 05:48:37 2020  984 s  13492/13601 msgs left
+msg INBOX/407 {1327}          copied to INBOX/3271       13.80 msgs/s  24.166 KiB/s 192.650 KiB copied ETA: Mon Oct 26 05:48:30 2020  978 s  13491/13601 msgs left
+msg INBOX/408 {1182}          copied to INBOX/3272       13.89 msgs/s  24.257 KiB/s 193.805 KiB copied ETA: Mon Oct 26 05:48:23 2020  971 s  13490/13601 msgs left
+msg INBOX/409 {1212}          copied to INBOX/3273       13.98 msgs/s  24.336 KiB/s 194.988 KiB copied ETA: Mon Oct 26 05:48:17 2020  965 s  13489/13601 msgs left
+msg INBOX/410 {1279}          copied to INBOX/3274       14.07 msgs/s  24.436 KiB/s 196.237 KiB copied ETA: Mon Oct 26 05:48:11 2020  959 s  13488/13601 msgs left
+msg INBOX/411 {1189}          copied to INBOX/3275       14.16 msgs/s  24.523 KiB/s 197.398 KiB copied ETA: Mon Oct 26 05:48:05 2020  952 s  13487/13601 msgs left
+msg INBOX/412 {1156}          copied to INBOX/3276       14.25 msgs/s  24.603 KiB/s 198.527 KiB copied ETA: Mon Oct 26 05:47:59 2020  946 s  13486/13601 msgs left
+msg INBOX/419 {2492}          copied to INBOX/3277       14.33 msgs/s  24.823 KiB/s 200.961 KiB copied ETA: Mon Oct 26 05:47:54 2020  941 s  13485/13601 msgs left
+msg INBOX/422 {1932}          copied to INBOX/3278       14.41 msgs/s  24.989 KiB/s 202.848 KiB copied ETA: Mon Oct 26 05:47:48 2020  936 s  13484/13601 msgs left
+msg INBOX/427 {2910}          copied to INBOX/3279       14.50 msgs/s  25.272 KiB/s 205.689 KiB copied ETA: Mon Oct 26 05:47:42 2020  930 s  13483/13601 msgs left
+msg INBOX/429 {2354}          copied to INBOX/3280       14.58 msgs/s  25.480 KiB/s 207.988 KiB copied ETA: Mon Oct 26 05:47:37 2020  925 s  13482/13601 msgs left
+msg INBOX/430 {1263}          copied to INBOX/3281       14.66 msgs/s  25.564 KiB/s 209.222 KiB copied ETA: Mon Oct 26 05:47:32 2020  919 s  13481/13601 msgs left
+msg INBOX/435 {2704}          copied to INBOX/3282       14.75 msgs/s  25.818 KiB/s 211.862 KiB copied ETA: Mon Oct 26 05:47:27 2020  914 s  13480/13601 msgs left
+msg INBOX/448 {1341}          copied to INBOX/3283       14.83 msgs/s  25.906 KiB/s 213.172 KiB copied ETA: Mon Oct 26 05:47:22 2020  909 s  13479/13601 msgs left
+msg INBOX/449 {1451}          copied to INBOX/3284       14.91 msgs/s  26.005 KiB/s 214.589 KiB copied ETA: Mon Oct 26 05:47:17 2020  904 s  13478/13601 msgs left
+msg INBOX/450 {1052}          copied to INBOX/3285       14.99 msgs/s  26.069 KiB/s 215.616 KiB copied ETA: Mon Oct 26 05:47:12 2020  899 s  13477/13601 msgs left
+msg INBOX/451 {1273}          copied to INBOX/3286       15.07 msgs/s  26.153 KiB/s 216.859 KiB copied ETA: Mon Oct 26 05:47:07 2020  894 s  13476/13601 msgs left
+msg INBOX/452 {1282}          copied to INBOX/3287       15.16 msgs/s  26.243 KiB/s 218.111 KiB copied ETA: Mon Oct 26 05:47:01 2020  889 s  13475/13601 msgs left
+msg INBOX/453 {1294}          copied to INBOX/3288       15.25 msgs/s  26.337 KiB/s 219.375 KiB copied ETA: Mon Oct 26 05:46:56 2020  884 s  13474/13601 msgs left
+msg INBOX/454 {1280}          copied to INBOX/3289       15.33 msgs/s  26.424 KiB/s 220.625 KiB copied ETA: Mon Oct 26 05:46:51 2020  879 s  13473/13601 msgs left
+msg INBOX/455 {1810}          copied to INBOX/3290       15.40 msgs/s  26.553 KiB/s 222.393 KiB copied ETA: Mon Oct 26 05:46:47 2020  875 s  13472/13601 msgs left
+msg INBOX/456 {1243}          copied to INBOX/3291       15.49 msgs/s  26.636 KiB/s 223.606 KiB copied ETA: Mon Oct 26 05:46:43 2020  870 s  13471/13601 msgs left
+msg INBOX/457 {1414}          copied to INBOX/3292       15.57 msgs/s  26.738 KiB/s 224.987 KiB copied ETA: Mon Oct 26 05:46:38 2020  865 s  13470/13601 msgs left
+msg INBOX/462 {2085}          copied to INBOX/3293       15.65 msgs/s  26.916 KiB/s 227.023 KiB copied ETA: Mon Oct 26 05:46:33 2020  861 s  13469/13601 msgs left
+msg INBOX/463 {1419}          copied to INBOX/3294       15.73 msgs/s  27.011 KiB/s 228.409 KiB copied ETA: Mon Oct 26 05:46:29 2020  856 s  13468/13601 msgs left
+msg INBOX/465 {1282}          copied to INBOX/3295       15.81 msgs/s  27.091 KiB/s 229.661 KiB copied ETA: Mon Oct 26 05:46:25 2020  852 s  13467/13601 msgs left
+msg INBOX/467 {1213}          copied to INBOX/3296       15.89 msgs/s  27.165 KiB/s 230.846 KiB copied ETA: Mon Oct 26 05:46:20 2020  848 s  13466/13601 msgs left
+msg INBOX/470 {2533}          copied to INBOX/3297       15.97 msgs/s  27.390 KiB/s 233.319 KiB copied ETA: Mon Oct 26 05:46:16 2020  843 s  13465/13601 msgs left
+msg INBOX/471 {2767}          copied to INBOX/3298       16.04 msgs/s  27.638 KiB/s 236.021 KiB copied ETA: Mon Oct 26 05:46:12 2020  839 s  13464/13601 msgs left
+msg INBOX/474 {1359}          copied to INBOX/3299       16.12 msgs/s  27.717 KiB/s 237.349 KiB copied ETA: Mon Oct 26 05:46:08 2020  835 s  13463/13601 msgs left
+msg INBOX/475 {2127}          copied to INBOX/3300       16.19 msgs/s  27.890 KiB/s 239.426 KiB copied ETA: Mon Oct 26 05:46:04 2020  831 s  13462/13601 msgs left
+msg INBOX/477 {1270}          copied to INBOX/3301       16.27 msgs/s  27.971 KiB/s 240.666 KiB copied ETA: Mon Oct 26 05:46:00 2020  827 s  13461/13601 msgs left
+msg INBOX/481 {1944}          copied to INBOX/3302       16.35 msgs/s  28.131 KiB/s 242.564 KiB copied ETA: Mon Oct 26 05:45:56 2020  823 s  13460/13601 msgs left
+msg INBOX/482 {2178}          copied to INBOX/3303       16.43 msgs/s  28.312 KiB/s 244.691 KiB copied ETA: Mon Oct 26 05:45:52 2020  819 s  13459/13601 msgs left
+msg INBOX/483 {1268}          copied to INBOX/3304       16.49 msgs/s  28.354 KiB/s 245.930 KiB copied ETA: Mon Oct 26 05:45:49 2020  816 s  13458/13601 msgs left
+msg INBOX/484 {1205}          copied to INBOX/3305       16.56 msgs/s  28.413 KiB/s 247.106 KiB copied ETA: Mon Oct 26 05:45:46 2020  813 s  13457/13601 msgs left
+msg INBOX/485 {1198}          copied to INBOX/3306       16.63 msgs/s  28.472 KiB/s 248.276 KiB copied ETA: Mon Oct 26 05:45:42 2020  809 s  13456/13601 msgs left
+msg INBOX/486 {1574}          copied to INBOX/3307       16.70 msgs/s  28.574 KiB/s 249.813 KiB copied ETA: Mon Oct 26 05:45:39 2020  806 s  13455/13601 msgs left
+msg INBOX/488 {1084}          copied to INBOX/3308       16.78 msgs/s  28.630 KiB/s 250.872 KiB copied ETA: Mon Oct 26 05:45:35 2020  802 s  13454/13601 msgs left
+msg INBOX/489 {1163}          copied to INBOX/3309       16.85 msgs/s  28.697 KiB/s 252.008 KiB copied ETA: Mon Oct 26 05:45:31 2020  798 s  13453/13601 msgs left
+msg INBOX/490 {1168}          copied to INBOX/3310       16.93 msgs/s  28.765 KiB/s 253.148 KiB copied ETA: Mon Oct 26 05:45:28 2020  795 s  13452/13601 msgs left
+msg INBOX/491 {2609}          copied to INBOX/3311       17.00 msgs/s  28.983 KiB/s 255.696 KiB copied ETA: Mon Oct 26 05:45:24 2020  791 s  13451/13601 msgs left
+msg INBOX/492 {2919}          copied to INBOX/3312       17.08 msgs/s  29.241 KiB/s 258.547 KiB copied ETA: Mon Oct 26 05:45:21 2020  788 s  13450/13601 msgs left
+msg INBOX/494 {1845}          copied to INBOX/3313       17.15 msgs/s  29.382 KiB/s 260.349 KiB copied ETA: Mon Oct 26 05:45:17 2020  784 s  13449/13601 msgs left
+msg INBOX/495 {2593}          copied to INBOX/3314       17.23 msgs/s  29.598 KiB/s 262.881 KiB copied ETA: Mon Oct 26 05:45:14 2020  781 s  13448/13601 msgs left
+msg INBOX/497 {1245}          copied to INBOX/3315       17.30 msgs/s  29.666 KiB/s 264.097 KiB copied ETA: Mon Oct 26 05:45:10 2020  777 s  13447/13601 msgs left
+msg INBOX/498 {1149}          copied to INBOX/3316       17.34 msgs/s  29.676 KiB/s 265.219 KiB copied ETA: Mon Oct 26 05:45:08 2020  775 s  13446/13601 msgs left
+msg INBOX/501 {1343}          copied to INBOX/3317       17.42 msgs/s  29.757 KiB/s 266.530 KiB copied ETA: Mon Oct 26 05:45:05 2020  772 s  13445/13601 msgs left
+msg INBOX/502 {1503}          copied to INBOX/3318       17.49 msgs/s  29.852 KiB/s 267.998 KiB copied ETA: Mon Oct 26 05:45:02 2020  769 s  13444/13601 msgs left
+msg INBOX/503 {1539}          copied to INBOX/3319       17.55 msgs/s  29.941 KiB/s 269.501 KiB copied ETA: Mon Oct 26 05:44:59 2020  766 s  13443/13601 msgs left
+msg INBOX/504 {1950}          copied to INBOX/3320       17.62 msgs/s  30.074 KiB/s 271.405 KiB copied ETA: Mon Oct 26 05:44:56 2020  763 s  13442/13601 msgs left
+msg INBOX/506 {1222}          copied to INBOX/3321       17.68 msgs/s  30.123 KiB/s 272.599 KiB copied ETA: Mon Oct 26 05:44:54 2020  760 s  13441/13601 msgs left
+msg INBOX/508 {1291}          copied to INBOX/3322       17.75 msgs/s  30.195 KiB/s 273.859 KiB copied ETA: Mon Oct 26 05:44:50 2020  757 s  13440/13601 msgs left
+msg INBOX/509 {1201}          copied to INBOX/3323       17.82 msgs/s  30.253 KiB/s 275.032 KiB copied ETA: Mon Oct 26 05:44:48 2020  754 s  13439/13601 msgs left
+msg INBOX/510 {1390}          copied to INBOX/3324       17.88 msgs/s  30.324 KiB/s 276.390 KiB copied ETA: Mon Oct 26 05:44:45 2020  751 s  13438/13601 msgs left
+msg INBOX/513 {1292}          copied to INBOX/3325       17.93 msgs/s  30.363 KiB/s 277.651 KiB copied ETA: Mon Oct 26 05:44:43 2020  749 s  13437/13601 msgs left
+msg INBOX/522 {1415}          copied to INBOX/3326       18.00 msgs/s  30.441 KiB/s 279.033 KiB copied ETA: Mon Oct 26 05:44:40 2020  746 s  13436/13601 msgs left
+msg INBOX/523 {2540}          copied to INBOX/3327       18.06 msgs/s  30.630 KiB/s 281.514 KiB copied ETA: Mon Oct 26 05:44:37 2020  744 s  13435/13601 msgs left
+msg INBOX/524 {2601}          copied to INBOX/3328       18.12 msgs/s  30.829 KiB/s 284.054 KiB copied ETA: Mon Oct 26 05:44:35 2020  741 s  13434/13601 msgs left
+msg INBOX/525 {2898}          copied to INBOX/3329       18.19 msgs/s  31.058 KiB/s 286.884 KiB copied ETA: Mon Oct 26 05:44:32 2020  739 s  13433/13601 msgs left
+msg INBOX/527 {1306}          copied to INBOX/3330       18.25 msgs/s  31.110 KiB/s 288.159 KiB copied ETA: Mon Oct 26 05:44:30 2020  736 s  13432/13601 msgs left
+msg INBOX/531 {2145}          copied to INBOX/3331       18.31 msgs/s  31.255 KiB/s 290.254 KiB copied ETA: Mon Oct 26 05:44:27 2020  734 s  13431/13601 msgs left
+msg INBOX/534 {1323}          copied to INBOX/3332       18.36 msgs/s  31.302 KiB/s 291.546 KiB copied ETA: Mon Oct 26 05:44:25 2020  732 s  13430/13601 msgs left
+msg INBOX/535 {2121}          copied to INBOX/3333       18.40 msgs/s  31.413 KiB/s 293.617 KiB copied ETA: Mon Oct 26 05:44:23 2020  730 s  13429/13601 msgs left
+msg INBOX/539 {1427}          copied to INBOX/3334       18.08 msgs/s  30.839 KiB/s 295.011 KiB copied ETA: Mon Oct 26 05:44:36 2020  743 s  13428/13601 msgs left
+msg INBOX/546 {1273}          copied to INBOX/3335       18.15 msgs/s  30.898 KiB/s 296.254 KiB copied ETA: Mon Oct 26 05:44:34 2020  740 s  13427/13601 msgs left
+msg INBOX/547 {1329}          copied to INBOX/3336       18.21 msgs/s  30.966 KiB/s 297.552 KiB copied ETA: Mon Oct 26 05:44:31 2020  737 s  13426/13601 msgs left
+msg INBOX/550 {2022}          copied to INBOX/3337       18.27 msgs/s  31.098 KiB/s 299.526 KiB copied ETA: Mon Oct 26 05:44:29 2020  735 s  13425/13601 msgs left
+msg INBOX/551 {1411}          copied to INBOX/3338       18.33 msgs/s  31.167 KiB/s 300.904 KiB copied ETA: Mon Oct 26 05:44:26 2020  732 s  13424/13601 msgs left
+msg INBOX/552 {1745}          copied to INBOX/3339       18.40 msgs/s  31.274 KiB/s 302.608 KiB copied ETA: Mon Oct 26 05:44:24 2020  730 s  13423/13601 msgs left
+msg INBOX/553 {1284}          copied to INBOX/3340       18.46 msgs/s  31.337 KiB/s 303.862 KiB copied ETA: Mon Oct 26 05:44:21 2020  727 s  13422/13601 msgs left
+msg INBOX/554 {1901}          copied to INBOX/3341       18.52 msgs/s  31.461 KiB/s 305.719 KiB copied ETA: Mon Oct 26 05:44:19 2020  725 s  13421/13601 msgs left
+msg INBOX/555 {1112}          copied to INBOX/3342       18.58 msgs/s  31.498 KiB/s 306.805 KiB copied ETA: Mon Oct 26 05:44:16 2020  722 s  13420/13601 msgs left
+msg INBOX/556 {1221}          copied to INBOX/3343       18.64 msgs/s  31.547 KiB/s 307.997 KiB copied ETA: Mon Oct 26 05:44:14 2020  720 s  13419/13601 msgs left
+msg INBOX/557 {1191}          copied to INBOX/3344       18.70 msgs/s  31.594 KiB/s 309.160 KiB copied ETA: Mon Oct 26 05:44:12 2020  718 s  13418/13601 msgs left
+msg INBOX/558 {1304}          copied to INBOX/3345       18.76 msgs/s  31.655 KiB/s 310.434 KiB copied ETA: Mon Oct 26 05:44:09 2020  715 s  13417/13601 msgs left
+msg INBOX/559 {1296}          copied to INBOX/3346       18.83 msgs/s  31.719 KiB/s 311.699 KiB copied ETA: Mon Oct 26 05:44:07 2020  713 s  13416/13601 msgs left
+msg INBOX/560 {1918}          copied to INBOX/3347       18.89 msgs/s  31.838 KiB/s 313.572 KiB copied ETA: Mon Oct 26 05:44:04 2020  710 s  13415/13601 msgs left
+msg INBOX/562 {1654}          copied to INBOX/3348       18.95 msgs/s  31.939 KiB/s 315.188 KiB copied ETA: Mon Oct 26 05:44:02 2020  708 s  13414/13601 msgs left
+msg INBOX/567 {2687}          copied to INBOX/3349       19.01 msgs/s  32.136 KiB/s 317.812 KiB copied ETA: Mon Oct 26 05:44:00 2020  706 s  13413/13601 msgs left
+msg INBOX/570 {1355}          copied to INBOX/3350       19.07 msgs/s  32.202 KiB/s 319.135 KiB copied ETA: Mon Oct 26 05:43:57 2020  703 s  13412/13601 msgs left
+msg INBOX/571 {2459}          copied to INBOX/3351       19.13 msgs/s  32.380 KiB/s 321.536 KiB copied ETA: Mon Oct 26 05:43:55 2020  701 s  13411/13601 msgs left
+msg INBOX/572 {2249}          copied to INBOX/3352       19.19 msgs/s  32.527 KiB/s 323.732 KiB copied ETA: Mon Oct 26 05:43:53 2020  699 s  13410/13601 msgs left
+msg INBOX/573 {1667}          copied to INBOX/3353       19.23 msgs/s  32.585 KiB/s 325.360 KiB copied ETA: Mon Oct 26 05:43:52 2020  697 s  13409/13601 msgs left
+msg INBOX/575 {1259}          copied to INBOX/3354       19.28 msgs/s  32.629 KiB/s 326.590 KiB copied ETA: Mon Oct 26 05:43:50 2020  695 s  13408/13601 msgs left
+msg INBOX/577 {1280}          copied to INBOX/3355       19.33 msgs/s  32.669 KiB/s 327.840 KiB copied ETA: Mon Oct 26 05:43:48 2020  694 s  13407/13601 msgs left
+msg INBOX/578 {2038}          copied to INBOX/3356       19.39 msgs/s  32.793 KiB/s 329.830 KiB copied ETA: Mon Oct 26 05:43:46 2020  692 s  13406/13601 msgs left
+msg INBOX/581 {2707}          copied to INBOX/3357       19.43 msgs/s  32.964 KiB/s 332.474 KiB copied ETA: Mon Oct 26 05:43:44 2020  690 s  13405/13601 msgs left
+msg INBOX/582 {1197}          copied to INBOX/3358       19.47 msgs/s  32.974 KiB/s 333.643 KiB copied ETA: Mon Oct 26 05:43:43 2020  688 s  13404/13601 msgs left
+msg INBOX/583 {1603}          copied to INBOX/3359       19.52 msgs/s  33.050 KiB/s 335.208 KiB copied ETA: Mon Oct 26 05:43:41 2020  687 s  13403/13601 msgs left
+msg INBOX/584 {1766}          copied to INBOX/3360       19.58 msgs/s  33.148 KiB/s 336.933 KiB copied ETA: Mon Oct 26 05:43:39 2020  685 s  13402/13601 msgs left
+msg INBOX/586 {2473}          copied to INBOX/3361       19.63 msgs/s  33.309 KiB/s 339.348 KiB copied ETA: Mon Oct 26 05:43:37 2020  683 s  13401/13601 msgs left
+msg INBOX/588 {2388}          copied to INBOX/3362       19.69 msgs/s  33.465 KiB/s 341.680 KiB copied ETA: Mon Oct 26 05:43:35 2020  681 s  13400/13601 msgs left
+msg INBOX/589 {1909}          copied to INBOX/3363       19.74 msgs/s  33.577 KiB/s 343.544 KiB copied ETA: Mon Oct 26 05:43:33 2020  679 s  13399/13601 msgs left
+msg INBOX/590 {2116}          copied to INBOX/3364       19.80 msgs/s  33.709 KiB/s 345.610 KiB copied ETA: Mon Oct 26 05:43:31 2020  677 s  13398/13601 msgs left
+msg INBOX/594 {2688}          copied to INBOX/3365       19.85 msgs/s  33.887 KiB/s 348.235 KiB copied ETA: Mon Oct 26 05:43:29 2020  675 s  13397/13601 msgs left
+msg INBOX/595 {1285}          copied to INBOX/3366       19.90 msgs/s  33.924 KiB/s 349.490 KiB copied ETA: Mon Oct 26 05:43:28 2020  673 s  13396/13601 msgs left
+msg INBOX/596 {2698}          copied to INBOX/3367       19.95 msgs/s  34.101 KiB/s 352.125 KiB copied ETA: Mon Oct 26 05:43:26 2020  671 s  13395/13601 msgs left
+msg INBOX/598 {1223}          copied to INBOX/3368       20.00 msgs/s  34.135 KiB/s 353.319 KiB copied ETA: Mon Oct 26 05:43:24 2020  670 s  13394/13601 msgs left
+msg INBOX/599 {1597}          copied to INBOX/3369       20.05 msgs/s  34.204 KiB/s 354.879 KiB copied ETA: Mon Oct 26 05:43:23 2020  668 s  13393/13601 msgs left
+msg INBOX/600 {1459}          copied to INBOX/3370       20.10 msgs/s  34.264 KiB/s 356.304 KiB copied ETA: Mon Oct 26 05:43:21 2020  666 s  13392/13601 msgs left
+msg INBOX/601 {1221}          copied to INBOX/3371       20.13 msgs/s  34.273 KiB/s 357.496 KiB copied ETA: Mon Oct 26 05:43:20 2020  665 s  13391/13601 msgs left
+msg INBOX/607 {1344}          copied to INBOX/3372       20.18 msgs/s  34.319 KiB/s 358.809 KiB copied ETA: Mon Oct 26 05:43:18 2020  664 s  13390/13601 msgs left
+msg INBOX/609 {2529}          copied to INBOX/3373       20.24 msgs/s  34.484 KiB/s 361.278 KiB copied ETA: Mon Oct 26 05:43:16 2020  662 s  13389/13601 msgs left
+msg INBOX/614 {2303}          copied to INBOX/3374       20.29 msgs/s  34.629 KiB/s 363.527 KiB copied ETA: Mon Oct 26 05:43:15 2020  660 s  13388/13601 msgs left
+msg INBOX/615 {2999}          copied to INBOX/3375       20.34 msgs/s  34.833 KiB/s 366.456 KiB copied ETA: Mon Oct 26 05:43:13 2020  658 s  13387/13601 msgs left
+msg INBOX/616 {1161}          copied to INBOX/3376       20.39 msgs/s  34.862 KiB/s 367.590 KiB copied ETA: Mon Oct 26 05:43:11 2020  657 s  13386/13601 msgs left
+msg INBOX/619 {1320}          copied to INBOX/3377       20.44 msgs/s  34.911 KiB/s 368.879 KiB copied ETA: Mon Oct 26 05:43:10 2020  655 s  13385/13601 msgs left
+msg INBOX/622 {1238}          copied to INBOX/3378       20.48 msgs/s  34.928 KiB/s 370.088 KiB copied ETA: Mon Oct 26 05:43:08 2020  654 s  13384/13601 msgs left
+msg INBOX/623 {2905}          copied to INBOX/3379       20.53 msgs/s  35.115 KiB/s 372.925 KiB copied ETA: Mon Oct 26 05:43:07 2020  652 s  13383/13601 msgs left
+msg INBOX/626 {1598}          copied to INBOX/3380       20.58 msgs/s  35.187 KiB/s 374.485 KiB copied ETA: Mon Oct 26 05:43:05 2020  650 s  13382/13601 msgs left
+msg INBOX/627 {1323}          copied to INBOX/3381       20.63 msgs/s  35.234 KiB/s 375.777 KiB copied ETA: Mon Oct 26 05:43:04 2020  649 s  13381/13601 msgs left
+msg INBOX/629 {1304}          copied to INBOX/3382       20.68 msgs/s  35.287 KiB/s 377.051 KiB copied ETA: Mon Oct 26 05:43:02 2020  647 s  13380/13601 msgs left
+msg INBOX/630 {1362}          copied to INBOX/3383       20.74 msgs/s  35.347 KiB/s 378.381 KiB copied ETA: Mon Oct 26 05:43:00 2020  645 s  13379/13601 msgs left
+msg INBOX/638 {1542}          copied to INBOX/3384       20.78 msgs/s  35.405 KiB/s 379.887 KiB copied ETA: Mon Oct 26 05:42:59 2020  644 s  13378/13601 msgs left
+msg INBOX/641 {1425}          copied to INBOX/3385       20.83 msgs/s  35.460 KiB/s 381.278 KiB copied ETA: Mon Oct 26 05:42:57 2020  642 s  13377/13601 msgs left
+msg INBOX/649 {2237}          copied to INBOX/3386       20.88 msgs/s  35.592 KiB/s 383.463 KiB copied ETA: Mon Oct 26 05:42:56 2020  641 s  13376/13601 msgs left
+msg INBOX/650 {1763}          copied to INBOX/3387       20.94 msgs/s  35.684 KiB/s 385.185 KiB copied ETA: Mon Oct 26 05:42:54 2020  639 s  13375/13601 msgs left
+msg INBOX/651 {2527}          copied to INBOX/3388       20.97 msgs/s  35.805 KiB/s 387.652 KiB copied ETA: Mon Oct 26 05:42:53 2020  638 s  13374/13601 msgs left
+msg INBOX/652 {1213}          copied to INBOX/3389       21.01 msgs/s  35.832 KiB/s 388.837 KiB copied ETA: Mon Oct 26 05:42:52 2020  637 s  13373/13601 msgs left
+msg INBOX/655 {1978}          copied to INBOX/3390       21.07 msgs/s  35.946 KiB/s 390.769 KiB copied ETA: Mon Oct 26 05:42:50 2020  635 s  13372/13601 msgs left
+msg INBOX/656 {2260}          copied to INBOX/3391       21.12 msgs/s  36.080 KiB/s 392.976 KiB copied ETA: Mon Oct 26 05:42:48 2020  633 s  13371/13601 msgs left
+msg INBOX/657 {1224}          copied to INBOX/3392       21.17 msgs/s  36.124 KiB/s 394.171 KiB copied ETA: Mon Oct 26 05:42:47 2020  632 s  13370/13601 msgs left
+msg INBOX/659 {2115}          copied to INBOX/3393       21.22 msgs/s  36.249 KiB/s 396.236 KiB copied ETA: Mon Oct 26 05:42:45 2020  630 s  13369/13601 msgs left
+msg INBOX/660 {2676}          copied to INBOX/3394       21.28 msgs/s  36.428 KiB/s 398.850 KiB copied ETA: Mon Oct 26 05:42:43 2020  628 s  13368/13601 msgs left
+msg INBOX/663 {1270}          copied to INBOX/3395       21.33 msgs/s  36.474 KiB/s 400.090 KiB copied ETA: Mon Oct 26 05:42:42 2020  627 s  13367/13601 msgs left
+msg INBOX/664 {1207}          copied to INBOX/3396       21.38 msgs/s  36.515 KiB/s 401.269 KiB copied ETA: Mon Oct 26 05:42:40 2020  625 s  13366/13601 msgs left
+msg INBOX/665 {1320}          copied to INBOX/3397       21.43 msgs/s  36.560 KiB/s 402.558 KiB copied ETA: Mon Oct 26 05:42:39 2020  624 s  13365/13601 msgs left
+msg INBOX/666 {1195}          copied to INBOX/3398       21.46 msgs/s  36.548 KiB/s 403.725 KiB copied ETA: Mon Oct 26 05:42:38 2020  623 s  13364/13601 msgs left
+msg INBOX/667 {2227}          copied to INBOX/3399       21.50 msgs/s  36.671 KiB/s 405.899 KiB copied ETA: Mon Oct 26 05:42:37 2020  622 s  13363/13601 msgs left
+msg INBOX/668 {2868}          copied to INBOX/3400       21.55 msgs/s  36.847 KiB/s 408.700 KiB copied ETA: Mon Oct 26 05:42:35 2020  620 s  13362/13601 msgs left
+msg INBOX/669 {2756}          copied to INBOX/3401       21.60 msgs/s  37.020 KiB/s 411.392 KiB copied ETA: Mon Oct 26 05:42:34 2020  619 s  13361/13601 msgs left
+msg INBOX/672 {2156}          copied to INBOX/3402       21.64 msgs/s  37.134 KiB/s 413.497 KiB copied ETA: Mon Oct 26 05:42:33 2020  617 s  13360/13601 msgs left
+msg INBOX/673 {2700}          copied to INBOX/3403       21.69 msgs/s  37.301 KiB/s 416.134 KiB copied ETA: Mon Oct 26 05:42:31 2020  616 s  13359/13601 msgs left
+msg INBOX/675 {1522}          copied to INBOX/3404       21.74 msgs/s  37.361 KiB/s 417.620 KiB copied ETA: Mon Oct 26 05:42:30 2020  614 s  13358/13601 msgs left
+msg INBOX/682 {1311}          copied to INBOX/3405       21.79 msgs/s  37.401 KiB/s 418.900 KiB copied ETA: Mon Oct 26 05:42:29 2020  613 s  13357/13601 msgs left
+msg INBOX/684 {2199}          copied to INBOX/3406       21.83 msgs/s  37.519 KiB/s 421.048 KiB copied ETA: Mon Oct 26 05:42:27 2020  612 s  13356/13601 msgs left
+msg INBOX/685 {2954}          copied to INBOX/3407       21.86 msgs/s  37.666 KiB/s 423.933 KiB copied ETA: Mon Oct 26 05:42:27 2020  611 s  13355/13601 msgs left
+msg INBOX/688 {1063}          copied to INBOX/3408       21.90 msgs/s  37.682 KiB/s 424.971 KiB copied ETA: Mon Oct 26 05:42:25 2020  610 s  13354/13601 msgs left
+msg INBOX/690 {1164}          copied to INBOX/3409       21.94 msgs/s  37.705 KiB/s 426.107 KiB copied ETA: Mon Oct 26 05:42:24 2020  609 s  13353/13601 msgs left
+msg INBOX/691 {1229}          copied to INBOX/3410       21.99 msgs/s  37.737 KiB/s 427.308 KiB copied ETA: Mon Oct 26 05:42:23 2020  607 s  13352/13601 msgs left
+msg INBOX/694 {1281}          copied to INBOX/3411       22.02 msgs/s  37.748 KiB/s 428.559 KiB copied ETA: Mon Oct 26 05:42:22 2020  606 s  13351/13601 msgs left
+msg INBOX/695 {1306}          copied to INBOX/3412       22.07 msgs/s  37.788 KiB/s 429.834 KiB copied ETA: Mon Oct 26 05:42:21 2020  605 s  13350/13601 msgs left
+msg INBOX/699 {1425}          copied to INBOX/3413       22.11 msgs/s  37.837 KiB/s 431.226 KiB copied ETA: Mon Oct 26 05:42:19 2020  604 s  13349/13601 msgs left
+msg INBOX/700 {1606}          copied to INBOX/3414       22.15 msgs/s  37.887 KiB/s 432.794 KiB copied ETA: Mon Oct 26 05:42:18 2020  603 s  13348/13601 msgs left
+msg INBOX/701 {2861}          copied to INBOX/3415       22.19 msgs/s  38.060 KiB/s 435.588 KiB copied ETA: Mon Oct 26 05:42:17 2020  601 s  13347/13601 msgs left
+msg INBOX/702 {2042}          copied to INBOX/3416       22.24 msgs/s  38.165 KiB/s 437.582 KiB copied ETA: Mon Oct 26 05:42:16 2020  600 s  13346/13601 msgs left
+msg INBOX/705 {1543}          copied to INBOX/3417       22.28 msgs/s  38.212 KiB/s 439.089 KiB copied ETA: Mon Oct 26 05:42:15 2020  599 s  13345/13601 msgs left
+msg INBOX/706 {1473}          copied to INBOX/3418       22.31 msgs/s  38.247 KiB/s 440.527 KiB copied ETA: Mon Oct 26 05:42:14 2020  598 s  13344/13601 msgs left
+msg INBOX/708 {1508}          copied to INBOX/3419       22.34 msgs/s  38.278 KiB/s 442.000 KiB copied ETA: Mon Oct 26 05:42:13 2020  597 s  13343/13601 msgs left
+msg INBOX/710 {1702}          copied to INBOX/3420       22.39 msgs/s  38.354 KiB/s 443.662 KiB copied ETA: Mon Oct 26 05:42:12 2020  596 s  13342/13601 msgs left
+msg INBOX/711 {1335}          copied to INBOX/3421       22.44 msgs/s  38.402 KiB/s 444.966 KiB copied ETA: Mon Oct 26 05:42:10 2020  595 s  13341/13601 msgs left
+msg INBOX/720 {1001}          copied to INBOX/3422       22.49 msgs/s  38.421 KiB/s 445.943 KiB copied ETA: Mon Oct 26 05:42:09 2020  593 s  13340/13601 msgs left
+msg INBOX/721 {1036}          copied to INBOX/3423       22.53 msgs/s  38.440 KiB/s 446.955 KiB copied ETA: Mon Oct 26 05:42:08 2020  592 s  13339/13601 msgs left
+msg INBOX/722 {1559}          copied to INBOX/3424       22.57 msgs/s  38.494 KiB/s 448.478 KiB copied ETA: Mon Oct 26 05:42:07 2020  591 s  13338/13601 msgs left
+msg INBOX/723 {1270}          copied to INBOX/3425       22.62 msgs/s  38.524 KiB/s 449.718 KiB copied ETA: Mon Oct 26 05:42:06 2020  590 s  13337/13601 msgs left
+msg INBOX/732 {1424}          copied to INBOX/3426       22.66 msgs/s  38.578 KiB/s 451.108 KiB copied ETA: Mon Oct 26 05:42:04 2020  588 s  13336/13601 msgs left
+msg INBOX/733 {1424}          copied to INBOX/3427       22.71 msgs/s  38.636 KiB/s 452.499 KiB copied ETA: Mon Oct 26 05:42:03 2020  587 s  13335/13601 msgs left
+msg INBOX/737 {1027}          copied to INBOX/3428       22.75 msgs/s  38.649 KiB/s 453.502 KiB copied ETA: Mon Oct 26 05:42:02 2020  586 s  13334/13601 msgs left
+msg INBOX/738 {2587}          copied to INBOX/3429       22.80 msgs/s  38.801 KiB/s 456.028 KiB copied ETA: Mon Oct 26 05:42:01 2020  585 s  13333/13601 msgs left
+msg INBOX/740 {1409}          copied to INBOX/3430       22.85 msgs/s  38.856 KiB/s 457.404 KiB copied ETA: Mon Oct 26 05:41:59 2020  583 s  13332/13601 msgs left
+msg INBOX/742 {1482}          copied to INBOX/3431       22.90 msgs/s  38.911 KiB/s 458.852 KiB copied ETA: Mon Oct 26 05:41:58 2020  582 s  13331/13601 msgs left
+msg INBOX/743 {1296}          copied to INBOX/3432       22.94 msgs/s  38.948 KiB/s 460.117 KiB copied ETA: Mon Oct 26 05:41:57 2020  581 s  13330/13601 msgs left
+msg INBOX/744 {2500}          copied to INBOX/3433       22.98 msgs/s  39.080 KiB/s 462.559 KiB copied ETA: Mon Oct 26 05:41:56 2020  580 s  13329/13601 msgs left
+msg INBOX/745 {1291}          copied to INBOX/3434       23.02 msgs/s  39.107 KiB/s 463.819 KiB copied ETA: Mon Oct 26 05:41:55 2020  579 s  13328/13601 msgs left
+msg INBOX/749 {1362}          copied to INBOX/3435       23.06 msgs/s  39.151 KiB/s 465.149 KiB copied ETA: Mon Oct 26 05:41:54 2020  578 s  13327/13601 msgs left
+msg INBOX/753 {2232}          copied to INBOX/3436       23.11 msgs/s  39.267 KiB/s 467.329 KiB copied ETA: Mon Oct 26 05:41:53 2020  577 s  13326/13601 msgs left
+msg INBOX/756 {1385}          copied to INBOX/3437       23.15 msgs/s  39.310 KiB/s 468.682 KiB copied ETA: Mon Oct 26 05:41:52 2020  576 s  13325/13601 msgs left
+msg INBOX/757 {1546}          copied to INBOX/3438       23.20 msgs/s  39.378 KiB/s 470.191 KiB copied ETA: Mon Oct 26 05:41:51 2020  574 s  13324/13601 msgs left
+msg INBOX/758 {2576}          copied to INBOX/3439       23.25 msgs/s  39.529 KiB/s 472.707 KiB copied ETA: Mon Oct 26 05:41:49 2020  573 s  13323/13601 msgs left
+msg INBOX/760 {1790}          copied to INBOX/3440       23.30 msgs/s  39.615 KiB/s 474.455 KiB copied ETA: Mon Oct 26 05:41:48 2020  572 s  13322/13601 msgs left
+msg INBOX/763 {1373}          copied to INBOX/3441       23.34 msgs/s  39.657 KiB/s 475.796 KiB copied ETA: Mon Oct 26 05:41:47 2020  571 s  13321/13601 msgs left
+msg INBOX/764 {2505}          copied to INBOX/3442       23.38 msgs/s  39.799 KiB/s 478.242 KiB copied ETA: Mon Oct 26 05:41:46 2020  570 s  13320/13601 msgs left
+msg INBOX/765 {2004}          copied to INBOX/3443       23.43 msgs/s  39.900 KiB/s 480.199 KiB copied ETA: Mon Oct 26 05:41:45 2020  568 s  13319/13601 msgs left
+msg INBOX/783 {1292}          copied to INBOX/3444       23.48 msgs/s  39.945 KiB/s 481.461 KiB copied ETA: Mon Oct 26 05:41:44 2020  567 s  13318/13601 msgs left
+msg INBOX/788 {1585}          copied to INBOX/3445       23.53 msgs/s  40.014 KiB/s 483.009 KiB copied ETA: Mon Oct 26 05:41:42 2020  566 s  13317/13601 msgs left
+msg INBOX/790 {2362}          copied to INBOX/3446       23.57 msgs/s  40.140 KiB/s 485.315 KiB copied ETA: Mon Oct 26 05:41:41 2020  565 s  13316/13601 msgs left
+msg INBOX/796 {1428}          copied to INBOX/3447       23.62 msgs/s  40.193 KiB/s 486.710 KiB copied ETA: Mon Oct 26 05:41:40 2020  564 s  13315/13601 msgs left
+msg INBOX/799 {2030}          copied to INBOX/3448       23.66 msgs/s  40.288 KiB/s 488.692 KiB copied ETA: Mon Oct 26 05:41:39 2020  563 s  13314/13601 msgs left
+msg INBOX/805 {1680}          copied to INBOX/3449       23.68 msgs/s  40.316 KiB/s 490.333 KiB copied ETA: Mon Oct 26 05:41:39 2020  562 s  13313/13601 msgs left
+msg INBOX/807 {2911}          copied to INBOX/3450       23.71 msgs/s  40.464 KiB/s 493.176 KiB copied ETA: Mon Oct 26 05:41:38 2020  561 s  13312/13601 msgs left
+msg INBOX/808 {1442}          copied to INBOX/3451       23.75 msgs/s  40.502 KiB/s 494.584 KiB copied ETA: Mon Oct 26 05:41:37 2020  561 s  13311/13601 msgs left
+msg INBOX/813 {2238}          copied to INBOX/3452       23.76 msgs/s  40.564 KiB/s 496.770 KiB copied ETA: Mon Oct 26 05:41:37 2020  560 s  13310/13601 msgs left
+msg INBOX/817 {1601}          copied to INBOX/3453       23.79 msgs/s  40.604 KiB/s 498.333 KiB copied ETA: Mon Oct 26 05:41:36 2020  559 s  13309/13601 msgs left
+msg INBOX/818 {1199}          copied to INBOX/3454       23.83 msgs/s  40.622 KiB/s 499.504 KiB copied ETA: Mon Oct 26 05:41:35 2020  559 s  13308/13601 msgs left
+msg INBOX/824 {1274}          copied to INBOX/3455       23.86 msgs/s  40.632 KiB/s 500.748 KiB copied ETA: Mon Oct 26 05:41:34 2020  558 s  13307/13601 msgs left
+msg INBOX/825 {1710}          copied to INBOX/3456       23.89 msgs/s  40.693 KiB/s 502.418 KiB copied ETA: Mon Oct 26 05:41:33 2020  557 s  13306/13601 msgs left
+msg INBOX/827 {2752}          copied to INBOX/3457       23.92 msgs/s  40.812 KiB/s 505.105 KiB copied ETA: Mon Oct 26 05:41:33 2020  556 s  13305/13601 msgs left
+msg INBOX/828 {1106}          copied to INBOX/3458       23.96 msgs/s  40.833 KiB/s 506.186 KiB copied ETA: Mon Oct 26 05:41:32 2020  555 s  13304/13601 msgs left
+msg INBOX/829 {1513}          copied to INBOX/3459       24.00 msgs/s  40.879 KiB/s 507.663 KiB copied ETA: Mon Oct 26 05:41:31 2020  554 s  13303/13601 msgs left
+msg INBOX/832 {2580}          copied to INBOX/3460       24.04 msgs/s  41.016 KiB/s 510.183 KiB copied ETA: Mon Oct 26 05:41:30 2020  553 s  13302/13601 msgs left
+msg INBOX/833 {2280}          copied to INBOX/3461       24.06 msgs/s  41.098 KiB/s 512.409 KiB copied ETA: Mon Oct 26 05:41:30 2020  553 s  13301/13601 msgs left
+msg INBOX/834 {1431}          copied to INBOX/3462       24.10 msgs/s  41.141 KiB/s 513.807 KiB copied ETA: Mon Oct 26 05:41:29 2020  552 s  13300/13601 msgs left
+msg INBOX/836 {1160}          copied to INBOX/3463       24.15 msgs/s  41.172 KiB/s 514.939 KiB copied ETA: Mon Oct 26 05:41:28 2020  551 s  13299/13601 msgs left
+msg INBOX/839 {2065}          copied to INBOX/3464       24.18 msgs/s  41.260 KiB/s 516.956 KiB copied ETA: Mon Oct 26 05:41:27 2020  550 s  13298/13601 msgs left
+msg INBOX/840 {3044}          copied to INBOX/3465       24.22 msgs/s  41.428 KiB/s 519.929 KiB copied ETA: Mon Oct 26 05:41:26 2020  549 s  13297/13601 msgs left
+msg INBOX/846 {1277}          copied to INBOX/3466       24.26 msgs/s  41.462 KiB/s 521.176 KiB copied ETA: Mon Oct 26 05:41:25 2020  548 s  13296/13601 msgs left
+msg INBOX/847 {1950}          copied to INBOX/3467       24.30 msgs/s  41.542 KiB/s 523.080 KiB copied ETA: Mon Oct 26 05:41:24 2020  547 s  13295/13601 msgs left
+msg INBOX/855 {2220}          copied to INBOX/3468       24.34 msgs/s  41.641 KiB/s 525.248 KiB copied ETA: Mon Oct 26 05:41:23 2020  546 s  13294/13601 msgs left
+msg INBOX/859 {2898}          copied to INBOX/3469       24.38 msgs/s  41.793 KiB/s 528.078 KiB copied ETA: Mon Oct 26 05:41:22 2020  545 s  13293/13601 msgs left
+msg INBOX/862 {2924}          copied to INBOX/3470       24.40 msgs/s  41.928 KiB/s 530.934 KiB copied ETA: Mon Oct 26 05:41:22 2020  545 s  13292/13601 msgs left
+msg INBOX/868 {2911}          copied to INBOX/3471       24.44 msgs/s  42.082 KiB/s 533.776 KiB copied ETA: Mon Oct 26 05:41:21 2020  544 s  13291/13601 msgs left
+msg INBOX/870 {1052}          copied to INBOX/3472       24.48 msgs/s  42.095 KiB/s 534.804 KiB copied ETA: Mon Oct 26 05:41:20 2020  543 s  13290/13601 msgs left
+msg INBOX/872 {1954}          copied to INBOX/3473       24.52 msgs/s  42.180 KiB/s 536.712 KiB copied ETA: Mon Oct 26 05:41:19 2020  542 s  13289/13601 msgs left
+msg INBOX/874 {2597}          copied to INBOX/3474       24.56 msgs/s  42.319 KiB/s 539.248 KiB copied ETA: Mon Oct 26 05:41:18 2020  541 s  13288/13601 msgs left
+msg INBOX/875 {2910}          copied to INBOX/3475       24.61 msgs/s  42.485 KiB/s 542.090 KiB copied ETA: Mon Oct 26 05:41:17 2020  540 s  13287/13601 msgs left
+msg INBOX/956 {2247}          copied to INBOX/3476       24.65 msgs/s  42.594 KiB/s 544.284 KiB copied ETA: Mon Oct 26 05:41:16 2020  539 s  13286/13601 msgs left
+msg INBOX/958 {1311}          copied to INBOX/3477       24.69 msgs/s  42.634 KiB/s 545.564 KiB copied ETA: Mon Oct 26 05:41:15 2020  538 s  13285/13601 msgs left
+msg INBOX/959 {1261}          copied to INBOX/3478       24.74 msgs/s  42.667 KiB/s 546.796 KiB copied ETA: Mon Oct 26 05:41:14 2020  537 s  13284/13601 msgs left
+msg INBOX/960 {1280}          copied to INBOX/3479       24.78 msgs/s  42.708 KiB/s 548.046 KiB copied ETA: Mon Oct 26 05:41:13 2020  536 s  13283/13601 msgs left
+msg INBOX/961 {1383}          copied to INBOX/3480       24.82 msgs/s  42.753 KiB/s 549.396 KiB copied ETA: Mon Oct 26 05:41:12 2020  535 s  13282/13601 msgs left
+msg INBOX/962 {1336}          copied to INBOX/3481       24.87 msgs/s  42.794 KiB/s 550.701 KiB copied ETA: Mon Oct 26 05:41:11 2020  534 s  13281/13601 msgs left
+msg INBOX/963 {1630}          copied to INBOX/3482       24.91 msgs/s  42.855 KiB/s 552.293 KiB copied ETA: Mon Oct 26 05:41:10 2020  533 s  13280/13601 msgs left
+msg INBOX/964 {1341}          copied to INBOX/3483       24.94 msgs/s  42.883 KiB/s 553.603 KiB copied ETA: Mon Oct 26 05:41:10 2020  532 s  13279/13601 msgs left
+msg INBOX/965 {1338}          copied to INBOX/3484       24.98 msgs/s  42.922 KiB/s 554.909 KiB copied ETA: Mon Oct 26 05:41:09 2020  531 s  13278/13601 msgs left
+msg INBOX/966 {1353}          copied to INBOX/3485       25.03 msgs/s  42.963 KiB/s 556.230 KiB copied ETA: Mon Oct 26 05:41:08 2020  531 s  13277/13601 msgs left
+msg INBOX/967 {1321}          copied to INBOX/3486       25.06 msgs/s  42.989 KiB/s 557.521 KiB copied ETA: Mon Oct 26 05:41:07 2020  530 s  13276/13601 msgs left
+msg INBOX/968 {1329}          copied to INBOX/3487       25.10 msgs/s  43.031 KiB/s 558.818 KiB copied ETA: Mon Oct 26 05:41:06 2020  529 s  13275/13601 msgs left
+msg INBOX/969 {1345}          copied to INBOX/3488       25.15 msgs/s  43.075 KiB/s 560.132 KiB copied ETA: Mon Oct 26 05:41:05 2020  528 s  13274/13601 msgs left
+msg INBOX/971 {3004}          copied to INBOX/3489       25.19 msgs/s  43.244 KiB/s 563.065 KiB copied ETA: Mon Oct 26 05:41:04 2020  527 s  13273/13601 msgs left
+msg INBOX/973 {1279}          copied to INBOX/3490       25.23 msgs/s  43.281 KiB/s 564.314 KiB copied ETA: Mon Oct 26 05:41:03 2020  526 s  13272/13601 msgs left
+msg INBOX/978 {1305}          copied to INBOX/3491       25.27 msgs/s  43.314 KiB/s 565.589 KiB copied ETA: Mon Oct 26 05:41:02 2020  525 s  13271/13601 msgs left
+msg INBOX/982 {2917}          copied to INBOX/3492       25.30 msgs/s  43.454 KiB/s 568.438 KiB copied ETA: Mon Oct 26 05:41:02 2020  524 s  13270/13601 msgs left
+msg INBOX/988 {1611}          copied to INBOX/3493       25.34 msgs/s  43.500 KiB/s 570.011 KiB copied ETA: Mon Oct 26 05:41:01 2020  524 s  13269/13601 msgs left
+msg INBOX/989 {1297}          copied to INBOX/3494       25.38 msgs/s  43.538 KiB/s 571.277 KiB copied ETA: Mon Oct 26 05:41:00 2020  523 s  13268/13601 msgs left
+msg INBOX/998 {1096}          copied to INBOX/3495       25.42 msgs/s  43.559 KiB/s 572.348 KiB copied ETA: Mon Oct 26 05:40:59 2020  522 s  13267/13601 msgs left
+msg INBOX/1001 {1052}         copied to INBOX/3496       25.46 msgs/s  43.577 KiB/s 573.375 KiB copied ETA: Mon Oct 26 05:40:58 2020  521 s  13266/13601 msgs left
+msg INBOX/1002 {2699}         copied to INBOX/3497       25.48 msgs/s  43.672 KiB/s 576.011 KiB copied ETA: Mon Oct 26 05:40:58 2020  521 s  13265/13601 msgs left
+msg INBOX/1005 {1286}         copied to INBOX/3498       25.51 msgs/s  43.701 KiB/s 577.267 KiB copied ETA: Mon Oct 26 05:40:57 2020  520 s  13264/13601 msgs left
+msg INBOX/1006 {1146}         copied to INBOX/3499       25.55 msgs/s  43.716 KiB/s 578.386 KiB copied ETA: Mon Oct 26 05:40:57 2020  519 s  13263/13601 msgs left
+msg INBOX/1007 {2174}         copied to INBOX/3500       25.58 msgs/s  43.809 KiB/s 580.509 KiB copied ETA: Mon Oct 26 05:40:56 2020  518 s  13262/13601 msgs left
+msg INBOX/1008 {2536}         copied to INBOX/3501       25.62 msgs/s  43.928 KiB/s 582.985 KiB copied ETA: Mon Oct 26 05:40:55 2020  518 s  13261/13601 msgs left
+msg INBOX/1010 {2847}         copied to INBOX/3502       25.65 msgs/s  44.060 KiB/s 585.766 KiB copied ETA: Mon Oct 26 05:40:55 2020  517 s  13260/13601 msgs left
+msg INBOX/1012 {2665}         copied to INBOX/3503       25.69 msgs/s  44.190 KiB/s 588.368 KiB copied ETA: Mon Oct 26 05:40:54 2020  516 s  13259/13601 msgs left
+msg INBOX/1013 {2174}         copied to INBOX/3504       25.72 msgs/s  44.286 KiB/s 590.491 KiB copied ETA: Mon Oct 26 05:40:53 2020  515 s  13258/13601 msgs left
+msg INBOX/1015 {2536}         copied to INBOX/3505       25.76 msgs/s  44.409 KiB/s 592.968 KiB copied ETA: Mon Oct 26 05:40:52 2020  515 s  13257/13601 msgs left
+msg INBOX/1019 {2838}         copied to INBOX/3506       25.80 msgs/s  44.547 KiB/s 595.739 KiB copied ETA: Mon Oct 26 05:40:51 2020  514 s  13256/13601 msgs left
+msg INBOX/1020 {2803}         copied to INBOX/3507       25.84 msgs/s  44.688 KiB/s 598.477 KiB copied ETA: Mon Oct 26 05:40:51 2020  513 s  13255/13601 msgs left
+msg INBOX/1021 {1425}         copied to INBOX/3508       25.88 msgs/s  44.737 KiB/s 599.868 KiB copied ETA: Mon Oct 26 05:40:50 2020  512 s  13254/13601 msgs left
+msg INBOX/1033 {2881}         copied to INBOX/3509       25.92 msgs/s  44.892 KiB/s 602.682 KiB copied ETA: Mon Oct 26 05:40:49 2020  511 s  13253/13601 msgs left
+msg INBOX/1034 {2051}         copied to INBOX/3510       25.97 msgs/s  44.989 KiB/s 604.685 KiB copied ETA: Mon Oct 26 05:40:48 2020  510 s  13252/13601 msgs left
+msg INBOX/1035 {1424}         copied to INBOX/3511       26.01 msgs/s  45.033 KiB/s 606.075 KiB copied ETA: Mon Oct 26 05:40:47 2020  510 s  13251/13601 msgs left
+msg INBOX/1039 {886}          copied to INBOX/3512       26.05 msgs/s  45.039 KiB/s 606.940 KiB copied ETA: Mon Oct 26 05:40:46 2020  509 s  13250/13601 msgs left
+msg INBOX/1048 {1181}         copied to INBOX/3513       26.09 msgs/s  45.069 KiB/s 608.094 KiB copied ETA: Mon Oct 26 05:40:46 2020  508 s  13249/13601 msgs left
+msg INBOX/1050 {1174}         copied to INBOX/3514       26.12 msgs/s  45.086 KiB/s 609.240 KiB copied ETA: Mon Oct 26 05:40:45 2020  507 s  13248/13601 msgs left
+msg INBOX/1053 {1124}         copied to INBOX/3515       26.16 msgs/s  45.110 KiB/s 610.338 KiB copied ETA: Mon Oct 26 05:40:44 2020  506 s  13247/13601 msgs left
+msg INBOX/1054 {1206}         copied to INBOX/3516       26.18 msgs/s  45.096 KiB/s 611.516 KiB copied ETA: Mon Oct 26 05:40:44 2020  506 s  13246/13601 msgs left
+msg INBOX/1058 {1405}         copied to INBOX/3517       26.22 msgs/s  45.136 KiB/s 612.888 KiB copied ETA: Mon Oct 26 05:40:43 2020  505 s  13245/13601 msgs left
+msg INBOX/1059 {1405}         copied to INBOX/3518       26.25 msgs/s  45.167 KiB/s 614.260 KiB copied ETA: Mon Oct 26 05:40:42 2020  505 s  13244/13601 msgs left
+msg INBOX/1060 {1405}         copied to INBOX/3519       26.29 msgs/s  45.213 KiB/s 615.632 KiB copied ETA: Mon Oct 26 05:40:42 2020  504 s  13243/13601 msgs left
+msg INBOX/1061 {1405}         copied to INBOX/3520       26.33 msgs/s  45.256 KiB/s 617.004 KiB copied ETA: Mon Oct 26 05:40:41 2020  503 s  13242/13601 msgs left
+msg INBOX/1062 {1305}         copied to INBOX/3521       26.37 msgs/s  45.291 KiB/s 618.278 KiB copied ETA: Mon Oct 26 05:40:40 2020  502 s  13241/13601 msgs left
+msg INBOX/1063 {2161}         copied to INBOX/3522       26.41 msgs/s  45.393 KiB/s 620.389 KiB copied ETA: Mon Oct 26 05:40:39 2020  501 s  13240/13601 msgs left
+msg INBOX/1065 {2699}         copied to INBOX/3523       26.46 msgs/s  45.535 KiB/s 623.024 KiB copied ETA: Mon Oct 26 05:40:38 2020  500 s  13239/13601 msgs left
+msg INBOX/1066 {2568}         copied to INBOX/3524       26.50 msgs/s  45.658 KiB/s 625.532 KiB copied ETA: Mon Oct 26 05:40:38 2020  500 s  13238/13601 msgs left
+msg INBOX/1067 {2803}         copied to INBOX/3525       26.54 msgs/s  45.803 KiB/s 628.270 KiB copied ETA: Mon Oct 26 05:40:37 2020  499 s  13237/13601 msgs left
+msg INBOX/1070 {1516}         copied to INBOX/3526       26.58 msgs/s  45.855 KiB/s 629.750 KiB copied ETA: Mon Oct 26 05:40:36 2020  498 s  13236/13601 msgs left
+msg INBOX/1079 {2723}         copied to INBOX/3527       26.62 msgs/s  45.991 KiB/s 632.409 KiB copied ETA: Mon Oct 26 05:40:35 2020  497 s  13235/13601 msgs left
+msg INBOX/1080 {2519}         copied to INBOX/3528       26.65 msgs/s  46.104 KiB/s 634.869 KiB copied ETA: Mon Oct 26 05:40:35 2020  497 s  13234/13601 msgs left
+msg INBOX/1082 {2055}         copied to INBOX/3529       26.69 msgs/s  46.187 KiB/s 636.876 KiB copied ETA: Mon Oct 26 05:40:34 2020  496 s  13233/13601 msgs left
+msg INBOX/1083 {2117}         copied to INBOX/3530       26.72 msgs/s  46.272 KiB/s 638.943 KiB copied ETA: Mon Oct 26 05:40:33 2020  495 s  13232/13601 msgs left
+msg INBOX/1085 {2175}         copied to INBOX/3531       26.76 msgs/s  46.357 KiB/s 641.067 KiB copied ETA: Mon Oct 26 05:40:33 2020  495 s  13231/13601 msgs left
+msg INBOX/1086 {2537}         copied to INBOX/3532       26.78 msgs/s  46.448 KiB/s 643.545 KiB copied ETA: Mon Oct 26 05:40:32 2020  494 s  13230/13601 msgs left
+msg INBOX/1088 {1833}         copied to INBOX/3533       26.81 msgs/s  46.518 KiB/s 645.335 KiB copied ETA: Mon Oct 26 05:40:31 2020  493 s  13229/13601 msgs left
+msg INBOX/1090 {1584}         copied to INBOX/3534       26.85 msgs/s  46.566 KiB/s 646.882 KiB copied ETA: Mon Oct 26 05:40:31 2020  493 s  13228/13601 msgs left
+msg INBOX/1093 {2767}         copied to INBOX/3535       26.89 msgs/s  46.704 KiB/s 649.584 KiB copied ETA: Mon Oct 26 05:40:30 2020  492 s  13227/13601 msgs left
+msg INBOX/1094 {2351}         copied to INBOX/3536       26.93 msgs/s  46.809 KiB/s 651.880 KiB copied ETA: Mon Oct 26 05:40:29 2020  491 s  13226/13601 msgs left
+msg INBOX/1097 {1433}         copied to INBOX/3537       26.97 msgs/s  46.854 KiB/s 653.279 KiB copied ETA: Mon Oct 26 05:40:29 2020  490 s  13225/13601 msgs left
+msg INBOX/1100 {1577}         copied to INBOX/3538       27.00 msgs/s  46.904 KiB/s 654.819 KiB copied ETA: Mon Oct 26 05:40:28 2020  490 s  13224/13601 msgs left
+msg INBOX/1101 {1428}         copied to INBOX/3539       27.04 msgs/s  46.943 KiB/s 656.214 KiB copied ETA: Mon Oct 26 05:40:27 2020  489 s  13223/13601 msgs left
+msg INBOX/1110 {1315}         copied to INBOX/3540       27.07 msgs/s  46.969 KiB/s 657.498 KiB copied ETA: Mon Oct 26 05:40:27 2020  488 s  13222/13601 msgs left
+msg INBOX/1112 {1555}         copied to INBOX/3541       27.09 msgs/s  46.977 KiB/s 659.017 KiB copied ETA: Mon Oct 26 05:40:26 2020  488 s  13221/13601 msgs left
+msg INBOX/1114 {1424}         copied to INBOX/3542       27.12 msgs/s  47.016 KiB/s 660.407 KiB copied ETA: Mon Oct 26 05:40:26 2020  487 s  13220/13601 msgs left
+msg INBOX/1116 {2650}         copied to INBOX/3543       27.16 msgs/s  47.134 KiB/s 662.995 KiB copied ETA: Mon Oct 26 05:40:25 2020  487 s  13219/13601 msgs left
+msg INBOX/1117 {2760}         copied to INBOX/3544       27.19 msgs/s  47.261 KiB/s 665.690 KiB copied ETA: Mon Oct 26 05:40:24 2020  486 s  13218/13601 msgs left
+msg INBOX/1119 {2803}         copied to INBOX/3545       27.23 msgs/s  47.394 KiB/s 668.428 KiB copied ETA: Mon Oct 26 05:40:24 2020  485 s  13217/13601 msgs left
+msg INBOX/1120 {2338}         copied to INBOX/3546       27.26 msgs/s  47.495 KiB/s 670.711 KiB copied ETA: Mon Oct 26 05:40:23 2020  485 s  13216/13601 msgs left
+msg INBOX/1122 {1208}         copied to INBOX/3547       27.30 msgs/s  47.518 KiB/s 671.891 KiB copied ETA: Mon Oct 26 05:40:22 2020  484 s  13215/13601 msgs left
+msg INBOX/1127 {2047}         copied to INBOX/3548       27.33 msgs/s  47.598 KiB/s 673.890 KiB copied ETA: Mon Oct 26 05:40:22 2020  483 s  13214/13601 msgs left
+msg INBOX/1129 {2219}         copied to INBOX/3549       27.35 msgs/s  47.655 KiB/s 676.057 KiB copied ETA: Mon Oct 26 05:40:22 2020  483 s  13213/13601 msgs left
+msg INBOX/1130 {1776}         copied to INBOX/3550       27.37 msgs/s  47.692 KiB/s 677.791 KiB copied ETA: Mon Oct 26 05:40:21 2020  483 s  13212/13601 msgs left
+msg INBOX/1131 {1774}         copied to INBOX/3551       27.40 msgs/s  47.741 KiB/s 679.523 KiB copied ETA: Mon Oct 26 05:40:21 2020  482 s  13211/13601 msgs left
+msg INBOX/1134 {1176}         copied to INBOX/3552       27.43 msgs/s  47.746 KiB/s 680.672 KiB copied ETA: Mon Oct 26 05:40:20 2020  482 s  13210/13601 msgs left
+msg INBOX/1135 {1554}         copied to INBOX/3553       27.25 msgs/s  47.429 KiB/s 682.189 KiB copied ETA: Mon Oct 26 05:40:23 2020  485 s  13209/13601 msgs left
+msg INBOX/1138 {1325}         copied to INBOX/3554       27.29 msgs/s  47.457 KiB/s 683.483 KiB copied ETA: Mon Oct 26 05:40:23 2020  484 s  13208/13601 msgs left
+msg INBOX/1139 {1180}         copied to INBOX/3555       27.32 msgs/s  47.476 KiB/s 684.636 KiB copied ETA: Mon Oct 26 05:40:22 2020  483 s  13207/13601 msgs left
+msg INBOX/1140 {1228}         copied to INBOX/3556       27.35 msgs/s  47.489 KiB/s 685.835 KiB copied ETA: Mon Oct 26 05:40:22 2020  483 s  13206/13601 msgs left
+msg INBOX/1141 {1257}         copied to INBOX/3557       27.39 msgs/s  47.515 KiB/s 687.062 KiB copied ETA: Mon Oct 26 05:40:21 2020  482 s  13205/13601 msgs left
+msg INBOX/1142 {2221}         copied to INBOX/3558       27.42 msgs/s  47.606 KiB/s 689.231 KiB copied ETA: Mon Oct 26 05:40:20 2020  482 s  13204/13601 msgs left
+msg INBOX/1144 {2537}         copied to INBOX/3559       27.46 msgs/s  47.716 KiB/s 691.709 KiB copied ETA: Mon Oct 26 05:40:20 2020  481 s  13203/13601 msgs left
+msg INBOX/1145 {2179}         copied to INBOX/3560       27.49 msgs/s  47.805 KiB/s 693.837 KiB copied ETA: Mon Oct 26 05:40:19 2020  480 s  13202/13601 msgs left
+msg INBOX/1147 {2102}         copied to INBOX/3561       27.53 msgs/s  47.888 KiB/s 695.890 KiB copied ETA: Mon Oct 26 05:40:18 2020  480 s  13201/13601 msgs left
+msg INBOX/1148 {1589}         copied to INBOX/3562       27.56 msgs/s  47.934 KiB/s 697.441 KiB copied ETA: Mon Oct 26 05:40:18 2020  479 s  13200/13601 msgs left
+msg INBOX/1149 {1231}         copied to INBOX/3563       27.59 msgs/s  47.951 KiB/s 698.644 KiB copied ETA: Mon Oct 26 05:40:17 2020  478 s  13199/13601 msgs left
+msg INBOX/1151 {2114}         copied to INBOX/3564       27.62 msgs/s  48.025 KiB/s 700.708 KiB copied ETA: Mon Oct 26 05:40:17 2020  478 s  13198/13601 msgs left
+msg INBOX/1154 {1276}         copied to INBOX/3565       27.65 msgs/s  48.050 KiB/s 701.954 KiB copied ETA: Mon Oct 26 05:40:16 2020  477 s  13197/13601 msgs left
+msg INBOX/1155 {1285}         copied to INBOX/3566       27.68 msgs/s  48.061 KiB/s 703.209 KiB copied ETA: Mon Oct 26 05:40:16 2020  477 s  13196/13601 msgs left
+msg INBOX/1156 {1714}         copied to INBOX/3567       27.71 msgs/s  48.102 KiB/s 704.883 KiB copied ETA: Mon Oct 26 05:40:15 2020  476 s  13195/13601 msgs left
+msg INBOX/1157 {2227}         copied to INBOX/3568       27.74 msgs/s  48.184 KiB/s 707.058 KiB copied ETA: Mon Oct 26 05:40:15 2020  476 s  13194/13601 msgs left
+msg INBOX/1158 {1778}         copied to INBOX/3569       27.76 msgs/s  48.219 KiB/s 708.794 KiB copied ETA: Mon Oct 26 05:40:14 2020  475 s  13193/13601 msgs left
+msg INBOX/1159 {1354}         copied to INBOX/3570       27.77 msgs/s  48.217 KiB/s 710.116 KiB copied ETA: Mon Oct 26 05:40:14 2020  475 s  13192/13601 msgs left
+msg INBOX/1161 {1143}         copied to INBOX/3571       27.80 msgs/s  48.228 KiB/s 711.232 KiB copied ETA: Mon Oct 26 05:40:13 2020  474 s  13191/13601 msgs left
+msg INBOX/1163 {1282}         copied to INBOX/3572       27.83 msgs/s  48.249 KiB/s 712.484 KiB copied ETA: Mon Oct 26 05:40:13 2020  474 s  13190/13601 msgs left
+msg INBOX/1164 {1208}         copied to INBOX/3573       27.86 msgs/s  48.268 KiB/s 713.664 KiB copied ETA: Mon Oct 26 05:40:12 2020  473 s  13189/13601 msgs left
+msg INBOX/1166 {1229}         copied to INBOX/3574       27.90 msgs/s  48.290 KiB/s 714.864 KiB copied ETA: Mon Oct 26 05:40:12 2020  473 s  13188/13601 msgs left
+msg INBOX/1167 {1263}         copied to INBOX/3575       27.93 msgs/s  48.307 KiB/s 716.098 KiB copied ETA: Mon Oct 26 05:40:11 2020  472 s  13187/13601 msgs left
+msg INBOX/1169 {1330}         copied to INBOX/3576       27.96 msgs/s  48.326 KiB/s 717.396 KiB copied ETA: Mon Oct 26 05:40:11 2020  472 s  13186/13601 msgs left
+msg INBOX/1170 {1279}         copied to INBOX/3577       27.99 msgs/s  48.346 KiB/s 718.646 KiB copied ETA: Mon Oct 26 05:40:10 2020  471 s  13185/13601 msgs left
+msg INBOX/1171 {1146}         copied to INBOX/3578       28.02 msgs/s  48.357 KiB/s 719.765 KiB copied ETA: Mon Oct 26 05:40:10 2020  471 s  13184/13601 msgs left
+msg INBOX/1172 {1189}         copied to INBOX/3579       28.05 msgs/s  48.372 KiB/s 720.926 KiB copied ETA: Mon Oct 26 05:40:09 2020  470 s  13183/13601 msgs left
+msg INBOX/1182 {1313}         copied to INBOX/3580       28.07 msgs/s  48.381 KiB/s 722.208 KiB copied ETA: Mon Oct 26 05:40:09 2020  470 s  13182/13601 msgs left
+msg INBOX/1183 {1342}         copied to INBOX/3581       28.09 msgs/s  48.389 KiB/s 723.519 KiB copied ETA: Mon Oct 26 05:40:08 2020  469 s  13181/13601 msgs left
+msg INBOX/1184 {1559}         copied to INBOX/3582       28.12 msgs/s  48.427 KiB/s 725.041 KiB copied ETA: Mon Oct 26 05:40:08 2020  469 s  13180/13601 msgs left
+msg INBOX/1185 {2227}         copied to INBOX/3583       28.15 msgs/s  48.506 KiB/s 727.216 KiB copied ETA: Mon Oct 26 05:40:07 2020  468 s  13179/13601 msgs left
+msg INBOX/1186 {1778}         copied to INBOX/3584       28.18 msgs/s  48.565 KiB/s 728.952 KiB copied ETA: Mon Oct 26 05:40:07 2020  468 s  13178/13601 msgs left
+msg INBOX/1187 {1488}         copied to INBOX/3585       28.21 msgs/s  48.595 KiB/s 730.405 KiB copied ETA: Mon Oct 26 05:40:06 2020  467 s  13177/13601 msgs left
+msg INBOX/1190 {2215}         copied to INBOX/3586       28.24 msgs/s  48.678 KiB/s 732.568 KiB copied ETA: Mon Oct 26 05:40:06 2020  467 s  13176/13601 msgs left
+msg INBOX/1191 {1771}         copied to INBOX/3587       28.27 msgs/s  48.732 KiB/s 734.298 KiB copied ETA: Mon Oct 26 05:40:05 2020  466 s  13175/13601 msgs left
+msg INBOX/1193 {1063}         copied to INBOX/3588       28.30 msgs/s  48.734 KiB/s 735.336 KiB copied ETA: Mon Oct 26 05:40:05 2020  466 s  13174/13601 msgs left
+msg INBOX/1194 {2630}         copied to INBOX/3589       28.33 msgs/s  48.841 KiB/s 737.904 KiB copied ETA: Mon Oct 26 05:40:04 2020  465 s  13173/13601 msgs left
+msg INBOX/1196 {1281}         copied to INBOX/3590       28.36 msgs/s  48.856 KiB/s 739.155 KiB copied ETA: Mon Oct 26 05:40:04 2020  465 s  13172/13601 msgs left
+msg INBOX/1198 {2390}         copied to INBOX/3591       28.39 msgs/s  48.947 KiB/s 741.489 KiB copied ETA: Mon Oct 26 05:40:03 2020  464 s  13171/13601 msgs left
+msg INBOX/1199 {1266}         copied to INBOX/3592       28.42 msgs/s  48.968 KiB/s 742.726 KiB copied ETA: Mon Oct 26 05:40:03 2020  463 s  13170/13601 msgs left
+msg INBOX/1200 {2223}         copied to INBOX/3593       28.45 msgs/s  49.049 KiB/s 744.896 KiB copied ETA: Mon Oct 26 05:40:02 2020  463 s  13169/13601 msgs left
+msg INBOX/1201 {2227}         copied to INBOX/3594       28.48 msgs/s  49.136 KiB/s 747.071 KiB copied ETA: Mon Oct 26 05:40:02 2020  462 s  13168/13601 msgs left
+msg INBOX/1202 {1778}         copied to INBOX/3595       28.50 msgs/s  49.179 KiB/s 748.808 KiB copied ETA: Mon Oct 26 05:40:01 2020  462 s  13167/13601 msgs left
+msg INBOX/1203 {1775}         copied to INBOX/3596       28.53 msgs/s  49.226 KiB/s 750.541 KiB copied ETA: Mon Oct 26 05:40:01 2020  461 s  13166/13601 msgs left
+msg INBOX/1206 {1270}         copied to INBOX/3597       28.56 msgs/s  49.241 KiB/s 751.781 KiB copied ETA: Mon Oct 26 05:40:01 2020  461 s  13165/13601 msgs left
+msg INBOX/1208 {1296}         copied to INBOX/3598       28.59 msgs/s  49.263 KiB/s 753.047 KiB copied ETA: Mon Oct 26 05:40:00 2020  460 s  13164/13601 msgs left
+msg INBOX/1209 {1304}         copied to INBOX/3599       28.61 msgs/s  49.279 KiB/s 754.320 KiB copied ETA: Mon Oct 26 05:40:00 2020  460 s  13163/13601 msgs left
+msg INBOX/1211 {1325}         copied to INBOX/3600       28.58 msgs/s  49.194 KiB/s 755.614 KiB copied ETA: Mon Oct 26 05:40:00 2020  461 s  13162/13601 msgs left
+msg INBOX/1212 {1670}         copied to INBOX/3601       28.61 msgs/s  49.244 KiB/s 757.245 KiB copied ETA: Mon Oct 26 05:40:00 2020  460 s  13161/13601 msgs left
+msg INBOX/1220 {1424}         copied to INBOX/3602       28.65 msgs/s  49.277 KiB/s 758.636 KiB copied ETA: Mon Oct 26 05:39:59 2020  459 s  13160/13601 msgs left
+msg INBOX/1221 {1571}         copied to INBOX/3603       28.67 msgs/s  49.300 KiB/s 760.170 KiB copied ETA: Mon Oct 26 05:39:59 2020  459 s  13159/13601 msgs left
+msg INBOX/1222 {2345}         copied to INBOX/3604       28.69 msgs/s  49.373 KiB/s 762.460 KiB copied ETA: Mon Oct 26 05:39:58 2020  459 s  13158/13601 msgs left
+msg INBOX/1224 {1774}         copied to INBOX/3605       28.71 msgs/s  49.422 KiB/s 764.192 KiB copied ETA: Mon Oct 26 05:39:58 2020  458 s  13157/13601 msgs left
+msg INBOX/1225 {1321}         copied to INBOX/3606       28.73 msgs/s  49.428 KiB/s 765.482 KiB copied ETA: Mon Oct 26 05:39:58 2020  458 s  13156/13601 msgs left
+msg INBOX/1226 {1358}         copied to INBOX/3607       28.76 msgs/s  49.449 KiB/s 766.809 KiB copied ETA: Mon Oct 26 05:39:57 2020  457 s  13155/13601 msgs left
+msg INBOX/1227 {1333}         copied to INBOX/3608       28.79 msgs/s  49.474 KiB/s 768.110 KiB copied ETA: Mon Oct 26 05:39:57 2020  457 s  13154/13601 msgs left
+msg INBOX/1228 {2254}         copied to INBOX/3609       28.82 msgs/s  49.554 KiB/s 770.312 KiB copied ETA: Mon Oct 26 05:39:56 2020  456 s  13153/13601 msgs left
+msg INBOX/1229 {1381}         copied to INBOX/3610       28.84 msgs/s  49.568 KiB/s 771.660 KiB copied ETA: Mon Oct 26 05:39:56 2020  456 s  13152/13601 msgs left
+msg INBOX/1230 {2728}         copied to INBOX/3611       28.87 msgs/s  49.674 KiB/s 774.324 KiB copied ETA: Mon Oct 26 05:39:55 2020  456 s  13151/13601 msgs left
+msg INBOX/1231 {1377}         copied to INBOX/3612       28.88 msgs/s  49.679 KiB/s 775.669 KiB copied ETA: Mon Oct 26 05:39:55 2020  455 s  13150/13601 msgs left
+msg INBOX/1233 {1392}         copied to INBOX/3613       28.91 msgs/s  49.703 KiB/s 777.028 KiB copied ETA: Mon Oct 26 05:39:55 2020  455 s  13149/13601 msgs left
+msg INBOX/1234 {2290}         copied to INBOX/3614       28.94 msgs/s  49.781 KiB/s 779.265 KiB copied ETA: Mon Oct 26 05:39:54 2020  454 s  13148/13601 msgs left
+msg INBOX/1235 {1388}         copied to INBOX/3615       28.96 msgs/s  49.799 KiB/s 780.620 KiB copied ETA: Mon Oct 26 05:39:54 2020  454 s  13147/13601 msgs left
+msg INBOX/1236 {1175}         copied to INBOX/3616       28.98 msgs/s  49.796 KiB/s 781.768 KiB copied ETA: Mon Oct 26 05:39:54 2020  454 s  13146/13601 msgs left
+msg INBOX/1237 {1342}         copied to INBOX/3617       29.01 msgs/s  49.818 KiB/s 783.078 KiB copied ETA: Mon Oct 26 05:39:53 2020  453 s  13145/13601 msgs left
+msg INBOX/1238 {1355}         copied to INBOX/3618       29.04 msgs/s  49.846 KiB/s 784.401 KiB copied ETA: Mon Oct 26 05:39:53 2020  453 s  13144/13601 msgs left
+msg INBOX/1240 {1281}         copied to INBOX/3619       29.07 msgs/s  49.868 KiB/s 785.652 KiB copied ETA: Mon Oct 26 05:39:52 2020  452 s  13143/13601 msgs left
+msg INBOX/1241 {1392}         copied to INBOX/3620       29.10 msgs/s  49.898 KiB/s 787.012 KiB copied ETA: Mon Oct 26 05:39:52 2020  452 s  13142/13601 msgs left
+msg INBOX/1243 {1390}         copied to INBOX/3621       29.13 msgs/s  49.925 KiB/s 788.369 KiB copied ETA: Mon Oct 26 05:39:51 2020  451 s  13141/13601 msgs left
+msg INBOX/1245 {1748}         copied to INBOX/3622       29.16 msgs/s  49.976 KiB/s 790.076 KiB copied ETA: Mon Oct 26 05:39:51 2020  451 s  13140/13601 msgs left
+msg INBOX/1246 {1389}         copied to INBOX/3623       29.19 msgs/s  49.997 KiB/s 791.433 KiB copied ETA: Mon Oct 26 05:39:50 2020  450 s  13139/13601 msgs left
+msg INBOX/1247 {1391}         copied to INBOX/3624       29.21 msgs/s  50.020 KiB/s 792.791 KiB copied ETA: Mon Oct 26 05:39:50 2020  450 s  13138/13601 msgs left
+msg INBOX/1248 {2715}         copied to INBOX/3625       29.23 msgs/s  50.115 KiB/s 795.442 KiB copied ETA: Mon Oct 26 05:39:50 2020  449 s  13137/13601 msgs left
+msg INBOX/1249 {2636}         copied to INBOX/3626       29.26 msgs/s  50.216 KiB/s 798.017 KiB copied ETA: Mon Oct 26 05:39:49 2020  449 s  13136/13601 msgs left
+msg INBOX/1250 {1215}         copied to INBOX/3627       29.28 msgs/s  50.223 KiB/s 799.203 KiB copied ETA: Mon Oct 26 05:39:49 2020  449 s  13135/13601 msgs left
+msg INBOX/1251 {1310}         copied to INBOX/3628       29.31 msgs/s  50.244 KiB/s 800.482 KiB copied ETA: Mon Oct 26 05:39:48 2020  448 s  13134/13601 msgs left
+msg INBOX/1252 {1294}         copied to INBOX/3629       29.34 msgs/s  50.262 KiB/s 801.746 KiB copied ETA: Mon Oct 26 05:39:48 2020  448 s  13133/13601 msgs left
+msg INBOX/1253 {2776}         copied to INBOX/3630       29.36 msgs/s  50.368 KiB/s 804.457 KiB copied ETA: Mon Oct 26 05:39:47 2020  447 s  13132/13601 msgs left
+msg INBOX/1255 {1325}         copied to INBOX/3631       29.39 msgs/s  50.388 KiB/s 805.751 KiB copied ETA: Mon Oct 26 05:39:47 2020  447 s  13131/13601 msgs left
+msg INBOX/1256 {1319}         copied to INBOX/3632       29.42 msgs/s  50.404 KiB/s 807.039 KiB copied ETA: Mon Oct 26 05:39:47 2020  446 s  13130/13601 msgs left
+msg INBOX/1257 {1388}         copied to INBOX/3633       29.44 msgs/s  50.428 KiB/s 808.395 KiB copied ETA: Mon Oct 26 05:39:46 2020  446 s  13129/13601 msgs left
+msg INBOX/1258 {1320}         copied to INBOX/3634       29.47 msgs/s  50.451 KiB/s 809.684 KiB copied ETA: Mon Oct 26 05:39:46 2020  445 s  13128/13601 msgs left
+msg INBOX/1259 {1418}         copied to INBOX/3635       29.50 msgs/s  50.472 KiB/s 811.068 KiB copied ETA: Mon Oct 26 05:39:45 2020  445 s  13127/13601 msgs left
+msg INBOX/1260 {1855}         copied to INBOX/3636       29.52 msgs/s  50.521 KiB/s 812.880 KiB copied ETA: Mon Oct 26 05:39:45 2020  445 s  13126/13601 msgs left
+msg INBOX/1261 {2734}         copied to INBOX/3637       29.54 msgs/s  50.610 KiB/s 815.550 KiB copied ETA: Mon Oct 26 05:39:45 2020  444 s  13125/13601 msgs left
+msg INBOX/1264 {1259}         copied to INBOX/3638       29.56 msgs/s  50.616 KiB/s 816.779 KiB copied ETA: Mon Oct 26 05:39:44 2020  444 s  13124/13601 msgs left
+msg INBOX/1266 {2954}         copied to INBOX/3639       29.58 msgs/s  50.731 KiB/s 819.664 KiB copied ETA: Mon Oct 26 05:39:44 2020  444 s  13123/13601 msgs left
+msg INBOX/1267 {1391}         copied to INBOX/3640       29.61 msgs/s  50.747 KiB/s 821.022 KiB copied ETA: Mon Oct 26 05:39:44 2020  443 s  13122/13601 msgs left
+msg INBOX/1268 {1276}         copied to INBOX/3641       29.62 msgs/s  50.741 KiB/s 822.269 KiB copied ETA: Mon Oct 26 05:39:43 2020  443 s  13121/13601 msgs left
+msg INBOX/1269 {1280}         copied to INBOX/3642       29.63 msgs/s  50.736 KiB/s 823.519 KiB copied ETA: Mon Oct 26 05:39:43 2020  443 s  13120/13601 msgs left
+msg INBOX/1270 {1346}         copied to INBOX/3643       29.65 msgs/s  50.748 KiB/s 824.833 KiB copied ETA: Mon Oct 26 05:39:43 2020  442 s  13119/13601 msgs left
+msg INBOX/1271 {1392}         copied to INBOX/3644       29.67 msgs/s  50.759 KiB/s 826.192 KiB copied ETA: Mon Oct 26 05:39:43 2020  442 s  13118/13601 msgs left
+msg INBOX/1273 {2219}         copied to INBOX/3645       29.69 msgs/s  50.821 KiB/s 828.359 KiB copied ETA: Mon Oct 26 05:39:42 2020  442 s  13117/13601 msgs left
+msg INBOX/1274 {1773}         copied to INBOX/3646       29.72 msgs/s  50.867 KiB/s 830.091 KiB copied ETA: Mon Oct 26 05:39:42 2020  441 s  13116/13601 msgs left
+msg INBOX/1275 {2721}         copied to INBOX/3647       29.74 msgs/s  50.965 KiB/s 832.748 KiB copied ETA: Mon Oct 26 05:39:42 2020  441 s  13115/13601 msgs left
+msg INBOX/1276 {1953}         copied to INBOX/3648       29.77 msgs/s  51.015 KiB/s 834.655 KiB copied ETA: Mon Oct 26 05:39:41 2020  441 s  13114/13601 msgs left
+msg INBOX/1279 {2231}         copied to INBOX/3649       29.78 msgs/s  51.074 KiB/s 836.834 KiB copied ETA: Mon Oct 26 05:39:41 2020  440 s  13113/13601 msgs left
+msg INBOX/1280 {1781}         copied to INBOX/3650       29.81 msgs/s  51.117 KiB/s 838.573 KiB copied ETA: Mon Oct 26 05:39:41 2020  440 s  13112/13601 msgs left
+msg INBOX/1281 {1389}         copied to INBOX/3651       29.83 msgs/s  51.130 KiB/s 839.930 KiB copied ETA: Mon Oct 26 05:39:40 2020  440 s  13111/13601 msgs left
+msg INBOX/1284 {1392}         copied to INBOX/3652       29.85 msgs/s  51.139 KiB/s 841.289 KiB copied ETA: Mon Oct 26 05:39:40 2020  439 s  13110/13601 msgs left
+msg INBOX/1288 {1332}         copied to INBOX/3653       29.87 msgs/s  51.147 KiB/s 842.590 KiB copied ETA: Mon Oct 26 05:39:40 2020  439 s  13109/13601 msgs left
+msg INBOX/1291 {1341}         copied to INBOX/3654       29.89 msgs/s  51.157 KiB/s 843.899 KiB copied ETA: Mon Oct 26 05:39:39 2020  439 s  13108/13601 msgs left
+msg INBOX/1292 {1568}         copied to INBOX/3655       29.91 msgs/s  51.183 KiB/s 845.431 KiB copied ETA: Mon Oct 26 05:39:39 2020  438 s  13107/13601 msgs left
+msg INBOX/1296 {1148}         copied to INBOX/3656       29.93 msgs/s  51.184 KiB/s 846.552 KiB copied ETA: Mon Oct 26 05:39:39 2020  438 s  13106/13601 msgs left
+msg INBOX/1297 {1729}         copied to INBOX/3657       29.95 msgs/s  51.225 KiB/s 848.240 KiB copied ETA: Mon Oct 26 05:39:38 2020  438 s  13105/13601 msgs left
+msg INBOX/1298 {1469}         copied to INBOX/3658       29.98 msgs/s  51.250 KiB/s 849.675 KiB copied ETA: Mon Oct 26 05:39:38 2020  437 s  13104/13601 msgs left
+msg INBOX/1301 {2223}         copied to INBOX/3659       30.00 msgs/s  51.319 KiB/s 851.846 KiB copied ETA: Mon Oct 26 05:39:38 2020  437 s  13103/13601 msgs left
+msg INBOX/1302 {1776}         copied to INBOX/3660       30.03 msgs/s  51.361 KiB/s 853.580 KiB copied ETA: Mon Oct 26 05:39:37 2020  436 s  13102/13601 msgs left
+msg INBOX/1303 {2008}         copied to INBOX/3661       30.05 msgs/s  51.410 KiB/s 855.541 KiB copied ETA: Mon Oct 26 05:39:37 2020  436 s  13101/13601 msgs left
+msg INBOX/1306 {1974}         copied to INBOX/3662       30.06 msgs/s  51.453 KiB/s 857.469 KiB copied ETA: Mon Oct 26 05:39:37 2020  436 s  13100/13601 msgs left
+msg INBOX/1307 {1409}         copied to INBOX/3663       30.07 msgs/s  51.450 KiB/s 858.845 KiB copied ETA: Mon Oct 26 05:39:37 2020  436 s  13099/13601 msgs left
+msg INBOX/1309 {1555}         copied to INBOX/3664       30.09 msgs/s  51.471 KiB/s 860.363 KiB copied ETA: Mon Oct 26 05:39:36 2020  435 s  13098/13601 msgs left
+msg INBOX/1310 {2223}         copied to INBOX/3665       30.11 msgs/s  51.523 KiB/s 862.534 KiB copied ETA: Mon Oct 26 05:39:36 2020  435 s  13097/13601 msgs left
+msg INBOX/1311 {1777}         copied to INBOX/3666       30.13 msgs/s  51.566 KiB/s 864.270 KiB copied ETA: Mon Oct 26 05:39:36 2020  435 s  13096/13601 msgs left
+msg INBOX/1313 {1344}         copied to INBOX/3667       30.16 msgs/s  51.592 KiB/s 865.582 KiB copied ETA: Mon Oct 26 05:39:35 2020  434 s  13095/13601 msgs left
+msg INBOX/1317 {2997}         copied to INBOX/3668       30.19 msgs/s  51.711 KiB/s 868.509 KiB copied ETA: Mon Oct 26 05:39:35 2020  434 s  13094/13601 msgs left
+msg INBOX/1326 {2619}         copied to INBOX/3669       30.21 msgs/s  51.807 KiB/s 871.066 KiB copied ETA: Mon Oct 26 05:39:34 2020  433 s  13093/13601 msgs left
+msg INBOX/1331 {1527}         copied to INBOX/3670       30.24 msgs/s  51.837 KiB/s 872.558 KiB copied ETA: Mon Oct 26 05:39:34 2020  433 s  13092/13601 msgs left
+msg INBOX/1336 {1984}         copied to INBOX/3671       30.26 msgs/s  51.887 KiB/s 874.495 KiB copied ETA: Mon Oct 26 05:39:34 2020  433 s  13091/13601 msgs left
+msg INBOX/1337 {2422}         copied to INBOX/3672       30.29 msgs/s  51.969 KiB/s 876.860 KiB copied ETA: Mon Oct 26 05:39:33 2020  432 s  13090/13601 msgs left
+msg INBOX/1343 {1148}         copied to INBOX/3673       30.30 msgs/s  51.954 KiB/s 877.981 KiB copied ETA: Mon Oct 26 05:39:33 2020  432 s  13089/13601 msgs left
+msg INBOX/1345 {1915}         copied to INBOX/3674       30.32 msgs/s  52.003 KiB/s 879.852 KiB copied ETA: Mon Oct 26 05:39:33 2020  432 s  13088/13601 msgs left
+msg INBOX/1346 {1555}         copied to INBOX/3675       30.34 msgs/s  52.030 KiB/s 881.370 KiB copied ETA: Mon Oct 26 05:39:32 2020  431 s  13087/13601 msgs left
+msg INBOX/1347 {1919}         copied to INBOX/3676       30.37 msgs/s  52.080 KiB/s 883.244 KiB copied ETA: Mon Oct 26 05:39:32 2020  431 s  13086/13601 msgs left
+msg INBOX/1348 {1555}         copied to INBOX/3677       30.39 msgs/s  52.104 KiB/s 884.763 KiB copied ETA: Mon Oct 26 05:39:32 2020  431 s  13085/13601 msgs left
+msg INBOX/1349 {2437}         copied to INBOX/3678       30.41 msgs/s  52.180 KiB/s 887.143 KiB copied ETA: Mon Oct 26 05:39:32 2020  430 s  13084/13601 msgs left
+msg INBOX/1350 {1165}         copied to INBOX/3679       30.43 msgs/s  52.188 KiB/s 888.280 KiB copied ETA: Mon Oct 26 05:39:31 2020  430 s  13083/13601 msgs left
+msg INBOX/1351 {1481}         copied to INBOX/3680       30.46 msgs/s  52.212 KiB/s 889.727 KiB copied ETA: Mon Oct 26 05:39:31 2020  430 s  13082/13601 msgs left
+msg INBOX/1356 {1436}         copied to INBOX/3681       30.48 msgs/s  52.233 KiB/s 891.129 KiB copied ETA: Mon Oct 26 05:39:30 2020  429 s  13081/13601 msgs left
+msg INBOX/1362 {2494}         copied to INBOX/3682       30.50 msgs/s  52.315 KiB/s 893.564 KiB copied ETA: Mon Oct 26 05:39:30 2020  429 s  13080/13601 msgs left
+msg INBOX/1366 {2219}         copied to INBOX/3683       30.53 msgs/s  52.383 KiB/s 895.731 KiB copied ETA: Mon Oct 26 05:39:30 2020  428 s  13079/13601 msgs left
+msg INBOX/1367 {1773}         copied to INBOX/3684       30.55 msgs/s  52.423 KiB/s 897.463 KiB copied ETA: Mon Oct 26 05:39:29 2020  428 s  13078/13601 msgs left
+msg INBOX/1369 {1700}         copied to INBOX/3685       30.57 msgs/s  52.458 KiB/s 899.123 KiB copied ETA: Mon Oct 26 05:39:29 2020  428 s  13077/13601 msgs left
+msg INBOX/1377 {1384}         copied to INBOX/3686       30.59 msgs/s  52.475 KiB/s 900.475 KiB copied ETA: Mon Oct 26 05:39:29 2020  427 s  13076/13601 msgs left
+msg INBOX/1380 {2219}         copied to INBOX/3687       30.62 msgs/s  52.537 KiB/s 902.642 KiB copied ETA: Mon Oct 26 05:39:28 2020  427 s  13075/13601 msgs left
+msg INBOX/1382 {2227}         copied to INBOX/3688       30.64 msgs/s  52.601 KiB/s 904.816 KiB copied ETA: Mon Oct 26 05:39:28 2020  427 s  13074/13601 msgs left
+msg INBOX/1383 {1772}         copied to INBOX/3689       30.66 msgs/s  52.644 KiB/s 906.547 KiB copied ETA: Mon Oct 26 05:39:28 2020  426 s  13073/13601 msgs left
+msg INBOX/1384 {1779}         copied to INBOX/3690       30.68 msgs/s  52.682 KiB/s 908.284 KiB copied ETA: Mon Oct 26 05:39:28 2020  426 s  13072/13601 msgs left
+msg INBOX/1388 {1629}         copied to INBOX/3691       30.70 msgs/s  52.711 KiB/s 909.875 KiB copied ETA: Mon Oct 26 05:39:27 2020  426 s  13071/13601 msgs left
+msg INBOX/1390 {1897}         copied to INBOX/3692       30.73 msgs/s  52.759 KiB/s 911.728 KiB copied ETA: Mon Oct 26 05:39:27 2020  425 s  13070/13601 msgs left
+msg INBOX/1391 {1560}         copied to INBOX/3693       30.75 msgs/s  52.788 KiB/s 913.251 KiB copied ETA: Mon Oct 26 05:39:27 2020  425 s  13069/13601 msgs left
+msg INBOX/1393 {2137}         copied to INBOX/3694       30.77 msgs/s  52.847 KiB/s 915.338 KiB copied ETA: Mon Oct 26 05:39:26 2020  425 s  13068/13601 msgs left
+msg INBOX/1394 {2573}         copied to INBOX/3695       30.79 msgs/s  52.921 KiB/s 917.851 KiB copied ETA: Mon Oct 26 05:39:26 2020  424 s  13067/13601 msgs left
+msg INBOX/1400 {1356}         copied to INBOX/3696       30.81 msgs/s  52.939 KiB/s 919.175 KiB copied ETA: Mon Oct 26 05:39:26 2020  424 s  13066/13601 msgs left
+msg INBOX/1401 {2554}         copied to INBOX/3697       30.84 msgs/s  53.026 KiB/s 921.669 KiB copied ETA: Mon Oct 26 05:39:25 2020  424 s  13065/13601 msgs left
+msg INBOX/1402 {1420}         copied to INBOX/3698       30.86 msgs/s  53.041 KiB/s 923.056 KiB copied ETA: Mon Oct 26 05:39:25 2020  423 s  13064/13601 msgs left
+msg INBOX/1404 {1513}         copied to INBOX/3699       30.86 msgs/s  53.029 KiB/s 924.533 KiB copied ETA: Mon Oct 26 05:39:25 2020  423 s  13063/13601 msgs left
+msg INBOX/1405 {2764}         copied to INBOX/3700       30.86 msgs/s  53.095 KiB/s 927.232 KiB copied ETA: Mon Oct 26 05:39:25 2020  423 s  13062/13601 msgs left
+msg INBOX/1406 {2764}         copied to INBOX/3701       30.88 msgs/s  53.171 KiB/s 929.932 KiB copied ETA: Mon Oct 26 05:39:25 2020  423 s  13061/13601 msgs left
+msg INBOX/1408 {1374}         copied to INBOX/3702       30.89 msgs/s  53.182 KiB/s 931.273 KiB copied ETA: Mon Oct 26 05:39:24 2020  423 s  13060/13601 msgs left
+msg INBOX/1409 {2223}         copied to INBOX/3703       30.90 msgs/s  53.220 KiB/s 933.444 KiB copied ETA: Mon Oct 26 05:39:24 2020  423 s  13059/13601 msgs left
+msg INBOX/1410 {1775}         copied to INBOX/3704       30.92 msgs/s  53.250 KiB/s 935.178 KiB copied ETA: Mon Oct 26 05:39:24 2020  422 s  13058/13601 msgs left
+msg INBOX/1411 {1555}         copied to INBOX/3705       30.91 msgs/s  53.219 KiB/s 936.696 KiB copied ETA: Mon Oct 26 05:39:24 2020  422 s  13057/13601 msgs left
+msg INBOX/1412 {1555}         copied to INBOX/3706       30.91 msgs/s  53.215 KiB/s 938.215 KiB copied ETA: Mon Oct 26 05:39:24 2020  422 s  13056/13601 msgs left
+msg INBOX/1413 {1971}         copied to INBOX/3707       30.93 msgs/s  53.249 KiB/s 940.140 KiB copied ETA: Mon Oct 26 05:39:24 2020  422 s  13055/13601 msgs left
+msg INBOX/1414 {1994}         copied to INBOX/3708       30.94 msgs/s  53.294 KiB/s 942.087 KiB copied ETA: Mon Oct 26 05:39:24 2020  422 s  13054/13601 msgs left
+msg INBOX/1420 {1282}         copied to INBOX/3709       30.96 msgs/s  53.295 KiB/s 943.339 KiB copied ETA: Mon Oct 26 05:39:24 2020  422 s  13053/13601 msgs left
+msg INBOX/1421 {2986}         copied to INBOX/3710       30.97 msgs/s  53.384 KiB/s 946.255 KiB copied ETA: Mon Oct 26 05:39:23 2020  421 s  13052/13601 msgs left
+msg INBOX/1422 {1516}         copied to INBOX/3711       30.99 msgs/s  53.402 KiB/s 947.735 KiB copied ETA: Mon Oct 26 05:39:23 2020  421 s  13051/13601 msgs left
+msg INBOX/1425 {1555}         copied to INBOX/3712       31.01 msgs/s  53.425 KiB/s 949.254 KiB copied ETA: Mon Oct 26 05:39:23 2020  421 s  13050/13601 msgs left
+msg INBOX/1427 {1555}         copied to INBOX/3713       31.02 msgs/s  53.431 KiB/s 950.772 KiB copied ETA: Mon Oct 26 05:39:23 2020  421 s  13049/13601 msgs left
+msg INBOX/1428 {2227}         copied to INBOX/3714       31.01 msgs/s  53.441 KiB/s 952.947 KiB copied ETA: Mon Oct 26 05:39:23 2020  421 s  13048/13601 msgs left
+msg INBOX/1432 {2765}         copied to INBOX/3715       31.03 msgs/s  53.520 KiB/s 955.647 KiB copied ETA: Mon Oct 26 05:39:23 2020  421 s  13047/13601 msgs left
+msg INBOX/1433 {2811}         copied to INBOX/3716       31.04 msgs/s  53.608 KiB/s 958.393 KiB copied ETA: Mon Oct 26 05:39:22 2020  420 s  13046/13601 msgs left
+msg INBOX/1434 {1780}         copied to INBOX/3717       31.06 msgs/s  53.636 KiB/s 960.131 KiB copied ETA: Mon Oct 26 05:39:22 2020  420 s  13045/13601 msgs left
+msg INBOX/1435 {2514}         copied to INBOX/3718       31.07 msgs/s  53.685 KiB/s 962.586 KiB copied ETA: Mon Oct 26 05:39:22 2020  420 s  13044/13601 msgs left
+msg INBOX/1436 {2932}         copied to INBOX/3719       31.07 msgs/s  53.765 KiB/s 965.449 KiB copied ETA: Mon Oct 26 05:39:22 2020  420 s  13043/13601 msgs left
+msg INBOX/1437 {1700}         copied to INBOX/3720       31.09 msgs/s  53.794 KiB/s 967.109 KiB copied ETA: Mon Oct 26 05:39:22 2020  419 s  13042/13601 msgs left
+msg INBOX/1438 {1776}         copied to INBOX/3721       31.11 msgs/s  53.827 KiB/s 968.844 KiB copied ETA: Mon Oct 26 05:39:21 2020  419 s  13041/13601 msgs left
+msg INBOX/1439 {1305}         copied to INBOX/3722       31.13 msgs/s  53.840 KiB/s 970.118 KiB copied ETA: Mon Oct 26 05:39:21 2020  419 s  13040/13601 msgs left
+msg INBOX/1440 {1882}         copied to INBOX/3723       31.16 msgs/s  53.882 KiB/s 971.956 KiB copied ETA: Mon Oct 26 05:39:21 2020  419 s  13039/13601 msgs left
+msg INBOX/1442 {1311}         copied to INBOX/3724       31.17 msgs/s  53.889 KiB/s 973.236 KiB copied ETA: Mon Oct 26 05:39:21 2020  418 s  13038/13601 msgs left
+msg INBOX/1444 {2859}         copied to INBOX/3725       31.19 msgs/s  53.983 KiB/s 976.028 KiB copied ETA: Mon Oct 26 05:39:20 2020  418 s  13037/13601 msgs left
+msg INBOX/1446 {1269}         copied to INBOX/3726       31.21 msgs/s  53.986 KiB/s 977.268 KiB copied ETA: Mon Oct 26 05:39:20 2020  418 s  13036/13601 msgs left
+msg INBOX/1448 {1459}         copied to INBOX/3727       31.22 msgs/s  53.986 KiB/s 978.692 KiB copied ETA: Mon Oct 26 05:39:20 2020  418 s  13035/13601 msgs left
+msg INBOX/1450 {1337}         copied to INBOX/3728       31.24 msgs/s  53.998 KiB/s 979.998 KiB copied ETA: Mon Oct 26 05:39:20 2020  417 s  13034/13601 msgs left
+msg INBOX/1451 {1334}         copied to INBOX/3729       31.26 msgs/s  54.004 KiB/s 981.301 KiB copied ETA: Mon Oct 26 05:39:19 2020  417 s  13033/13601 msgs left
+msg INBOX/1453 {1348}         copied to INBOX/3730       31.27 msgs/s  54.005 KiB/s 982.617 KiB copied ETA: Mon Oct 26 05:39:19 2020  417 s  13032/13601 msgs left
+msg INBOX/1456 {1305}         copied to INBOX/3731       31.29 msgs/s  54.010 KiB/s 983.892 KiB copied ETA: Mon Oct 26 05:39:19 2020  416 s  13031/13601 msgs left
+msg INBOX/1457 {1305}         copied to INBOX/3732       31.31 msgs/s  54.019 KiB/s 985.166 KiB copied ETA: Mon Oct 26 05:39:19 2020  416 s  13030/13601 msgs left
+msg INBOX/1458 {1308}         copied to INBOX/3733       31.32 msgs/s  54.020 KiB/s 986.443 KiB copied ETA: Mon Oct 26 05:39:18 2020  416 s  13029/13601 msgs left
+msg INBOX/1459 {1318}         copied to INBOX/3734       31.34 msgs/s  54.029 KiB/s 987.730 KiB copied ETA: Mon Oct 26 05:39:18 2020  416 s  13028/13601 msgs left
+msg INBOX/1460 {2231}         copied to INBOX/3735       31.36 msgs/s  54.083 KiB/s 989.909 KiB copied ETA: Mon Oct 26 05:39:18 2020  415 s  13027/13601 msgs left
+msg INBOX/1461 {1785}         copied to INBOX/3736       31.38 msgs/s  54.118 KiB/s 991.652 KiB copied ETA: Mon Oct 26 05:39:18 2020  415 s  13026/13601 msgs left
+msg INBOX/1462 {1764}         copied to INBOX/3737       31.40 msgs/s  54.144 KiB/s 993.375 KiB copied ETA: Mon Oct 26 05:39:17 2020  415 s  13025/13601 msgs left
+msg INBOX/1463 {1307}         copied to INBOX/3738       31.41 msgs/s  54.149 KiB/s 994.651 KiB copied ETA: Mon Oct 26 05:39:17 2020  415 s  13024/13601 msgs left
+msg INBOX/1464 {1867}         copied to INBOX/3739       31.43 msgs/s  54.183 KiB/s 996.475 KiB copied ETA: Mon Oct 26 05:39:17 2020  414 s  13023/13601 msgs left
+msg INBOX/1465 {1776}         copied to INBOX/3740       31.45 msgs/s  54.213 KiB/s 998.209 KiB copied ETA: Mon Oct 26 05:39:17 2020  414 s  13022/13601 msgs left
+msg INBOX/1466 {1319}         copied to INBOX/3741       31.45 msgs/s  54.198 KiB/s 999.497 KiB copied ETA: Mon Oct 26 05:39:17 2020  414 s  13021/13601 msgs left
+msg INBOX/1467 {1510}         copied to INBOX/3742       31.46 msgs/s  54.205 KiB/s 0.978 MiB copied ETA: Mon Oct 26 05:39:17 2020  414 s  13020/13601 msgs left
+msg INBOX/1468 {1323}         copied to INBOX/3743       31.48 msgs/s  54.204 KiB/s 0.979 MiB copied ETA: Mon Oct 26 05:39:16 2020  414 s  13019/13601 msgs left
+msg INBOX/1469 {1407}         copied to INBOX/3744       31.49 msgs/s  54.216 KiB/s 0.980 MiB copied ETA: Mon Oct 26 05:39:16 2020  413 s  13018/13601 msgs left
+msg INBOX/1470 {1308}         copied to INBOX/3745       31.51 msgs/s  54.220 KiB/s 0.981 MiB copied ETA: Mon Oct 26 05:39:16 2020  413 s  13017/13601 msgs left
+msg INBOX/1471 {1307}         copied to INBOX/3746       31.51 msgs/s  54.201 KiB/s 0.983 MiB copied ETA: Mon Oct 26 05:39:16 2020  413 s  13016/13601 msgs left
+msg INBOX/1472 {1303}         copied to INBOX/3747       31.52 msgs/s  54.192 KiB/s 0.984 MiB copied ETA: Mon Oct 26 05:39:16 2020  413 s  13015/13601 msgs left
+msg INBOX/1473 {1300}         copied to INBOX/3748       31.54 msgs/s  54.197 KiB/s 0.985 MiB copied ETA: Mon Oct 26 05:39:15 2020  413 s  13014/13601 msgs left
+msg INBOX/1474 {1245}         copied to INBOX/3749       31.55 msgs/s  54.192 KiB/s 0.986 MiB copied ETA: Mon Oct 26 05:39:15 2020  412 s  13013/13601 msgs left
+msg INBOX/1477 {1648}         copied to INBOX/3750       31.57 msgs/s  54.221 KiB/s 0.988 MiB copied ETA: Mon Oct 26 05:39:15 2020  412 s  13012/13601 msgs left
+msg INBOX/1480 {2346}         copied to INBOX/3751       31.57 msgs/s  54.257 KiB/s 0.990 MiB copied ETA: Mon Oct 26 05:39:15 2020  412 s  13011/13601 msgs left
+msg INBOX/1482 {1820}         copied to INBOX/3752       31.59 msgs/s  54.290 KiB/s 0.992 MiB copied ETA: Mon Oct 26 05:39:15 2020  412 s  13010/13601 msgs left
+msg INBOX/1483 {2197}         copied to INBOX/3753       31.61 msgs/s  54.344 KiB/s 0.994 MiB copied ETA: Mon Oct 26 05:39:15 2020  412 s  13009/13601 msgs left
+msg INBOX/1484 {1683}         copied to INBOX/3754       31.63 msgs/s  54.367 KiB/s 0.996 MiB copied ETA: Mon Oct 26 05:39:14 2020  411 s  13008/13601 msgs left
+msg INBOX/1486 {1343}         copied to INBOX/3755       31.64 msgs/s  54.372 KiB/s 0.997 MiB copied ETA: Mon Oct 26 05:39:14 2020  411 s  13007/13601 msgs left
+msg INBOX/1488 {1160}         copied to INBOX/3756       31.64 msgs/s  54.334 KiB/s 0.998 MiB copied ETA: Mon Oct 26 05:39:14 2020  411 s  13006/13601 msgs left
+msg INBOX/1490 {1081}         copied to INBOX/3757       31.66 msgs/s  54.330 KiB/s 0.999 MiB copied ETA: Mon Oct 26 05:39:14 2020  411 s  13005/13601 msgs left
+msg INBOX/1491 {1236}         copied to INBOX/3758       31.68 msgs/s  54.337 KiB/s 1.000 MiB copied ETA: Mon Oct 26 05:39:14 2020  411 s  13004/13601 msgs left
+msg INBOX/1492 {1219}         copied to INBOX/3759       31.70 msgs/s  54.350 KiB/s 1.001 MiB copied ETA: Mon Oct 26 05:39:13 2020  410 s  13003/13601 msgs left
+msg INBOX/1494 {2622}         copied to INBOX/3760       31.72 msgs/s  54.435 KiB/s 1.004 MiB copied ETA: Mon Oct 26 05:39:13 2020  410 s  13002/13601 msgs left
+msg INBOX/1496 {1154}         copied to INBOX/3761       31.74 msgs/s  54.433 KiB/s 1.005 MiB copied ETA: Mon Oct 26 05:39:13 2020  410 s  13001/13601 msgs left
+msg INBOX/1500 {1379}         copied to INBOX/3762       31.76 msgs/s  54.443 KiB/s 1.006 MiB copied ETA: Mon Oct 26 05:39:13 2020  409 s  13000/13601 msgs left
+msg INBOX/1501 {1375}         copied to INBOX/3763       31.77 msgs/s  54.451 KiB/s 1.008 MiB copied ETA: Mon Oct 26 05:39:12 2020  409 s  12999/13601 msgs left
+msg INBOX/1505 {1209}         copied to INBOX/3764       31.79 msgs/s  54.451 KiB/s 1.009 MiB copied ETA: Mon Oct 26 05:39:12 2020  409 s  12998/13601 msgs left
+msg INBOX/1506 {1246}         copied to INBOX/3765       31.81 msgs/s  54.453 KiB/s 1.010 MiB copied ETA: Mon Oct 26 05:39:12 2020  409 s  12997/13601 msgs left
+msg INBOX/1509 {2881}         copied to INBOX/3766       31.82 msgs/s  54.542 KiB/s 1.013 MiB copied ETA: Mon Oct 26 05:39:12 2020  408 s  12996/13601 msgs left
+msg INBOX/1510 {2845}         copied to INBOX/3767       31.84 msgs/s  54.631 KiB/s 1.015 MiB copied ETA: Mon Oct 26 05:39:11 2020  408 s  12995/13601 msgs left
+msg INBOX/1512 {1730}         copied to INBOX/3768       31.86 msgs/s  54.663 KiB/s 1.017 MiB copied ETA: Mon Oct 26 05:39:11 2020  408 s  12994/13601 msgs left
+msg INBOX/1513 {1505}         copied to INBOX/3769       31.88 msgs/s  54.683 KiB/s 1.018 MiB copied ETA: Mon Oct 26 05:39:11 2020  408 s  12993/13601 msgs left
+msg INBOX/1514 {2544}         copied to INBOX/3770       31.90 msgs/s  54.753 KiB/s 1.021 MiB copied ETA: Mon Oct 26 05:39:11 2020  407 s  12992/13601 msgs left
+msg INBOX/1516 {2620}         copied to INBOX/3771       31.92 msgs/s  54.832 KiB/s 1.023 MiB copied ETA: Mon Oct 26 05:39:10 2020  407 s  12991/13601 msgs left
+msg INBOX/1517 {2219}         copied to INBOX/3772       31.94 msgs/s  54.886 KiB/s 1.025 MiB copied ETA: Mon Oct 26 05:39:10 2020  407 s  12990/13601 msgs left
+msg INBOX/1518 {2110}         copied to INBOX/3773       31.96 msgs/s  54.936 KiB/s 1.027 MiB copied ETA: Mon Oct 26 05:39:10 2020  406 s  12989/13601 msgs left
+msg INBOX/1520 {1423}         copied to INBOX/3774       31.98 msgs/s  54.953 KiB/s 1.029 MiB copied ETA: Mon Oct 26 05:39:10 2020  406 s  12988/13601 msgs left
+msg INBOX/1522 {2037}         copied to INBOX/3775       31.99 msgs/s  54.990 KiB/s 1.031 MiB copied ETA: Mon Oct 26 05:39:09 2020  406 s  12987/13601 msgs left
+msg INBOX/1526 {2991}         copied to INBOX/3776       32.01 msgs/s  55.081 KiB/s 1.034 MiB copied ETA: Mon Oct 26 05:39:09 2020  406 s  12986/13601 msgs left
+msg INBOX/1528 {1773}         copied to INBOX/3777       32.02 msgs/s  55.112 KiB/s 1.035 MiB copied ETA: Mon Oct 26 05:39:09 2020  405 s  12985/13601 msgs left
+msg INBOX/1533 {1384}         copied to INBOX/3778       32.04 msgs/s  55.121 KiB/s 1.037 MiB copied ETA: Mon Oct 26 05:39:09 2020  405 s  12984/13601 msgs left
+msg INBOX/1534 {2980}         copied to INBOX/3779       32.06 msgs/s  55.210 KiB/s 1.039 MiB copied ETA: Mon Oct 26 05:39:09 2020  405 s  12983/13601 msgs left
+msg INBOX/1535 {1971}         copied to INBOX/3780       32.05 msgs/s  55.213 KiB/s 1.041 MiB copied ETA: Mon Oct 26 05:39:09 2020  405 s  12982/13601 msgs left
+msg INBOX/1538 {2208}         copied to INBOX/3781       32.06 msgs/s  55.254 KiB/s 1.043 MiB copied ETA: Mon Oct 26 05:39:08 2020  405 s  12981/13601 msgs left
+msg INBOX/1539 {2208}         copied to INBOX/3782       32.08 msgs/s  55.303 KiB/s 1.046 MiB copied ETA: Mon Oct 26 05:39:08 2020  405 s  12980/13601 msgs left
+msg INBOX/1551 {1421}         copied to INBOX/3783       32.09 msgs/s  55.314 KiB/s 1.047 MiB copied ETA: Mon Oct 26 05:39:08 2020  404 s  12979/13601 msgs left
+msg INBOX/1552 {1585}         copied to INBOX/3784       32.11 msgs/s  55.331 KiB/s 1.048 MiB copied ETA: Mon Oct 26 05:39:08 2020  404 s  12978/13601 msgs left
+msg INBOX/1553 {1863}         copied to INBOX/3785       32.13 msgs/s  55.365 KiB/s 1.050 MiB copied ETA: Mon Oct 26 05:39:08 2020  404 s  12977/13601 msgs left
+msg INBOX/1554 {2596}         copied to INBOX/3786       32.14 msgs/s  55.435 KiB/s 1.053 MiB copied ETA: Mon Oct 26 05:39:07 2020  404 s  12976/13601 msgs left
+msg INBOX/1555 {1773}         copied to INBOX/3787       32.16 msgs/s  55.462 KiB/s 1.054 MiB copied ETA: Mon Oct 26 05:39:07 2020  403 s  12975/13601 msgs left
+msg INBOX/1556 {1775}         copied to INBOX/3788       32.17 msgs/s  55.489 KiB/s 1.056 MiB copied ETA: Mon Oct 26 05:39:07 2020  403 s  12974/13601 msgs left
+msg INBOX/1557 {1767}         copied to INBOX/3789       32.19 msgs/s  55.515 KiB/s 1.058 MiB copied ETA: Mon Oct 26 05:39:07 2020  403 s  12973/13601 msgs left
+msg INBOX/1558 {1771}         copied to INBOX/3790       32.20 msgs/s  55.543 KiB/s 1.059 MiB copied ETA: Mon Oct 26 05:39:07 2020  403 s  12972/13601 msgs left
+msg INBOX/1559 {2435}         copied to INBOX/3791       32.22 msgs/s  55.602 KiB/s 1.062 MiB copied ETA: Mon Oct 26 05:39:06 2020  403 s  12971/13601 msgs left
+msg INBOX/1562 {1555}         copied to INBOX/3792       32.23 msgs/s  55.614 KiB/s 1.063 MiB copied ETA: Mon Oct 26 05:39:06 2020  402 s  12970/13601 msgs left
+msg INBOX/1565 {1967}         copied to INBOX/3793       32.24 msgs/s  55.646 KiB/s 1.065 MiB copied ETA: Mon Oct 26 05:39:06 2020  402 s  12969/13601 msgs left
+msg INBOX/1566 {1555}         copied to INBOX/3794       32.25 msgs/s  55.644 KiB/s 1.067 MiB copied ETA: Mon Oct 26 05:39:06 2020  402 s  12968/13601 msgs left
+msg INBOX/1567 {1915}         copied to INBOX/3795       32.27 msgs/s  55.684 KiB/s 1.068 MiB copied ETA: Mon Oct 26 05:39:06 2020  402 s  12967/13601 msgs left
+msg INBOX/1581 {2219}         copied to INBOX/3796       32.29 msgs/s  55.737 KiB/s 1.071 MiB copied ETA: Mon Oct 26 05:39:05 2020  402 s  12966/13601 msgs left
+msg INBOX/1582 {1772}         copied to INBOX/3797       32.30 msgs/s  55.762 KiB/s 1.072 MiB copied ETA: Mon Oct 26 05:39:05 2020  401 s  12965/13601 msgs left
+msg INBOX/1583 {2223}         copied to INBOX/3798       32.32 msgs/s  55.812 KiB/s 1.074 MiB copied ETA: Mon Oct 26 05:39:05 2020  401 s  12964/13601 msgs left
+msg INBOX/1584 {1776}         copied to INBOX/3799       32.34 msgs/s  55.844 KiB/s 1.076 MiB copied ETA: Mon Oct 26 05:39:05 2020  401 s  12963/13601 msgs left
+msg INBOX/1587 {1991}         copied to INBOX/3800       32.35 msgs/s  55.873 KiB/s 1.078 MiB copied ETA: Mon Oct 26 05:39:05 2020  401 s  12962/13601 msgs left
+msg INBOX/1590 {2461}         copied to INBOX/3801       32.36 msgs/s  55.939 KiB/s 1.080 MiB copied ETA: Mon Oct 26 05:39:04 2020  400 s  12961/13601 msgs left
+msg INBOX/1591 {1427}         copied to INBOX/3802       32.38 msgs/s  55.954 KiB/s 1.082 MiB copied ETA: Mon Oct 26 05:39:04 2020  400 s  12960/13601 msgs left
+msg INBOX/1592 {2062}         copied to INBOX/3803       32.40 msgs/s  55.996 KiB/s 1.084 MiB copied ETA: Mon Oct 26 05:39:04 2020  400 s  12959/13601 msgs left
+msg INBOX/1593 {2745}         copied to INBOX/3804       32.41 msgs/s  56.069 KiB/s 1.086 MiB copied ETA: Mon Oct 26 05:39:04 2020  400 s  12958/13601 msgs left
+msg INBOX/1594 {1555}         copied to INBOX/3805       32.42 msgs/s  56.067 KiB/s 1.088 MiB copied ETA: Mon Oct 26 05:39:04 2020  400 s  12957/13601 msgs left
+msg INBOX/1597 {1776}         copied to INBOX/3806       32.43 msgs/s  56.092 KiB/s 1.089 MiB copied ETA: Mon Oct 26 05:39:04 2020  399 s  12956/13601 msgs left
+msg INBOX/1600 {1776}         copied to INBOX/3807       32.45 msgs/s  56.123 KiB/s 1.091 MiB copied ETA: Mon Oct 26 05:39:03 2020  399 s  12955/13601 msgs left
+msg INBOX/1621 {1697}         copied to INBOX/3808       32.47 msgs/s  56.151 KiB/s 1.093 MiB copied ETA: Mon Oct 26 05:39:03 2020  399 s  12954/13601 msgs left
+msg INBOX/1625 {2066}         copied to INBOX/3809       32.49 msgs/s  56.201 KiB/s 1.095 MiB copied ETA: Mon Oct 26 05:39:03 2020  399 s  12953/13601 msgs left
+msg INBOX/1632 {2223}         copied to INBOX/3810       32.51 msgs/s  56.254 KiB/s 1.097 MiB copied ETA: Mon Oct 26 05:39:03 2020  398 s  12952/13601 msgs left
+msg INBOX/1633 {2716}         copied to INBOX/3811       32.53 msgs/s  56.333 KiB/s 1.099 MiB copied ETA: Mon Oct 26 05:39:02 2020  398 s  12951/13601 msgs left
+msg INBOX/1636 {2110}         copied to INBOX/3812       32.54 msgs/s  56.380 KiB/s 1.101 MiB copied ETA: Mon Oct 26 05:39:02 2020  398 s  12950/13601 msgs left
+msg INBOX/1639 {2817}         copied to INBOX/3813       32.56 msgs/s  56.455 KiB/s 1.104 MiB copied ETA: Mon Oct 26 05:39:02 2020  398 s  12949/13601 msgs left
+msg INBOX/1642 {1776}         copied to INBOX/3814       32.57 msgs/s  56.479 KiB/s 1.106 MiB copied ETA: Mon Oct 26 05:39:02 2020  398 s  12948/13601 msgs left
+msg INBOX/1645 {2911}         copied to INBOX/3815       32.58 msgs/s  56.554 KiB/s 1.109 MiB copied ETA: Mon Oct 26 05:39:02 2020  397 s  12947/13601 msgs left
+msg INBOX/1650 {2232}         copied to INBOX/3816       32.60 msgs/s  56.605 KiB/s 1.111 MiB copied ETA: Mon Oct 26 05:39:01 2020  397 s  12946/13601 msgs left
+msg INBOX/1651 {1905}         copied to INBOX/3817       32.61 msgs/s  56.622 KiB/s 1.113 MiB copied ETA: Mon Oct 26 05:39:01 2020  397 s  12945/13601 msgs left
+msg INBOX/1655 {2206}         copied to INBOX/3818       32.62 msgs/s  56.666 KiB/s 1.115 MiB copied ETA: Mon Oct 26 05:39:01 2020  397 s  12944/13601 msgs left
+msg INBOX/1656 {2146}         copied to INBOX/3819       32.62 msgs/s  56.689 KiB/s 1.117 MiB copied ETA: Mon Oct 26 05:39:01 2020  397 s  12943/13601 msgs left
+msg INBOX/1657 {2219}         copied to INBOX/3820       32.63 msgs/s  56.730 KiB/s 1.119 MiB copied ETA: Mon Oct 26 05:39:01 2020  397 s  12942/13601 msgs left
+msg INBOX/1658 {2300}         copied to INBOX/3821       32.64 msgs/s  56.776 KiB/s 1.121 MiB copied ETA: Mon Oct 26 05:39:01 2020  396 s  12941/13601 msgs left
+msg INBOX/1659 {2739}         copied to INBOX/3822       32.66 msgs/s  56.850 KiB/s 1.124 MiB copied ETA: Mon Oct 26 05:39:01 2020  396 s  12940/13601 msgs left
+msg INBOX/1663 {1615}         copied to INBOX/3823       32.67 msgs/s  56.860 KiB/s 1.125 MiB copied ETA: Mon Oct 26 05:39:01 2020  396 s  12939/13601 msgs left
+msg INBOX/1664 {1555}         copied to INBOX/3824       32.68 msgs/s  56.872 KiB/s 1.127 MiB copied ETA: Mon Oct 26 05:39:00 2020  396 s  12938/13601 msgs left
+msg INBOX/1665 {1928}         copied to INBOX/3825       32.70 msgs/s  56.903 KiB/s 1.128 MiB copied ETA: Mon Oct 26 05:39:00 2020  396 s  12937/13601 msgs left
+msg INBOX/1667 {1975}         copied to INBOX/3826       32.71 msgs/s  56.931 KiB/s 1.130 MiB copied ETA: Mon Oct 26 05:39:00 2020  396 s  12936/13601 msgs left
+msg INBOX/1671 {2481}         copied to INBOX/3827       32.72 msgs/s  56.986 KiB/s 1.133 MiB copied ETA: Mon Oct 26 05:39:00 2020  395 s  12935/13601 msgs left
+msg INBOX/1672 {1822}         copied to INBOX/3828       32.73 msgs/s  57.010 KiB/s 1.134 MiB copied ETA: Mon Oct 26 05:39:00 2020  395 s  12934/13601 msgs left
+msg INBOX/1673 {1709}         copied to INBOX/3829       32.75 msgs/s  57.027 KiB/s 1.136 MiB copied ETA: Mon Oct 26 05:39:00 2020  395 s  12933/13601 msgs left
+msg INBOX/1674 {1896}         copied to INBOX/3830       32.76 msgs/s  57.053 KiB/s 1.138 MiB copied ETA: Mon Oct 26 05:38:59 2020  395 s  12932/13601 msgs left
+msg INBOX/1675 {2162}         copied to INBOX/3831       32.77 msgs/s  57.097 KiB/s 1.140 MiB copied ETA: Mon Oct 26 05:38:59 2020  395 s  12931/13601 msgs left
+msg INBOX/1676 {1774}         copied to INBOX/3832       32.79 msgs/s  57.122 KiB/s 1.142 MiB copied ETA: Mon Oct 26 05:38:59 2020  394 s  12930/13601 msgs left
+msg INBOX/1677 {1773}         copied to INBOX/3833       32.80 msgs/s  57.144 KiB/s 1.143 MiB copied ETA: Mon Oct 26 05:38:59 2020  394 s  12929/13601 msgs left
+msg INBOX/1678 {2219}         copied to INBOX/3834       32.81 msgs/s  57.189 KiB/s 1.145 MiB copied ETA: Mon Oct 26 05:38:59 2020  394 s  12928/13601 msgs left
+msg INBOX/1679 {1896}         copied to INBOX/3835       32.83 msgs/s  57.220 KiB/s 1.147 MiB copied ETA: Mon Oct 26 05:38:59 2020  394 s  12927/13601 msgs left
+msg INBOX/1680 {2061}         copied to INBOX/3836       32.84 msgs/s  57.254 KiB/s 1.149 MiB copied ETA: Mon Oct 26 05:38:58 2020  394 s  12926/13601 msgs left
+msg INBOX/1681 {1380}         copied to INBOX/3837       32.85 msgs/s  57.259 KiB/s 1.151 MiB copied ETA: Mon Oct 26 05:38:58 2020  393 s  12925/13601 msgs left
+msg INBOX/1682 {1380}         copied to INBOX/3838       32.85 msgs/s  57.225 KiB/s 1.152 MiB copied ETA: Mon Oct 26 05:38:58 2020  393 s  12924/13601 msgs left
+msg INBOX/1684 {1896}         copied to INBOX/3839       32.84 msgs/s  57.225 KiB/s 1.154 MiB copied ETA: Mon Oct 26 05:38:58 2020  393 s  12923/13601 msgs left
+msg INBOX/1685 {1896}         copied to INBOX/3840       32.85 msgs/s  57.249 KiB/s 1.155 MiB copied ETA: Mon Oct 26 05:38:58 2020  393 s  12922/13601 msgs left
+msg INBOX/1686 {1896}         copied to INBOX/3841       32.87 msgs/s  57.278 KiB/s 1.157 MiB copied ETA: Mon Oct 26 05:38:58 2020  393 s  12921/13601 msgs left
+msg INBOX/1688 {2019}         copied to INBOX/3842       32.88 msgs/s  57.315 KiB/s 1.159 MiB copied ETA: Mon Oct 26 05:38:58 2020  393 s  12920/13601 msgs left
+msg INBOX/1689 {1380}         copied to INBOX/3843       32.90 msgs/s  57.318 KiB/s 1.160 MiB copied ETA: Mon Oct 26 05:38:58 2020  393 s  12919/13601 msgs left
+msg INBOX/1691 {1555}         copied to INBOX/3844       32.91 msgs/s  57.329 KiB/s 1.162 MiB copied ETA: Mon Oct 26 05:38:58 2020  393 s  12918/13601 msgs left
+msg INBOX/1692 {2219}         copied to INBOX/3845       32.92 msgs/s  57.377 KiB/s 1.164 MiB copied ETA: Mon Oct 26 05:38:57 2020  392 s  12917/13601 msgs left
+msg INBOX/1693 {1772}         copied to INBOX/3846       32.94 msgs/s  57.407 KiB/s 1.166 MiB copied ETA: Mon Oct 26 05:38:57 2020  392 s  12916/13601 msgs left
+msg INBOX/1706 {1951}         copied to INBOX/3847       32.96 msgs/s  57.441 KiB/s 1.168 MiB copied ETA: Mon Oct 26 05:38:57 2020  392 s  12915/13601 msgs left
+msg INBOX/1710 {2513}         copied to INBOX/3848       32.97 msgs/s  57.501 KiB/s 1.170 MiB copied ETA: Mon Oct 26 05:38:57 2020  392 s  12914/13601 msgs left
+msg INBOX/1712 {1804}         copied to INBOX/3849       32.99 msgs/s  57.529 KiB/s 1.172 MiB copied ETA: Mon Oct 26 05:38:57 2020  391 s  12913/13601 msgs left
+msg INBOX/1713 {2488}         copied to INBOX/3850       33.00 msgs/s  57.587 KiB/s 1.174 MiB copied ETA: Mon Oct 26 05:38:56 2020  391 s  12912/13601 msgs left
+msg INBOX/1715 {2945}         copied to INBOX/3851       33.01 msgs/s  57.661 KiB/s 1.177 MiB copied ETA: Mon Oct 26 05:38:56 2020  391 s  12911/13601 msgs left
+msg INBOX/1730 {1606}         copied to INBOX/3852       33.03 msgs/s  57.678 KiB/s 1.178 MiB copied ETA: Mon Oct 26 05:38:56 2020  391 s  12910/13601 msgs left
+msg INBOX/1731 {2350}         copied to INBOX/3853       33.04 msgs/s  57.721 KiB/s 1.181 MiB copied ETA: Mon Oct 26 05:38:56 2020  391 s  12909/13601 msgs left
+msg INBOX/1732 {1640}         copied to INBOX/3854       33.05 msgs/s  57.738 KiB/s 1.182 MiB copied ETA: Mon Oct 26 05:38:56 2020  391 s  12908/13601 msgs left
+msg INBOX/1733 {2318}         copied to INBOX/3855       33.06 msgs/s  57.786 KiB/s 1.184 MiB copied ETA: Mon Oct 26 05:38:56 2020  390 s  12907/13601 msgs left
+msg INBOX/1735 {2695}         copied to INBOX/3856       33.07 msgs/s  57.846 KiB/s 1.187 MiB copied ETA: Mon Oct 26 05:38:55 2020  390 s  12906/13601 msgs left
+msg INBOX/1736 {2086}         copied to INBOX/3857       33.09 msgs/s  57.880 KiB/s 1.189 MiB copied ETA: Mon Oct 26 05:38:55 2020  390 s  12905/13601 msgs left
+msg INBOX/1737 {1760}         copied to INBOX/3858       33.09 msgs/s  57.893 KiB/s 1.191 MiB copied ETA: Mon Oct 26 05:38:55 2020  390 s  12904/13601 msgs left
+msg INBOX/1740 {2219}         copied to INBOX/3859       33.10 msgs/s  57.923 KiB/s 1.193 MiB copied ETA: Mon Oct 26 05:38:55 2020  390 s  12903/13601 msgs left
+msg INBOX/1741 {1773}         copied to INBOX/3860       33.11 msgs/s  57.938 KiB/s 1.195 MiB copied ETA: Mon Oct 26 05:38:55 2020  390 s  12902/13601 msgs left
+msg INBOX/1745 {2742}         copied to INBOX/3861       33.12 msgs/s  57.995 KiB/s 1.197 MiB copied ETA: Mon Oct 26 05:38:55 2020  390 s  12901/13601 msgs left
+msg INBOX/1746 {1634}         copied to INBOX/3862       33.13 msgs/s  58.007 KiB/s 1.199 MiB copied ETA: Mon Oct 26 05:38:55 2020  389 s  12900/13601 msgs left
+msg INBOX/1750 {2271}         copied to INBOX/3863       33.14 msgs/s  58.047 KiB/s 1.201 MiB copied ETA: Mon Oct 26 05:38:55 2020  389 s  12899/13601 msgs left
+msg INBOX/1752 {2231}         copied to INBOX/3864       33.15 msgs/s  58.082 KiB/s 1.203 MiB copied ETA: Mon Oct 26 05:38:55 2020  389 s  12898/13601 msgs left
+msg INBOX/1760 {2140}         copied to INBOX/3865       33.11 msgs/s  58.043 KiB/s 1.205 MiB copied ETA: Mon Oct 26 05:38:55 2020  389 s  12897/13601 msgs left
+msg INBOX/1761 {2240}         copied to INBOX/3866       33.13 msgs/s  58.082 KiB/s 1.207 MiB copied ETA: Mon Oct 26 05:38:55 2020  389 s  12896/13601 msgs left
+msg INBOX/1766 {2505}         copied to INBOX/3867       33.13 msgs/s  58.129 KiB/s 1.210 MiB copied ETA: Mon Oct 26 05:38:55 2020  389 s  12895/13601 msgs left
+msg INBOX/1770 {1768}         copied to INBOX/3868       33.15 msgs/s  58.153 KiB/s 1.211 MiB copied ETA: Mon Oct 26 05:38:55 2020  389 s  12894/13601 msgs left
+msg INBOX/1771 {1781}         copied to INBOX/3869       33.16 msgs/s  58.179 KiB/s 1.213 MiB copied ETA: Mon Oct 26 05:38:54 2020  389 s  12893/13601 msgs left
+msg INBOX/1779 {2203}         copied to INBOX/3870       33.18 msgs/s  58.222 KiB/s 1.215 MiB copied ETA: Mon Oct 26 05:38:54 2020  389 s  12892/13601 msgs left
+msg INBOX/1783 {2152}         copied to INBOX/3871       33.19 msgs/s  58.262 KiB/s 1.217 MiB copied ETA: Mon Oct 26 05:38:54 2020  388 s  12891/13601 msgs left
+msg INBOX/1784 {2282}         copied to INBOX/3872       33.20 msgs/s  58.303 KiB/s 1.219 MiB copied ETA: Mon Oct 26 05:38:54 2020  388 s  12890/13601 msgs left
+msg INBOX/1785 {2234}         copied to INBOX/3873       33.21 msgs/s  58.342 KiB/s 1.221 MiB copied ETA: Mon Oct 26 05:38:54 2020  388 s  12889/13601 msgs left
+msg INBOX/1791 {2174}         copied to INBOX/3874       33.22 msgs/s  58.380 KiB/s 1.223 MiB copied ETA: Mon Oct 26 05:38:54 2020  388 s  12888/13601 msgs left
+msg INBOX/1792 {1567}         copied to INBOX/3875       33.24 msgs/s  58.391 KiB/s 1.225 MiB copied ETA: Mon Oct 26 05:38:53 2020  388 s  12887/13601 msgs left
+msg INBOX/1793 {1788}         copied to INBOX/3876       33.25 msgs/s  58.417 KiB/s 1.227 MiB copied ETA: Mon Oct 26 05:38:53 2020  388 s  12886/13601 msgs left
+msg INBOX/1794 {1775}         copied to INBOX/3877       33.26 msgs/s  58.438 KiB/s 1.228 MiB copied ETA: Mon Oct 26 05:38:53 2020  387 s  12885/13601 msgs left
+msg INBOX/1808 {2695}         copied to INBOX/3878       33.28 msgs/s  58.503 KiB/s 1.231 MiB copied ETA: Mon Oct 26 05:38:53 2020  387 s  12884/13601 msgs left
+msg INBOX/1813 {1654}         copied to INBOX/3879       33.27 msgs/s  58.481 KiB/s 1.233 MiB copied ETA: Mon Oct 26 05:38:53 2020  387 s  12883/13601 msgs left
+msg INBOX/1816 {2769}         copied to INBOX/3880       33.28 msgs/s  58.543 KiB/s 1.235 MiB copied ETA: Mon Oct 26 05:38:53 2020  387 s  12882/13601 msgs left
+msg INBOX/1818 {1525}         copied to INBOX/3881       33.29 msgs/s  58.557 KiB/s 1.237 MiB copied ETA: Mon Oct 26 05:38:53 2020  387 s  12881/13601 msgs left
+msg INBOX/1820 {2001}         copied to INBOX/3882       33.31 msgs/s  58.591 KiB/s 1.239 MiB copied ETA: Mon Oct 26 05:38:53 2020  387 s  12880/13601 msgs left
+msg INBOX/1821 {1542}         copied to INBOX/3883       33.32 msgs/s  58.604 KiB/s 1.240 MiB copied ETA: Mon Oct 26 05:38:52 2020  387 s  12879/13601 msgs left
+msg INBOX/1822 {1578}         copied to INBOX/3884       33.34 msgs/s  58.618 KiB/s 1.242 MiB copied ETA: Mon Oct 26 05:38:52 2020  386 s  12878/13601 msgs left
+msg INBOX/1824 {2223}         copied to INBOX/3885       33.35 msgs/s  58.659 KiB/s 1.244 MiB copied ETA: Mon Oct 26 05:38:52 2020  386 s  12877/13601 msgs left
+msg INBOX/1825 {1775}         copied to INBOX/3886       33.37 msgs/s  58.688 KiB/s 1.245 MiB copied ETA: Mon Oct 26 05:38:52 2020  386 s  12876/13601 msgs left
+msg INBOX/1826 {1744}         copied to INBOX/3887       33.38 msgs/s  58.714 KiB/s 1.247 MiB copied ETA: Mon Oct 26 05:38:52 2020  386 s  12875/13601 msgs left
+msg INBOX/1827 {1710}         copied to INBOX/3888       33.40 msgs/s  58.734 KiB/s 1.249 MiB copied ETA: Mon Oct 26 05:38:51 2020  386 s  12874/13601 msgs left
+msg INBOX/1832 {2138}         copied to INBOX/3889       33.41 msgs/s  58.782 KiB/s 1.251 MiB copied ETA: Mon Oct 26 05:38:51 2020  385 s  12873/13601 msgs left
+msg INBOX/1839 {2606}         copied to INBOX/3890       33.42 msgs/s  58.828 KiB/s 1.253 MiB copied ETA: Mon Oct 26 05:38:51 2020  385 s  12872/13601 msgs left
+msg INBOX/1841 {2448}         copied to INBOX/3891       33.43 msgs/s  58.876 KiB/s 1.255 MiB copied ETA: Mon Oct 26 05:38:51 2020  385 s  12871/13601 msgs left
+msg INBOX/1844 {2261}         copied to INBOX/3892       33.44 msgs/s  58.910 KiB/s 1.258 MiB copied ETA: Mon Oct 26 05:38:51 2020  385 s  12870/13601 msgs left
+msg INBOX/1845 {2319}         copied to INBOX/3893       33.44 msgs/s  58.933 KiB/s 1.260 MiB copied ETA: Mon Oct 26 05:38:51 2020  385 s  12869/13601 msgs left
+msg INBOX/1856 {1420}         copied to INBOX/3894       33.44 msgs/s  58.920 KiB/s 1.261 MiB copied ETA: Mon Oct 26 05:38:51 2020  385 s  12868/13601 msgs left
+msg INBOX/1865 {1770}         copied to INBOX/3895       33.45 msgs/s  58.942 KiB/s 1.263 MiB copied ETA: Mon Oct 26 05:38:51 2020  385 s  12867/13601 msgs left
+msg INBOX/1866 {1916}         copied to INBOX/3896       33.47 msgs/s  58.968 KiB/s 1.265 MiB copied ETA: Mon Oct 26 05:38:51 2020  384 s  12866/13601 msgs left
+msg INBOX/1871 {1771}         copied to INBOX/3897       33.48 msgs/s  58.983 KiB/s 1.266 MiB copied ETA: Mon Oct 26 05:38:51 2020  384 s  12865/13601 msgs left
+msg INBOX/1874 {1632}         copied to INBOX/3898       33.48 msgs/s  58.988 KiB/s 1.268 MiB copied ETA: Mon Oct 26 05:38:50 2020  384 s  12864/13601 msgs left
+msg INBOX/1875 {1429}         copied to INBOX/3899       33.49 msgs/s  58.988 KiB/s 1.269 MiB copied ETA: Mon Oct 26 05:38:50 2020  384 s  12863/13601 msgs left
+msg INBOX/1882 {1397}         copied to INBOX/3900       33.50 msgs/s  58.988 KiB/s 1.271 MiB copied ETA: Mon Oct 26 05:38:50 2020  384 s  12862/13601 msgs left
+msg INBOX/1886 {1783}         copied to INBOX/3901       33.51 msgs/s  59.004 KiB/s 1.272 MiB copied ETA: Mon Oct 26 05:38:50 2020  384 s  12861/13601 msgs left
+msg INBOX/1887 {1865}         copied to INBOX/3902       33.52 msgs/s  59.027 KiB/s 1.274 MiB copied ETA: Mon Oct 26 05:38:50 2020  384 s  12860/13601 msgs left
+msg INBOX/1891 {2606}         copied to INBOX/3903       33.53 msgs/s  59.079 KiB/s 1.277 MiB copied ETA: Mon Oct 26 05:38:50 2020  383 s  12859/13601 msgs left
+msg INBOX/1892 {2613}         copied to INBOX/3904       33.54 msgs/s  59.128 KiB/s 1.279 MiB copied ETA: Mon Oct 26 05:38:50 2020  383 s  12858/13601 msgs left
+msg INBOX/1895 {3026}         copied to INBOX/3905       33.55 msgs/s  59.202 KiB/s 1.282 MiB copied ETA: Mon Oct 26 05:38:50 2020  383 s  12857/13601 msgs left
+msg INBOX/1900 {1969}         copied to INBOX/3906       33.55 msgs/s  59.213 KiB/s 1.284 MiB copied ETA: Mon Oct 26 05:38:50 2020  383 s  12856/13601 msgs left
+msg INBOX/1901 {2910}         copied to INBOX/3907       33.57 msgs/s  59.281 KiB/s 1.287 MiB copied ETA: Mon Oct 26 05:38:49 2020  383 s  12855/13601 msgs left
+msg INBOX/1906 {2079}         copied to INBOX/3908       33.58 msgs/s  59.317 KiB/s 1.289 MiB copied ETA: Mon Oct 26 05:38:49 2020  383 s  12854/13601 msgs left
+msg INBOX/1907 {1772}         copied to INBOX/3909       33.59 msgs/s  59.334 KiB/s 1.290 MiB copied ETA: Mon Oct 26 05:38:49 2020  383 s  12853/13601 msgs left
+msg INBOX/1908 {1414}         copied to INBOX/3910       33.60 msgs/s  59.336 KiB/s 1.292 MiB copied ETA: Mon Oct 26 05:38:49 2020  382 s  12852/13601 msgs left
+msg INBOX/1911 {1659}         copied to INBOX/3911       33.60 msgs/s  59.321 KiB/s 1.293 MiB copied ETA: Mon Oct 26 05:38:49 2020  383 s  12851/13601 msgs left
+msg INBOX/1913 {2133}         copied to INBOX/3912       33.60 msgs/s  59.339 KiB/s 1.295 MiB copied ETA: Mon Oct 26 05:38:49 2020  382 s  12850/13601 msgs left
+msg INBOX/1914 {2209}         copied to INBOX/3913       33.61 msgs/s  59.371 KiB/s 1.297 MiB copied ETA: Mon Oct 26 05:38:49 2020  382 s  12849/13601 msgs left
+msg INBOX/1915 {1768}         copied to INBOX/3914       33.62 msgs/s  59.393 KiB/s 1.299 MiB copied ETA: Mon Oct 26 05:38:49 2020  382 s  12848/13601 msgs left
+msg INBOX/1916 {1766}         copied to INBOX/3915       33.63 msgs/s  59.415 KiB/s 1.301 MiB copied ETA: Mon Oct 26 05:38:49 2020  382 s  12847/13601 msgs left
+msg INBOX/1919 {2384}         copied to INBOX/3916       33.64 msgs/s  59.452 KiB/s 1.303 MiB copied ETA: Mon Oct 26 05:38:49 2020  382 s  12846/13601 msgs left
+msg INBOX/1920 {1691}         copied to INBOX/3917       33.65 msgs/s  59.470 KiB/s 1.305 MiB copied ETA: Mon Oct 26 05:38:48 2020  382 s  12845/13601 msgs left
+msg INBOX/1921 {1723}         copied to INBOX/3918       33.67 msgs/s  59.490 KiB/s 1.306 MiB copied ETA: Mon Oct 26 05:38:48 2020  382 s  12844/13601 msgs left
+msg INBOX/1922 {2217}         copied to INBOX/3919       33.68 msgs/s  59.535 KiB/s 1.308 MiB copied ETA: Mon Oct 26 05:38:48 2020  381 s  12843/13601 msgs left
+msg INBOX/1923 {1772}         copied to INBOX/3920       33.70 msgs/s  59.558 KiB/s 1.310 MiB copied ETA: Mon Oct 26 05:38:48 2020  381 s  12842/13601 msgs left
+msg INBOX/1928 {2217}         copied to INBOX/3921       33.71 msgs/s  59.600 KiB/s 1.312 MiB copied ETA: Mon Oct 26 05:38:48 2020  381 s  12841/13601 msgs left
+msg INBOX/1929 {1770}         copied to INBOX/3922       33.72 msgs/s  59.623 KiB/s 1.314 MiB copied ETA: Mon Oct 26 05:38:48 2020  381 s  12840/13601 msgs left
+msg INBOX/1931 {2221}         copied to INBOX/3923       33.74 msgs/s  59.668 KiB/s 1.316 MiB copied ETA: Mon Oct 26 05:38:47 2020  381 s  12839/13601 msgs left
+msg INBOX/1932 {1774}         copied to INBOX/3924       33.75 msgs/s  59.685 KiB/s 1.318 MiB copied ETA: Mon Oct 26 05:38:47 2020  380 s  12838/13601 msgs left
+msg INBOX/1934 {1878}         copied to INBOX/3925       33.76 msgs/s  59.706 KiB/s 1.319 MiB copied ETA: Mon Oct 26 05:38:47 2020  380 s  12837/13601 msgs left
+msg INBOX/1935 {1629}         copied to INBOX/3926       33.77 msgs/s  59.717 KiB/s 1.321 MiB copied ETA: Mon Oct 26 05:38:47 2020  380 s  12836/13601 msgs left
+msg INBOX/1936 {2345}         copied to INBOX/3927       33.78 msgs/s  59.754 KiB/s 1.323 MiB copied ETA: Mon Oct 26 05:38:47 2020  380 s  12835/13601 msgs left
+msg INBOX/1941 {1626}         copied to INBOX/3928       33.79 msgs/s  59.764 KiB/s 1.325 MiB copied ETA: Mon Oct 26 05:38:47 2020  380 s  12834/13601 msgs left
+msg INBOX/1942 {2613}         copied to INBOX/3929       33.80 msgs/s  59.819 KiB/s 1.327 MiB copied ETA: Mon Oct 26 05:38:47 2020  380 s  12833/13601 msgs left
+msg INBOX/1945 {2548}         copied to INBOX/3930       33.81 msgs/s  59.867 KiB/s 1.330 MiB copied ETA: Mon Oct 26 05:38:47 2020  380 s  12832/13601 msgs left
+msg INBOX/1946 {1654}         copied to INBOX/3931       33.82 msgs/s  59.881 KiB/s 1.331 MiB copied ETA: Mon Oct 26 05:38:46 2020  379 s  12831/13601 msgs left
+msg INBOX/1947 {2763}         copied to INBOX/3932       33.82 msgs/s  59.928 KiB/s 1.334 MiB copied ETA: Mon Oct 26 05:38:46 2020  379 s  12830/13601 msgs left
+msg INBOX/1948 {2666}         copied to INBOX/3933       33.84 msgs/s  59.983 KiB/s 1.337 MiB copied ETA: Mon Oct 26 05:38:46 2020  379 s  12829/13601 msgs left
+msg INBOX/1949 {2853}         copied to INBOX/3934       33.85 msgs/s  60.048 KiB/s 1.339 MiB copied ETA: Mon Oct 26 05:38:46 2020  379 s  12828/13601 msgs left
+msg INBOX/1950 {1816}         copied to INBOX/3935       33.86 msgs/s  60.076 KiB/s 1.341 MiB copied ETA: Mon Oct 26 05:38:46 2020  379 s  12827/13601 msgs left
+msg INBOX/1952 {1816}         copied to INBOX/3936       33.87 msgs/s  60.080 KiB/s 1.343 MiB copied ETA: Mon Oct 26 05:38:46 2020  379 s  12826/13601 msgs left
+msg INBOX/1956 {1424}         copied to INBOX/3937       33.87 msgs/s  60.079 KiB/s 1.344 MiB copied ETA: Mon Oct 26 05:38:46 2020  379 s  12825/13601 msgs left
+msg INBOX/1957 {1740}         copied to INBOX/3938       33.89 msgs/s  60.099 KiB/s 1.346 MiB copied ETA: Mon Oct 26 05:38:46 2020  378 s  12824/13601 msgs left
+msg INBOX/1958 {1582}         copied to INBOX/3939       33.90 msgs/s  60.104 KiB/s 1.347 MiB copied ETA: Mon Oct 26 05:38:45 2020  378 s  12823/13601 msgs left
+msg INBOX/1961 {2818}         copied to INBOX/3940       33.91 msgs/s  60.164 KiB/s 1.350 MiB copied ETA: Mon Oct 26 05:38:45 2020  378 s  12822/13601 msgs left
+msg INBOX/1962 {1770}         copied to INBOX/3941       33.91 msgs/s  60.177 KiB/s 1.352 MiB copied ETA: Mon Oct 26 05:38:45 2020  378 s  12821/13601 msgs left
+msg INBOX/1963 {1732}         copied to INBOX/3942       33.92 msgs/s  60.193 KiB/s 1.353 MiB copied ETA: Mon Oct 26 05:38:45 2020  378 s  12820/13601 msgs left
+msg INBOX/1971 {1632}         copied to INBOX/3943       33.93 msgs/s  60.198 KiB/s 1.355 MiB copied ETA: Mon Oct 26 05:38:45 2020  378 s  12819/13601 msgs left
+msg INBOX/1972 {1612}         copied to INBOX/3944       33.95 msgs/s  60.213 KiB/s 1.356 MiB copied ETA: Mon Oct 26 05:38:45 2020  378 s  12818/13601 msgs left
+msg INBOX/1979 {2500}         copied to INBOX/3945       33.95 msgs/s  60.256 KiB/s 1.359 MiB copied ETA: Mon Oct 26 05:38:45 2020  378 s  12817/13601 msgs left
+msg INBOX/1981 {2735}         copied to INBOX/3946       33.96 msgs/s  60.314 KiB/s 1.361 MiB copied ETA: Mon Oct 26 05:38:45 2020  377 s  12816/13601 msgs left
+msg INBOX/1986 {2432}         copied to INBOX/3947       33.98 msgs/s  60.359 KiB/s 1.364 MiB copied ETA: Mon Oct 26 05:38:45 2020  377 s  12815/13601 msgs left
+msg INBOX/1990 {2607}         copied to INBOX/3948       33.99 msgs/s  60.412 KiB/s 1.366 MiB copied ETA: Mon Oct 26 05:38:44 2020  377 s  12814/13601 msgs left
+msg INBOX/1993 {2226}         copied to INBOX/3949       34.00 msgs/s  60.450 KiB/s 1.368 MiB copied ETA: Mon Oct 26 05:38:44 2020  377 s  12813/13601 msgs left
+msg INBOX/1995 {1724}         copied to INBOX/3950       34.01 msgs/s  60.464 KiB/s 1.370 MiB copied ETA: Mon Oct 26 05:38:44 2020  377 s  12812/13601 msgs left
+msg INBOX/1996 {2028}         copied to INBOX/3951       34.02 msgs/s  60.487 KiB/s 1.372 MiB copied ETA: Mon Oct 26 05:38:44 2020  377 s  12811/13601 msgs left
+msg INBOX/1997 {1762}         copied to INBOX/3952       34.02 msgs/s  60.496 KiB/s 1.374 MiB copied ETA: Mon Oct 26 05:38:44 2020  377 s  12810/13601 msgs left
+msg INBOX/2000 {1176}         copied to INBOX/3953       34.03 msgs/s  60.490 KiB/s 1.375 MiB copied ETA: Mon Oct 26 05:38:44 2020  376 s  12809/13601 msgs left
+msg INBOX/2001 {1779}         copied to INBOX/3954       34.04 msgs/s  60.505 KiB/s 1.376 MiB copied ETA: Mon Oct 26 05:38:44 2020  376 s  12808/13601 msgs left
+msg INBOX/2002 {1721}         copied to INBOX/3955       34.05 msgs/s  60.519 KiB/s 1.378 MiB copied ETA: Mon Oct 26 05:38:44 2020  376 s  12807/13601 msgs left
+msg INBOX/2003 {2230}         copied to INBOX/3956       34.06 msgs/s  60.546 KiB/s 1.380 MiB copied ETA: Mon Oct 26 05:38:44 2020  376 s  12806/13601 msgs left
+msg INBOX/2004 {1782}         copied to INBOX/3957       34.07 msgs/s  60.556 KiB/s 1.382 MiB copied ETA: Mon Oct 26 05:38:43 2020  376 s  12805/13601 msgs left
+msg INBOX/2005 {2222}         copied to INBOX/3958       34.08 msgs/s  60.590 KiB/s 1.384 MiB copied ETA: Mon Oct 26 05:38:43 2020  376 s  12804/13601 msgs left
+msg INBOX/2006 {1774}         copied to INBOX/3959       34.09 msgs/s  60.605 KiB/s 1.386 MiB copied ETA: Mon Oct 26 05:38:43 2020  376 s  12803/13601 msgs left
+msg INBOX/2008 {2285}         copied to INBOX/3960       34.09 msgs/s  60.634 KiB/s 1.388 MiB copied ETA: Mon Oct 26 05:38:43 2020  376 s  12802/13601 msgs left
+msg INBOX/2010 {2081}         copied to INBOX/3961       34.10 msgs/s  60.655 KiB/s 1.390 MiB copied ETA: Mon Oct 26 05:38:43 2020  375 s  12801/13601 msgs left
+msg INBOX/2012 {1712}         copied to INBOX/3962       34.10 msgs/s  60.659 KiB/s 1.391 MiB copied ETA: Mon Oct 26 05:38:43 2020  375 s  12800/13601 msgs left
+msg INBOX/2014 {2285}         copied to INBOX/3963       34.11 msgs/s  60.694 KiB/s 1.394 MiB copied ETA: Mon Oct 26 05:38:43 2020  375 s  12799/13601 msgs left
+msg INBOX/2017 {1418}         copied to INBOX/3964       34.12 msgs/s  60.697 KiB/s 1.395 MiB copied ETA: Mon Oct 26 05:38:43 2020  375 s  12798/13601 msgs left
+msg INBOX/2018 {2040}         copied to INBOX/3965       34.13 msgs/s  60.725 KiB/s 1.397 MiB copied ETA: Mon Oct 26 05:38:43 2020  375 s  12797/13601 msgs left
+msg INBOX/2019 {2040}         copied to INBOX/3966       34.14 msgs/s  60.754 KiB/s 1.399 MiB copied ETA: Mon Oct 26 05:38:43 2020  375 s  12796/13601 msgs left
+msg INBOX/2020 {2040}         copied to INBOX/3967       34.14 msgs/s  60.755 KiB/s 1.401 MiB copied ETA: Mon Oct 26 05:38:43 2020  375 s  12795/13601 msgs left
+msg INBOX/2021 {1768}         copied to INBOX/3968       34.15 msgs/s  60.771 KiB/s 1.402 MiB copied ETA: Mon Oct 26 05:38:43 2020  375 s  12794/13601 msgs left
+msg INBOX/2022 {2881}         copied to INBOX/3969       34.16 msgs/s  60.828 KiB/s 1.405 MiB copied ETA: Mon Oct 26 05:38:42 2020  375 s  12793/13601 msgs left
+msg INBOX/2031 {2670}         copied to INBOX/3970       34.17 msgs/s  60.880 KiB/s 1.408 MiB copied ETA: Mon Oct 26 05:38:42 2020  374 s  12792/13601 msgs left
+msg INBOX/2033 {1795}         copied to INBOX/3971       34.17 msgs/s  60.887 KiB/s 1.409 MiB copied ETA: Mon Oct 26 05:38:42 2020  374 s  12791/13601 msgs left
+msg INBOX/2035 {1687}         copied to INBOX/3972       34.17 msgs/s  60.883 KiB/s 1.411 MiB copied ETA: Mon Oct 26 05:38:42 2020  374 s  12790/13601 msgs left
+msg INBOX/2037 {1714}         copied to INBOX/3973       34.18 msgs/s  60.898 KiB/s 1.413 MiB copied ETA: Mon Oct 26 05:38:42 2020  374 s  12789/13601 msgs left
+msg INBOX/2038 {2107}         copied to INBOX/3974       34.19 msgs/s  60.925 KiB/s 1.415 MiB copied ETA: Mon Oct 26 05:38:42 2020  374 s  12788/13601 msgs left
+msg INBOX/2045 {1427}         copied to INBOX/3975       34.20 msgs/s  60.920 KiB/s 1.416 MiB copied ETA: Mon Oct 26 05:38:42 2020  374 s  12787/13601 msgs left
+msg INBOX/2051 {1421}         copied to INBOX/3976       34.20 msgs/s  60.904 KiB/s 1.417 MiB copied ETA: Mon Oct 26 05:38:42 2020  374 s  12786/13601 msgs left
+msg INBOX/2055 {1970}         copied to INBOX/3977       34.21 msgs/s  60.927 KiB/s 1.419 MiB copied ETA: Mon Oct 26 05:38:42 2020  374 s  12785/13601 msgs left
+msg INBOX/2056 {1771}         copied to INBOX/3978       34.22 msgs/s  60.940 KiB/s 1.421 MiB copied ETA: Mon Oct 26 05:38:42 2020  374 s  12784/13601 msgs left
+msg INBOX/2059 {1982}         copied to INBOX/3979       34.22 msgs/s  60.950 KiB/s 1.423 MiB copied ETA: Mon Oct 26 05:38:42 2020  374 s  12783/13601 msgs left
+msg INBOX/2061 {1639}         copied to INBOX/3980       34.23 msgs/s  60.957 KiB/s 1.424 MiB copied ETA: Mon Oct 26 05:38:42 2020  373 s  12782/13601 msgs left
+msg INBOX/2065 {1425}         copied to INBOX/3981       34.23 msgs/s  60.954 KiB/s 1.426 MiB copied ETA: Mon Oct 26 05:38:42 2020  373 s  12781/13601 msgs left
+msg INBOX/2070 {1987}         copied to INBOX/3982       34.24 msgs/s  60.978 KiB/s 1.428 MiB copied ETA: Mon Oct 26 05:38:41 2020  373 s  12780/13601 msgs left
+msg INBOX/2072 {2054}         copied to INBOX/3983       34.25 msgs/s  61.005 KiB/s 1.430 MiB copied ETA: Mon Oct 26 05:38:41 2020  373 s  12779/13601 msgs left
+msg INBOX/2074 {2488}         copied to INBOX/3984       34.26 msgs/s  61.048 KiB/s 1.432 MiB copied ETA: Mon Oct 26 05:38:41 2020  373 s  12778/13601 msgs left
+msg INBOX/2076 {2760}         copied to INBOX/3985       34.26 msgs/s  61.091 KiB/s 1.435 MiB copied ETA: Mon Oct 26 05:38:41 2020  373 s  12777/13601 msgs left
+msg INBOX/2077 {1432}         copied to INBOX/3986       34.27 msgs/s  61.080 KiB/s 1.436 MiB copied ETA: Mon Oct 26 05:38:41 2020  373 s  12776/13601 msgs left
+msg INBOX/2078 {2537}         copied to INBOX/3987       34.28 msgs/s  61.127 KiB/s 1.438 MiB copied ETA: Mon Oct 26 05:38:41 2020  373 s  12775/13601 msgs left
+msg INBOX/2080 {2465}         copied to INBOX/3988       34.29 msgs/s  61.170 KiB/s 1.441 MiB copied ETA: Mon Oct 26 05:38:41 2020  373 s  12774/13601 msgs left
+msg INBOX/2086 {1554}         copied to INBOX/3989       34.29 msgs/s  61.170 KiB/s 1.442 MiB copied ETA: Mon Oct 26 05:38:41 2020  372 s  12773/13601 msgs left
+msg INBOX/2087 {1990}         copied to INBOX/3990       34.30 msgs/s  61.189 KiB/s 1.444 MiB copied ETA: Mon Oct 26 05:38:41 2020  372 s  12772/13601 msgs left
+msg INBOX/2088 {1990}         copied to INBOX/3991       34.30 msgs/s  61.201 KiB/s 1.446 MiB copied ETA: Mon Oct 26 05:38:41 2020  372 s  12771/13601 msgs left
+msg INBOX/2089 {1554}         copied to INBOX/3992       34.31 msgs/s  61.193 KiB/s 1.448 MiB copied ETA: Mon Oct 26 05:38:41 2020  372 s  12770/13601 msgs left
+msg INBOX/2093 {2922}         copied to INBOX/3993       34.31 msgs/s  61.248 KiB/s 1.450 MiB copied ETA: Mon Oct 26 05:38:41 2020  372 s  12769/13601 msgs left
+msg INBOX/2095 {1986}         copied to INBOX/3994       34.31 msgs/s  61.254 KiB/s 1.452 MiB copied ETA: Mon Oct 26 05:38:41 2020  372 s  12768/13601 msgs left
+msg INBOX/2096 {1915}         copied to INBOX/3995       34.32 msgs/s  61.266 KiB/s 1.454 MiB copied ETA: Mon Oct 26 05:38:41 2020  372 s  12767/13601 msgs left
+msg INBOX/2098 {2695}         copied to INBOX/3996       34.33 msgs/s  61.319 KiB/s 1.457 MiB copied ETA: Mon Oct 26 05:38:40 2020  372 s  12766/13601 msgs left
+msg INBOX/2103 {2486}         copied to INBOX/3997       34.33 msgs/s  61.361 KiB/s 1.459 MiB copied ETA: Mon Oct 26 05:38:40 2020  372 s  12765/13601 msgs left
+msg INBOX/2106 {2507}         copied to INBOX/3998       34.34 msgs/s  61.406 KiB/s 1.461 MiB copied ETA: Mon Oct 26 05:38:40 2020  372 s  12764/13601 msgs left
+msg INBOX/2109 {2453}         copied to INBOX/3999       34.35 msgs/s  61.447 KiB/s 1.464 MiB copied ETA: Mon Oct 26 05:38:40 2020  372 s  12763/13601 msgs left
+msg INBOX/2114 {1663}         copied to INBOX/4000       34.36 msgs/s  61.450 KiB/s 1.465 MiB copied ETA: Mon Oct 26 05:38:40 2020  371 s  12762/13601 msgs left
+msg INBOX/2115 {1998}         copied to INBOX/4001       34.37 msgs/s  61.468 KiB/s 1.467 MiB copied ETA: Mon Oct 26 05:38:40 2020  371 s  12761/13601 msgs left
+msg INBOX/2116 {2465}         copied to INBOX/4002       34.37 msgs/s  61.503 KiB/s 1.470 MiB copied ETA: Mon Oct 26 05:38:40 2020  371 s  12760/13601 msgs left
+msg INBOX/2117 {1776}         copied to INBOX/4003       34.38 msgs/s  61.518 KiB/s 1.471 MiB copied ETA: Mon Oct 26 05:38:40 2020  371 s  12759/13601 msgs left
+msg INBOX/2118 {1781}         copied to INBOX/4004       34.38 msgs/s  61.515 KiB/s 1.473 MiB copied ETA: Mon Oct 26 05:38:40 2020  371 s  12758/13601 msgs left
+msg INBOX/2119 {1558}         copied to INBOX/4005       34.39 msgs/s  61.522 KiB/s 1.474 MiB copied ETA: Mon Oct 26 05:38:40 2020  371 s  12757/13601 msgs left
+msg INBOX/2120 {2218}         copied to INBOX/4006       34.40 msgs/s  61.555 KiB/s 1.477 MiB copied ETA: Mon Oct 26 05:38:40 2020  371 s  12756/13601 msgs left
+msg INBOX/2121 {2218}         copied to INBOX/4007       34.41 msgs/s  61.587 KiB/s 1.479 MiB copied ETA: Mon Oct 26 05:38:40 2020  371 s  12755/13601 msgs left
+msg INBOX/2122 {1774}         copied to INBOX/4008       34.42 msgs/s  61.601 KiB/s 1.480 MiB copied ETA: Mon Oct 26 05:38:39 2020  371 s  12754/13601 msgs left
+msg INBOX/2123 {1773}         copied to INBOX/4009       34.43 msgs/s  61.611 KiB/s 1.482 MiB copied ETA: Mon Oct 26 05:38:39 2020  370 s  12753/13601 msgs left
+msg INBOX/2124 {2226}         copied to INBOX/4010       34.42 msgs/s  61.624 KiB/s 1.484 MiB copied ETA: Mon Oct 26 05:38:39 2020  370 s  12752/13601 msgs left
+msg INBOX/2125 {2238}         copied to INBOX/4011       34.43 msgs/s  61.643 KiB/s 1.486 MiB copied ETA: Mon Oct 26 05:38:39 2020  370 s  12751/13601 msgs left
+msg INBOX/2127 {1781}         copied to INBOX/4012       34.42 msgs/s  61.626 KiB/s 1.488 MiB copied ETA: Mon Oct 26 05:38:39 2020  370 s  12750/13601 msgs left
+msg INBOX/2128 {1772}         copied to INBOX/4013       34.42 msgs/s  61.635 KiB/s 1.490 MiB copied ETA: Mon Oct 26 05:38:39 2020  370 s  12749/13601 msgs left
+msg INBOX/2129 {1789}         copied to INBOX/4014       34.43 msgs/s  61.640 KiB/s 1.491 MiB copied ETA: Mon Oct 26 05:38:39 2020  370 s  12748/13601 msgs left
+msg INBOX/2131 {1654}         copied to INBOX/4015       34.44 msgs/s  61.651 KiB/s 1.493 MiB copied ETA: Mon Oct 26 05:38:39 2020  370 s  12747/13601 msgs left
+msg INBOX/2132 {2238}         copied to INBOX/4016       34.44 msgs/s  61.680 KiB/s 1.495 MiB copied ETA: Mon Oct 26 05:38:39 2020  370 s  12746/13601 msgs left
+msg INBOX/2133 {1592}         copied to INBOX/4017       34.45 msgs/s  61.679 KiB/s 1.497 MiB copied ETA: Mon Oct 26 05:38:39 2020  370 s  12745/13601 msgs left
+msg INBOX/2134 {1787}         copied to INBOX/4018       34.46 msgs/s  61.690 KiB/s 1.498 MiB copied ETA: Mon Oct 26 05:38:39 2020  370 s  12744/13601 msgs left
+msg INBOX/2140 {1932}         copied to INBOX/4019       34.46 msgs/s  61.695 KiB/s 1.500 MiB copied ETA: Mon Oct 26 05:38:39 2020  370 s  12743/13601 msgs left
+msg INBOX/2142 {1692}         copied to INBOX/4020       34.45 msgs/s  61.678 KiB/s 1.502 MiB copied ETA: Mon Oct 26 05:38:39 2020  370 s  12742/13601 msgs left
+msg INBOX/2145 {2240}         copied to INBOX/4021       34.45 msgs/s  61.701 KiB/s 1.504 MiB copied ETA: Mon Oct 26 05:38:39 2020  370 s  12741/13601 msgs left
+msg INBOX/2147 {2659}         copied to INBOX/4022       34.46 msgs/s  61.741 KiB/s 1.507 MiB copied ETA: Mon Oct 26 05:38:39 2020  370 s  12740/13601 msgs left
+msg INBOX/2151 {2630}         copied to INBOX/4023       34.47 msgs/s  61.790 KiB/s 1.509 MiB copied ETA: Mon Oct 26 05:38:39 2020  370 s  12739/13601 msgs left
+msg INBOX/2156 {2142}         copied to INBOX/4024       34.47 msgs/s  61.812 KiB/s 1.511 MiB copied ETA: Mon Oct 26 05:38:39 2020  369 s  12738/13601 msgs left
+msg INBOX/2159 {2852}         copied to INBOX/4025       34.49 msgs/s  61.871 KiB/s 1.514 MiB copied ETA: Mon Oct 26 05:38:39 2020  369 s  12737/13601 msgs left
+msg INBOX/2160 {2898}         copied to INBOX/4026       34.50 msgs/s  61.936 KiB/s 1.517 MiB copied ETA: Mon Oct 26 05:38:38 2020  369 s  12736/13601 msgs left
+msg INBOX/2162 {1769}         copied to INBOX/4027       34.51 msgs/s  61.949 KiB/s 1.518 MiB copied ETA: Mon Oct 26 05:38:38 2020  369 s  12735/13601 msgs left
+msg INBOX/2163 {2932}         copied to INBOX/4028       34.52 msgs/s  62.008 KiB/s 1.521 MiB copied ETA: Mon Oct 26 05:38:38 2020  369 s  12734/13601 msgs left
+msg INBOX/2164 {2222}         copied to INBOX/4029       34.53 msgs/s  62.044 KiB/s 1.523 MiB copied ETA: Mon Oct 26 05:38:38 2020  369 s  12733/13601 msgs left
+msg INBOX/2165 {1776}         copied to INBOX/4030       34.54 msgs/s  62.067 KiB/s 1.525 MiB copied ETA: Mon Oct 26 05:38:38 2020  369 s  12732/13601 msgs left
+msg INBOX/2166 {1771}         copied to INBOX/4031       34.55 msgs/s  62.082 KiB/s 1.527 MiB copied ETA: Mon Oct 26 05:38:38 2020  368 s  12731/13601 msgs left
+msg INBOX/2169 {1731}         copied to INBOX/4032       34.56 msgs/s  62.090 KiB/s 1.528 MiB copied ETA: Mon Oct 26 05:38:38 2020  368 s  12730/13601 msgs left
+msg INBOX/2178 {1758}         copied to INBOX/4033       34.57 msgs/s  62.100 KiB/s 1.530 MiB copied ETA: Mon Oct 26 05:38:38 2020  368 s  12729/13601 msgs left
+msg INBOX/2182 {2021}         copied to INBOX/4034       34.58 msgs/s  62.126 KiB/s 1.532 MiB copied ETA: Mon Oct 26 05:38:38 2020  368 s  12728/13601 msgs left
+msg INBOX/2186 {1421}         copied to INBOX/4035       34.59 msgs/s  62.127 KiB/s 1.533 MiB copied ETA: Mon Oct 26 05:38:37 2020  368 s  12727/13601 msgs left
+msg INBOX/2192 {2502}         copied to INBOX/4036       34.59 msgs/s  62.156 KiB/s 1.536 MiB copied ETA: Mon Oct 26 05:38:37 2020  368 s  12726/13601 msgs left
+msg INBOX/2193 {2502}         copied to INBOX/4037       34.60 msgs/s  62.196 KiB/s 1.538 MiB copied ETA: Mon Oct 26 05:38:37 2020  368 s  12725/13601 msgs left
+msg INBOX/2195 {1458}         copied to INBOX/4038       34.60 msgs/s  62.188 KiB/s 1.539 MiB copied ETA: Mon Oct 26 05:38:37 2020  368 s  12724/13601 msgs left
+msg INBOX/2198 {1712}         copied to INBOX/4039       34.60 msgs/s  62.182 KiB/s 1.541 MiB copied ETA: Mon Oct 26 05:38:37 2020  368 s  12723/13601 msgs left
+msg INBOX/2199 {1726}         copied to INBOX/4040       34.59 msgs/s  62.164 KiB/s 1.543 MiB copied ETA: Mon Oct 26 05:38:37 2020  368 s  12722/13601 msgs left
+msg INBOX/2200 {1618}         copied to INBOX/4041       34.60 msgs/s  62.168 KiB/s 1.544 MiB copied ETA: Mon Oct 26 05:38:37 2020  368 s  12721/13601 msgs left
+msg INBOX/2206 {2948}         copied to INBOX/4042       34.60 msgs/s  62.220 KiB/s 1.547 MiB copied ETA: Mon Oct 26 05:38:37 2020  368 s  12720/13601 msgs left
+msg INBOX/2208 {2128}         copied to INBOX/4043       34.61 msgs/s  62.248 KiB/s 1.549 MiB copied ETA: Mon Oct 26 05:38:37 2020  367 s  12719/13601 msgs left
+msg INBOX/2209 {1780}         copied to INBOX/4044       34.62 msgs/s  62.259 KiB/s 1.551 MiB copied ETA: Mon Oct 26 05:38:37 2020  367 s  12718/13601 msgs left
+msg INBOX/2219 {2452}         copied to INBOX/4045       34.63 msgs/s  62.295 KiB/s 1.553 MiB copied ETA: Mon Oct 26 05:38:37 2020  367 s  12717/13601 msgs left
+msg INBOX/2220 {1652}         copied to INBOX/4046       34.63 msgs/s  62.297 KiB/s 1.555 MiB copied ETA: Mon Oct 26 05:38:37 2020  367 s  12716/13601 msgs left
+msg INBOX/2222 {2458}         copied to INBOX/4047       34.63 msgs/s  62.307 KiB/s 1.557 MiB copied ETA: Mon Oct 26 05:38:37 2020  367 s  12715/13601 msgs left
+msg INBOX/2223 {2428}         copied to INBOX/4048       34.61 msgs/s  62.298 KiB/s 1.559 MiB copied ETA: Mon Oct 26 05:38:37 2020  367 s  12714/13601 msgs left
+msg INBOX/2225 {1682}         copied to INBOX/4049       34.62 msgs/s  62.309 KiB/s 1.561 MiB copied ETA: Mon Oct 26 05:38:37 2020  367 s  12713/13601 msgs left
+msg INBOX/2226 {2045}         copied to INBOX/4050       34.63 msgs/s  62.338 KiB/s 1.563 MiB copied ETA: Mon Oct 26 05:38:37 2020  367 s  12712/13601 msgs left
+msg INBOX/2227 {1918}         copied to INBOX/4051       34.64 msgs/s  62.360 KiB/s 1.565 MiB copied ETA: Mon Oct 26 05:38:37 2020  367 s  12711/13601 msgs left
+msg INBOX/2228 {1916}         copied to INBOX/4052       34.65 msgs/s  62.379 KiB/s 1.566 MiB copied ETA: Mon Oct 26 05:38:37 2020  367 s  12710/13601 msgs left
+msg INBOX/2229 {1811}         copied to INBOX/4053       34.66 msgs/s  62.396 KiB/s 1.568 MiB copied ETA: Mon Oct 26 05:38:37 2020  367 s  12709/13601 msgs left
+msg INBOX/2231 {2569}         copied to INBOX/4054       34.67 msgs/s  62.442 KiB/s 1.571 MiB copied ETA: Mon Oct 26 05:38:37 2020  367 s  12708/13601 msgs left
+msg INBOX/2235 {976}          copied to INBOX/4055       34.67 msgs/s  62.410 KiB/s 1.572 MiB copied ETA: Mon Oct 26 05:38:37 2020  367 s  12707/13601 msgs left
+msg INBOX/2237 {1228}         copied to INBOX/4056       34.68 msgs/s  62.406 KiB/s 1.573 MiB copied ETA: Mon Oct 26 05:38:36 2020  366 s  12706/13601 msgs left
+msg INBOX/2238 {1162}         copied to INBOX/4057       34.69 msgs/s  62.395 KiB/s 1.574 MiB copied ETA: Mon Oct 26 05:38:36 2020  366 s  12705/13601 msgs left
+msg INBOX/2239 {1768}         copied to INBOX/4058       34.70 msgs/s  62.410 KiB/s 1.576 MiB copied ETA: Mon Oct 26 05:38:36 2020  366 s  12704/13601 msgs left
+msg INBOX/2240 {2387}         copied to INBOX/4059       34.70 msgs/s  62.438 KiB/s 1.578 MiB copied ETA: Mon Oct 26 05:38:36 2020  366 s  12703/13601 msgs left
+msg INBOX/2251 {1763}         copied to INBOX/4060       34.71 msgs/s  62.446 KiB/s 1.579 MiB copied ETA: Mon Oct 26 05:38:36 2020  366 s  12702/13601 msgs left
+msg INBOX/2252 {2218}         copied to INBOX/4061       34.72 msgs/s  62.471 KiB/s 1.582 MiB copied ETA: Mon Oct 26 05:38:36 2020  366 s  12701/13601 msgs left
+msg INBOX/2253 {1774}         copied to INBOX/4062       34.72 msgs/s  62.479 KiB/s 1.583 MiB copied ETA: Mon Oct 26 05:38:36 2020  366 s  12700/13601 msgs left
+msg INBOX/2254 {1970}         copied to INBOX/4063       34.72 msgs/s  62.486 KiB/s 1.585 MiB copied ETA: Mon Oct 26 05:38:36 2020  366 s  12699/13601 msgs left
+msg INBOX/2255 {1772}         copied to INBOX/4064       34.73 msgs/s  62.490 KiB/s 1.587 MiB copied ETA: Mon Oct 26 05:38:36 2020  366 s  12698/13601 msgs left
+msg INBOX/2258 {1263}         copied to INBOX/4065       34.73 msgs/s  62.468 KiB/s 1.588 MiB copied ETA: Mon Oct 26 05:38:36 2020  366 s  12697/13601 msgs left
+msg INBOX/2259 {1248}         copied to INBOX/4066       34.73 msgs/s  62.455 KiB/s 1.589 MiB copied ETA: Mon Oct 26 05:38:36 2020  366 s  12696/13601 msgs left
+msg INBOX/2260 {2898}         copied to INBOX/4067       34.74 msgs/s  62.507 KiB/s 1.592 MiB copied ETA: Mon Oct 26 05:38:36 2020  365 s  12695/13601 msgs left
+msg INBOX/2262 {1292}         copied to INBOX/4068       34.74 msgs/s  62.489 KiB/s 1.593 MiB copied ETA: Mon Oct 26 05:38:36 2020  365 s  12694/13601 msgs left
+msg INBOX/2263 {2204}         copied to INBOX/4069       34.74 msgs/s  62.511 KiB/s 1.595 MiB copied ETA: Mon Oct 26 05:38:36 2020  365 s  12693/13601 msgs left
+msg INBOX/2264 {1358}         copied to INBOX/4070       34.75 msgs/s  62.495 KiB/s 1.597 MiB copied ETA: Mon Oct 26 05:38:36 2020  365 s  12692/13601 msgs left
+msg INBOX/2265 {1409}         copied to INBOX/4071       34.75 msgs/s  62.491 KiB/s 1.598 MiB copied ETA: Mon Oct 26 05:38:36 2020  365 s  12691/13601 msgs left
+msg INBOX/2267 {1306}         copied to INBOX/4072       34.76 msgs/s  62.484 KiB/s 1.599 MiB copied ETA: Mon Oct 26 05:38:36 2020  365 s  12690/13601 msgs left
+msg INBOX/2270 {1994}         copied to INBOX/4073       34.77 msgs/s  62.503 KiB/s 1.601 MiB copied ETA: Mon Oct 26 05:38:35 2020  365 s  12689/13601 msgs left
+msg INBOX/2272 {2200}         copied to INBOX/4074       34.77 msgs/s  62.524 KiB/s 1.603 MiB copied ETA: Mon Oct 26 05:38:35 2020  365 s  12688/13601 msgs left
+msg INBOX/2273 {1883}         copied to INBOX/4075       34.77 msgs/s  62.531 KiB/s 1.605 MiB copied ETA: Mon Oct 26 05:38:35 2020  365 s  12687/13601 msgs left
