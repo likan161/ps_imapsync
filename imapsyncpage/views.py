@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from django.http import JsonResponse
 from django.http import HttpResponseRedirect
 from django import forms
 from django.shortcuts import render
@@ -10,6 +11,7 @@ from validate_email import validate_email
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import smtplib
+import json 
 
 def emailcheck(mail, pas, host):
     if validate_email(mail):
@@ -30,8 +32,30 @@ def TestFinishOk(file):
 def index(request):
         return render(request, "index.html")
 
-def test(request):
-        return render(request, "test.html")
+
+
+
+def hello(request):
+    return HttpResponse('Hello World!')
+
+def home(request):
+    return render_to_response('index.html', {'variable': 'world'})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 class NameForm(forms.Form):
         mail1 = forms.CharField(max_length=50)
@@ -46,7 +70,6 @@ class NameForm(forms.Form):
 
 def get_form(request):
     if request.method == 'POST':
-
         form= NameForm(request.POST)
         if form.is_valid():
             mail1= form.cleaned_data.get("mail1")
@@ -77,8 +100,8 @@ def get_form(request):
             Command = subprocess.run(ImapSyncRun.split(), stdout=subprocess.PIPE)
 
             FileName = "logs/" + time.strftime("%Y%m%d-%H%M%S") + "-" + mail1 + "-" + mail2 + ".log"
-            file = open(FileName,'w')
-            file.write(Command.stdout.decode("utf-8"))
+            file = open(FileName,'wb')
+            file.write(Command.stdout)
             file.close()
              
             if TestFinishOk(FileName):

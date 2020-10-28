@@ -7,7 +7,10 @@
 	<link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
 </head>
 <body bgcolor="#f2f2f2">
-<div class="login-header__logo">
+
+
+
+<div class="login-header__logo" id="indigo">
 	<a href="https://www.ps.kz">
         <img src="/static/logo.png" alt="Logo" />
         </a>
@@ -15,6 +18,7 @@
 
 <div id="output" class="container">
 	<form action="/transfer" id="user" method="POST">
+
 
 {% csrf_token %}
 {{ form.as_p }}
@@ -102,6 +106,13 @@
     <input type="submit" name="submit" value="Начать трансфер">
   </div>
 
+<div class="donut" id="myDiv" style="display:none;">
+	<div class="cssload-cube cssload-c1"></div>
+	<div class="cssload-cube cssload-c2"></div>
+	<div class="cssload-cube cssload-c4"></div>
+	<div class="cssload-cube cssload-c3"></div>
+</div>
+
   </form>
 </div>
 
@@ -117,6 +128,8 @@ var form = document.forms.user;
 form.submit.addEventListener("click", sendRequest);
  
 function sendRequest(event){	     
+	                    document.getElementById("myDiv").style.display = "";
+	                    document.getElementById("submit").disabled = true; 
                 	    event.preventDefault();
 	                    var formData = new FormData(form);
 	                    var request = new XMLHttpRequest();	 
@@ -129,5 +142,9 @@ function sendRequest(event){
 	                   request.send(formData);
                            }
 </script>
+
+
+<script>
+
 </body>
 </html>
